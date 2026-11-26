@@ -1,0 +1,124 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import { getServices } from '../../lib/strapi';
+import type { Service } from '../../lib/strapi';
+
+export async function getStaticPaths() {
+  const services = await getServices();
+  return services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service }
+  }));
+}
+
+interface Props {
+  service: Service;
+}
+
+const { service } = Astro.props;
+---
+
+<Layout title={`${service.title} | INFRASLIM Rabat`} description={service.subtitle} currentPath={`/services/${service.slug}`}>
+  <section class="service-detail-hero" style={`background: linear-gradient(135deg, rgba(145, 100, 142, 0.85) 0%, rgba(74, 40, 75, 0.8) 100%), url('${service.image}') center/cover no-repeat;`}>
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a> / <a href="/services">Services</a> / <span>{service.title}</span>
+      </div>
+      <span class="eyebrow">{service.category}</span>
+      <h1>{service.title}</h1>
+      <p class="subtitle">{service.subtitle}</p>
+    </div>
+  </section>
+
+  <section class="detail-body">
+    <div class="container">
+      <div class="detail-grid">
+        <div class="detail-main">
+          <h2>Présentation du Pôle</h2>
+          <p class="lead">{service.description}</p>
+
+          <h3>Prestations Incluses</h3>
+          <ul class="sub-list">
+            {service.subservices.map(item => (
+              <li>{item}</li>
+            ))}
+          </ul>
+
+          <h3>Bénéfices Clés</h3>
+          <div class="benefits-grid">
+            {service.benefits.map(benefit => (
+              <div class="benefit-box">
+                <span class="check">✓</span>
+                <span>{benefit}</span>
+              </div>
+            ))}
+          </div>
+
+          {service.pricingOverview && (
+            <div class="pricing-box">
+              <h3>Aperçu Tarifaire</h3>
+              <div class="p-row">
+                <span>Séance à l'unité</span>
+                <strong>{service.pricingOverview.singleSession}</strong>
+              </div>
+              <div class="p-row">
+                <span>Cure / Pack 10 séances (-20%)</span>
+                <strong class="highlight">{service.pricingOverview.pack10}</strong>
+              </div>
+              <a href="/tarifs" class="link-all">Voir toute la grille tarifaire &gt;</a>
+            </div>
+          )}
+        </div>
+
+        <aside class="detail-sidebar">
+          <ContactForm title={`Réserver : ${service.title}`} subtitle="Prenez rendez-vous ou demandez votre bilan InBody offert." />
+        </aside>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .service-detail-hero {
+    color: #FFFFFF;
+    padding: 5.5rem 2rem;
+    text-align: center;
+  }
+  .hero-content { max-width: 820px; margin: 0 auto; }
+  .breadcrumb { font-size: 0.8rem; color: rgba(255,255,255,0.75); margin-bottom: 1.5rem; }
+  .breadcrumb a { color: #FFFFFF; text-decoration: underline; }
+  .eyebrow { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; display: block; margin-bottom: 0.6rem; font-weight: 600; }
+  .service-detail-hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); color: #FFFFFF; margin-bottom: 1rem; }
+  .subtitle { font-size: 1.05rem; color: rgba(255,255,255,0.92); line-height: 1.7; }
+
+  .detail-body { padding: 5rem 2rem; background: #F7F3F7; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .detail-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3.5rem; align-items: start; }
+
+  .detail-main { background: #FFFFFF; padding: 3rem; border-radius: 8px; border: 1px solid rgba(175,132,172,0.2); }
+  .detail-main h2 { font-size: 1.9rem; margin-bottom: 1rem; }
+  .detail-main h3 { font-size: 1.35rem; margin: 2rem 0 1rem; color: #BB2026; }
+  .lead { font-size: 0.96rem; color: #444; line-height: 1.8; }
+
+  .sub-list { display: flex; flex-wrap: wrap; gap: 0.6rem; list-style: none; padding: 0; }
+  .sub-list li {
+    background: #F7F3F7; padding: 0.5rem 1rem; border-radius: 4px;
+    border-left: 3px solid #BB2026; font-size: 0.88rem; font-weight: 500; color: #2D2D2D;
+  }
+
+  .benefits-grid { display: grid; gap: 0.8rem; }
+  .benefit-box { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.92rem; color: #333; line-height: 1.6; }
+  .benefit-box .check { color: #BB2026; font-weight: 700; }
+
+  .pricing-box { margin-top: 2.5rem; background: #FAF7FA; padding: 1.8rem; border-radius: 8px; border: 1px solid rgba(175,132,172,0.3); }
+  .pricing-box h3 { margin-top: 0; font-size: 1.2rem; }
+  .p-row { display: flex; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 0.92rem; }
+  .p-row strong.highlight { color: #BB2026; }
+  .link-all { display: inline-block; margin-top: 1rem; font-size: 0.85rem; font-weight: 600; color: #BB2026; text-decoration: underline; }
+
+  @media (max-width: 900px) {
+    .detail-grid { grid-template-columns: 1fr; }
+    .detail-main { padding: 2rem; }
+  }
+</style>

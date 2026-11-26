@@ -1,0 +1,134 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Mentions Légales | INFRASLIM Agdal Rabat" currentPath="/mentions-legales">
+
+  <!-- HERO MENTIONS LÉGALES -->
+  <section class="legal-hero">
+    <div class="legal-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a> &nbsp;/&nbsp; <span>Mentions Légales</span>
+      </div>
+      <span class="hero-eyebrow">— INFORMATIONS JURIDIQUES &amp; ÉDITORIALES</span>
+      <h1 class="hero-title">Mentions <em>Légales</em></h1>
+      <p class="hero-desc">Informations réglementaires et éditoriales du site officiel d'INFRASLIM.</p>
+    </div>
+  </section>
+
+  <!-- CONTENU LÉGAL -->
+  <main class="legal-content">
+    <div class="legal-section">
+      <h2>1. Éditeur du site</h2>
+      <p>Le site internet accessible à l’adresse <strong>https://infraslim.ma/</strong> est édité par :</p>
+      <ul>
+        <li><strong>Raison sociale :</strong> INFRASLIM SARL</li>
+        <li><strong>Activité :</strong> Centre d'amincissement, de remise en forme, soins de beauté et bien-être (Espace 100% féminin)</li>
+        <li><strong>Siège social :</strong> 43 Rue Oum Rabiâ, Appt. N°2, Quartier Agdal, Rabat, Maroc</li>
+        <li><strong>Téléphone / WhatsApp :</strong> +212 615 109 898 (06 15 10 98 98)</li>
+        <li><strong>Email de contact :</strong> contact@infraslim.ma</li>
+        <li><strong>Directeur de la publication :</strong> Direction Générale INFRASLIM</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. Hébergement du site</h2>
+      <p>Le site est hébergé conformément aux standards de sécurité et de haute disponibilité web.</p>
+      <ul>
+        <li><strong>Hébergeur :</strong> Infrastructure Cloud Sécurisée</li>
+        <li><strong>Site web hébergeur :</strong> https://infraslim.ma</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. Propriété intellectuelle</h2>
+      <p>L’ensemble du contenu présent sur le site <strong>infraslim.ma</strong> (textes, graphismes, logos, photographies, vidéos, icônes, animations, architecture logicielle et sonore) est la propriété exclusive d’INFRASLIM ou de ses partenaires et fait l'objet d'une protection par le droit de la propriété intellectuelle et le droit d'auteur au Maroc et à l'international.</p>
+      <p>Toute reproduction, représentation, modification, publication, adaptation totale ou partielle de ces éléments, quel que soit le moyen ou le procédé utilisé, est strictement interdite sans autorisation écrite préalable.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. Nature des prestations et avertissements</h2>
+      <p>INFRASLIM est un centre de bien-être, de remise en forme et d’esthétique corporelle. Les technologies proposées (Infrarouge, VelaShape, Drainage lymphatique, Madérothérapie, Hydrafacial, Laser, etc.) s’inscrivent dans une démarche de soin esthétique et de bien-être.</p>
+      <p>Elles ne constituent en aucun cas des actes médicaux ou thérapeutiques. Les résultats peuvent varier d’une personne à l’autre en fonction de l’hygiène de vie, de la physiologie et de la régularité des séances.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Droit applicable et juridiction compétente</h2>
+      <p>Les présentes mentions légales sont régies par le droit marocain. En cas de litige et à défaut de résolution amiable, les tribunaux compétents de Rabat seront seuls compétents.</p>
+    </div>
+  </main>
+
+</Layout>
+
+<style>
+  .legal-hero {
+    background: linear-gradient(135deg, #AF84AC 0%, #91648e 100%);
+    color: #FFFFFF;
+    padding: 4.5rem 2rem 5.5rem;
+    text-align: center;
+  }
+  .legal-hero-inner { max-width: 820px; margin: 0 auto; }
+  .breadcrumb {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #DEC9DD;
+    margin-bottom: 1rem;
+    display: block;
+    font-weight: 600;
+  }
+  .hero-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(2.3rem, 5vw, 3.8rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+  .hero-title em { font-style: italic; color: #FFFFFF; }
+  .hero-desc {
+    font-size: 1.02rem;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.75;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .legal-content {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+  }
+  .legal-section {
+    margin-bottom: 2.5rem;
+    background: #FFFFFF;
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(175, 132, 172, 0.25);
+    border-left: 4px solid #BB2026;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  }
+  .legal-section h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    color: #2D2D2D;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(175, 132, 172, 0.2);
+    padding-bottom: 0.5rem;
+  }
+  .legal-section p, .legal-section ul {
+    font-size: 0.95rem;
+    color: #4A4A4A;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  .legal-section ul { padding-left: 1.5rem; }
+  .legal-section li { margin-bottom: 0.5rem; }
+</style>

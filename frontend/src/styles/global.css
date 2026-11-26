@@ -1,0 +1,169 @@
+/* =====================================================================
+   INFRASLIM — DESIGN SYSTEM CLAIR & UNIFIÉ (CSS OFFICIEL COMPLET)
+   Charte : Rouge #BB2026 · Mauve #AF84AC · Fond #F7F3F7 · Blanc #FFFFFF
+   ===================================================================== */
+
+:root {
+  --red:        #BB2026;
+  --red-light:  #d44348;
+  --red-dark:   #8f1a1f;
+  --mauve:      #AF84AC;
+  --mauve-light:#c4a1c2;
+  --mauve-dark: #91648e;
+  --blue:       #0071BC;
+  --bg:         #F7F3F7;
+  --cream:      #F0EAF0;
+  --white:      #FFFFFF;
+  --text:       #2D2D2D;
+  --muted:      #6B636B;
+  --border:     rgba(175, 132, 172, 0.25);
+  --shadow-gold:0 8px 32px rgba(187, 32, 38, 0.18);
+  --radius:     12px;
+  --transition: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  --font-serif:   'Josefin Sans', sans-serif;
+  --font-heading: 'Josefin Sans', sans-serif;
+  --font-sans:    'Poppins', sans-serif;
+  --font-body:    'Poppins', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.65;
+  overflow-x: clip;
+}
+
+img { max-width: 100%; display: block; }
+svg { overflow: hidden; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+/* ─── TYPOGRAPHIE & TITRES ─────────────────────────────────────────── */
+h1, h2, h3, h4, .section-title, .ht-title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.8vw, 2.85rem);
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+}
+.section-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--mauve);
+}
+
+.section-desc {
+  font-size: 0.98rem;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 650px;
+}
+
+.divider {
+  width: 50px;
+  height: 2px;
+  background: var(--red);
+  margin: 1.25rem 0 1.5rem;
+}
+
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5.5rem 2rem;
+}
+
+/* ─── BOUTONS UNIFIÉS ──────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--red);
+  color: #FFFFFF !important;
+  padding: 0.85rem 1.85rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.btn-primary:hover {
+  background: var(--red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(187,32,38,0.25);
+}
+
+.btn-secondary-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--red);
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.btn-secondary-link:hover {
+  color: var(--red-dark);
+  transform: translateX(3px);
+}
+
+/* ─── BOUTON FLOTTANT WHATSAPP ─────────────────────────────────────── */
+.floating-wa {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 25px rgba(37,211,102,0.4);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.floating-wa:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 30px rgba(37,211,102,0.5);
+}
+.floating-wa svg {
+  width: 30px;
+  height: 30px;
+  fill: #FFFFFF;
+}
+
+/* ─── NAVBAR & LOGO PARFAITEMENT CALIBRÉS ──────────────────────────── */
+.btn-whatsapp-nav, .btn-wa-nav, .nav-cta-wrap {
+  display: none !important;
+}

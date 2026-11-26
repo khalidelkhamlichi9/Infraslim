@@ -1,0 +1,1954 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FaqAccordion from '../components/FaqAccordion.astro';
+import { getServices, getFaqs, getGlobalSettings } from '../lib/strapi';
+
+const services = await getServices();
+const faqs = await getFaqs();
+const settings = await getGlobalSettings();
+---
+
+<Layout title="INFRASLIM – Centre Féminin Beauté & Bien-être | Agdal, Rabat" currentPath="/">
+
+  <!-- ===================================================
+       CANVAS PARTICLES INTERACTIF
+  =================================================== -->
+  <canvas id="particles-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.3;"></canvas>
+
+  <!-- ===================================================
+       HERO — 3 MESSAGES TEXTE (FOND MAUVE & PHOTO NATURELLE)
+  =================================================== -->
+  <section id="accueil" class="hero-text">
+    <div class="ht-slides">
+      <!-- Slide 1 -->
+      <div class="ht-slide active" id="slide-0">
+        <div class="ht-tag">Sport Infrarouge</div>
+        <h1 class="ht-title">
+          Brûlez jusqu'à<br />
+          <em>1300 Calories</em><br />
+          en 30 minutes
+        </h1>
+        <p class="ht-sub">La technologie infrarouge qui multiplie vos résultats dès la première séance.</p>
+        <div class="ht-btns">
+          <a href="/services/sport-nouvelle-generation" class="ht-btn-red">Découvrir le Sport &gt;</a>
+          <a href={settings.whatsapp} target="_blank" rel="noopener" class="ht-btn-white">Prendre RDV</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="ht-slide" id="slide-1">
+        <div class="ht-tag">Soins &amp; Beauté</div>
+        <h1 class="ht-title">
+          Sculptez votre<br />
+          <em>Silhouette</em><br />
+          avec nos experts
+        </h1>
+        <p class="ht-sub">VelaShape, Hydrafacial, soins amincissants… des technologies de pointe pour vous.</p>
+        <div class="ht-btns">
+          <a href="/services/soins-amincissants" class="ht-btn-red">Nos Soins &gt;</a>
+          <a href="/tarifs" class="ht-btn-white">Voir les tarifs</a>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="ht-slide" id="slide-2">
+        <div class="ht-tag">Hammam &amp; Rituels</div>
+        <h1 class="ht-title">
+          Hammam Traditionnel<br />
+          <em>100% Féminin</em><br />
+          à Agdal, Rabat
+        </h1>
+        <p class="ht-sub">Gommage Kessa, Ghassoul, rituels beldi… un moment de pur bien-être pour vous.</p>
+        <div class="ht-btns">
+          <a href="/hammam" class="ht-btn-red">Le Hammam &gt;</a>
+          <a href={settings.whatsapp} target="_blank" rel="noopener" class="ht-btn-white">Réserver</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dots -->
+    <div class="ht-dots">
+      <button class="ht-dot active" data-idx="0" aria-label="Slide 1"></button>
+      <button class="ht-dot" data-idx="1" aria-label="Slide 2"></button>
+      <button class="ht-dot" data-idx="2" aria-label="Slide 3"></button>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       ABOUT
+  =================================================== -->
+  <section id="centre" class="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="about-visual-main">
+            <div class="visual-text">
+              <div class="vt-title">INFRASLIM</div>
+              <div class="vt-sub">Agdal · Rabat · Maroc</div>
+            </div>
+          </div>
+          <div class="about-badge">
+            100%<br />Féminin
+          </div>
+        </div>
+
+        <div class="about-content reveal">
+          <span class="section-tag">Le Centre</span>
+          <h2 class="section-title">Un espace pensé<br /><em>pour vous</em></h2>
+          <div class="divider"></div>
+          <p class="section-desc">
+            INFRASLIM est un institut de beauté et de bien-être haut de gamme, 100% féminin, situé au cœur d'Agdal, à Rabat. Notre équipe de professionnelles vous accompagne avec bienveillance et expertise dans votre parcours de bien-être, d'amincissement et de beauté. Nous proposons une sélection rigoureuse des technologies les plus efficaces, des soins personnalisés et un suivi adapté à chaque cliente.
+          </p>
+
+          <div class="about-stats">
+            <div class="stat-box">
+              <div class="stat-num" data-count="5">0</div>
+              <div class="stat-label">Univers de soins</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num">★★★★★</div>
+              <div class="stat-label">Technologies de pointe</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num">100%</div>
+              <div class="stat-label">Féminin</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num">Agdal</div>
+              <div class="stat-label">Rabat, Maroc</div>
+            </div>
+          </div>
+
+          <div class="hours-box">
+            <div class="hours-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="hours-text">
+              <strong>Horaires d'ouverture</strong>
+              <span>Lundi au Samedi · 08h00 – 20h00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SERVICES OVERVIEW — CAROUSEL HORIZONTAL EXACT DU HTML
+  =================================================== -->
+  <section id="services-overview" class="services-overview">
+    <div class="section-inner">
+      <div class="reveal" style="text-align:center; max-width:600px; margin: 0 auto 1rem;">
+        <span class="section-tag">Nos Univers de Soins</span>
+        <h2 class="section-title">Tout ce dont vous avez<br /><em>besoin, en un lieu</em></h2>
+        <div class="divider" style="margin: 1.5rem auto;"></div>
+        <p class="section-desc" style="margin: 0 auto;">Cinq univers de soins soigneusement sélectionnés pour vous accompagner vers une silhouette, une peau et un bien-être sublimés.</p>
+      </div>
+
+      <div class="services-carousel-wrap reveal">
+        <div class="services-carousel" id="servicesCarousel">
+          <!-- Sport -->
+          <a href="/services/sport-nouvelle-generation" class="service-card" style="text-decoration:none;color:inherit;">
+            <div class="service-card-bg sport">
+              <div class="service-card-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              </div>
+            </div>
+            <div class="service-card-content">
+              <span class="service-card-num">01 —</span>
+              <h3 class="service-card-title">Sport Nouvelle Génération</h3>
+              <div class="service-card-tags">
+                <span class="service-tag">InfraBike</span>
+                <span class="service-tag">Tapis infrarouge</span>
+                <span class="service-tag">Infra Roller</span>
+                <span class="service-tag">Musculation</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Amincissants -->
+          <a href="/services/soins-amincissants" class="service-card" style="text-decoration:none;color:inherit;">
+            <div class="service-card-bg slim">
+              <div class="service-card-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+              </div>
+            </div>
+            <div class="service-card-content">
+              <span class="service-card-num">02 —</span>
+              <h3 class="service-card-title">Soins Amincissants</h3>
+              <div class="service-card-tags">
+                <span class="service-tag">VelaShape</span>
+                <span class="service-tag">Madérothérapie</span>
+                <span class="service-tag">Pressothérapie</span>
+                <span class="service-tag">Massages</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Visage -->
+          <a href="/services/soins-visage" class="service-card" style="text-decoration:none;color:inherit;">
+            <div class="service-card-bg visage">
+              <div class="service-card-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              </div>
+            </div>
+            <div class="service-card-content">
+              <span class="service-card-num">03 —</span>
+              <h3 class="service-card-title">Soins du Visage</h3>
+              <div class="service-card-tags">
+                <span class="service-tag">Hydrafacial</span>
+                <span class="service-tag">Carbon Peel</span>
+                <span class="service-tag">Kobido</span>
+                <span class="service-tag">Microneedling</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Laser -->
+          <a href="/services/epilation-laser" class="service-card" style="text-decoration:none;color:inherit;">
+            <div class="service-card-bg laser">
+              <div class="service-card-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M19.07 4.93L4.93 19.07"/></svg>
+              </div>
+            </div>
+            <div class="service-card-content">
+              <span class="service-card-num">04 —</span>
+              <h3 class="service-card-title">Épilation &amp; Laser</h3>
+              <div class="service-card-tags">
+                <span class="service-tag">Laser diode</span>
+                <span class="service-tag">Détatouage</span>
+                <span class="service-tag">Épilation cire</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Hammam -->
+          <a href="/hammam" class="service-card" style="text-decoration:none;color:inherit;">
+            <div class="service-card-bg hammam">
+              <div class="service-card-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 3c0 0-4 4-4 8s4 8 4 8 4-4 4-8-4-8-4-8z"/></svg>
+              </div>
+            </div>
+            <div class="service-card-content">
+              <span class="service-card-num">05 —</span>
+              <h3 class="service-card-title">Hammam</h3>
+              <div class="service-card-tags">
+                <span class="service-tag">Vapeur</span>
+                <span class="service-tag">Gommage kessa</span>
+                <span class="service-tag">Ghassoul</span>
+                <span class="service-tag">Beldi</span>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Carousel controls -->
+        <div class="carousel-controls">
+          <button class="carousel-btn" id="carouselPrev" aria-label="Précédent">&#8592;</button>
+          <div class="carousel-dots" id="carouselDots">
+            <button class="carousel-dot active" data-index="0"></button>
+            <button class="carousel-dot" data-index="1"></button>
+            <button class="carousel-dot" data-index="2"></button>
+          </div>
+          <button class="carousel-btn" id="carouselNext" aria-label="Suivant">&#8594;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SPORT NOUVELLE GÉNÉRATION
+  =================================================== -->
+  <section id="sport" class="featured-service">
+    <div class="section-inner">
+      <div class="featured-grid">
+        <div class="featured-visual sport reveal">
+          <div class="featured-visual-label">Sport</div>
+        </div>
+        <div class="reveal">
+          <span class="section-tag">01 — Sport Nouvelle Génération</span>
+          <h2 class="section-title">Brûlez plus,<br /><em>tonifiez mieux</em></h2>
+          <div class="divider"></div>
+          <p class="section-desc">
+            Nos équipements de sport infrarouge combinent l'effort physique et les bienfaits de la chaleur infrarouge pour multiplier les résultats. Brûlez plus de calories, tonifiez votre corps et ressentez les bénéfices dès la première séance.
+          </p>
+          <div class="featured-services-list">
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">InfraBike</div>
+              <p class="fs-item-desc">Vélo elliptique infrarouge. Cardio + Chaleur infrarouge = résultats optimisés.</p>
+            </div>
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Tapis roulant infrarouge</div>
+              <p class="fs-item-desc">Marche ou course sous chaleur infrarouge douce pour amplifier la combustion des graisses.</p>
+            </div>
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Infra Roller</div>
+              <p class="fs-item-desc">Massage motorisé associé à l'infrarouge pour affiner et drainer les zones ciblées.</p>
+            </div>
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Renforcement musculaire</div>
+              <p class="fs-item-desc">Équipements de musculation adaptés pour tonifier et sculpter votre silhouette.</p>
+            </div>
+          </div>
+          <div class="featured-cta-row">
+            <a href={settings.whatsapp} target="_blank" rel="noopener" class="btn-primary">
+              Prendre RDV
+            </a>
+            <a href="/services/sport-nouvelle-generation" class="btn-secondary-link">Voir tous les détails →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SOINS AMINCISSANTS
+  =================================================== -->
+  <section id="amincissants" class="featured-service" style="background: var(--cream);">
+    <div class="section-inner">
+      <div class="featured-grid reverse">
+        <div class="featured-visual slim reveal">
+          <div class="featured-visual-label">Minceur</div>
+        </div>
+        <div class="reveal">
+          <span class="section-tag">02 — Soins Amincissants</span>
+          <h2 class="section-title">Sculptez votre<br /><em>silhouette</em></h2>
+          <div class="divider"></div>
+          <p class="section-desc">
+            Nos protocoles amincissants associent technologies de pointe et soins manuels experts pour cibler les zones rebelles, drainer, raffermir et sublimer votre silhouette.
+          </p>
+          <div class="featured-services-list">
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">VelaShape</div>
+              <p class="fs-item-desc">Technologie radiofréquence + infrarouge + massage motorisé pour un remodelage corporel avancé.</p>
+            </div>
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Madérothérapie</div>
+              <p class="fs-item-desc">Massage sculptant aux rouleaux de bois pour réduire la cellulite et tonifier la peau.</p>
+            </div>
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Drainage lymphatique</div>
+              <p class="fs-item-desc">Technique manuelle douce favorisant l'élimination des toxines et la réduction des œdèmes.</p>
+            </div>
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Pressothérapie</div>
+              <p class="fs-item-desc">Bottes de compression pneumatique pour activer la circulation et drainer les membres.</p>
+            </div>
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Sauna dôme &amp; Couverture chauffante</div>
+              <p class="fs-item-desc">Sudation intense sous dôme chauffant ou enveloppement minceur chauffant pour accélérer l'élimination.</p>
+            </div>
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Massages</div>
+              <p class="fs-item-desc">Massages bien-être et relaxants pour détendre le corps et activer la circulation.</p>
+            </div>
+          </div>
+          <div class="featured-cta-row">
+            <a href={settings.whatsapp} target="_blank" rel="noopener" class="btn-primary">
+              Prendre RDV
+            </a>
+            <a href="/services/soins-amincissants" class="btn-secondary-link">Voir tous les détails →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       SOINS DU VISAGE
+  =================================================== -->
+  <section id="visage" class="featured-service">
+    <div class="section-inner">
+      <div class="featured-grid">
+        <div class="featured-visual visage reveal">
+          <div class="featured-visual-label">Visage</div>
+        </div>
+        <div class="reveal">
+          <span class="section-tag">03 — Soins du Visage</span>
+          <h2 class="section-title">L'éclat naturel<br /><em>de votre peau</em></h2>
+          <div class="divider"></div>
+          <p class="section-desc">
+            Nos soins visage s'appuient sur des technologies médicales et des protocoles éprouvés pour révéler l'éclat naturel de votre peau.
+          </p>
+          <div class="featured-services-list">
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Hydrafacial</div>
+              <p class="fs-item-desc">Nettoyage en profondeur + hydratation intense pour une peau rayonnante immédiatement.</p>
+            </div>
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Carbon Peel</div>
+              <p class="fs-item-desc">Peeling au carbone activé par laser pour unifier le teint et affiner le grain de peau.</p>
+            </div>
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Kobido</div>
+              <p class="fs-item-desc">Massage japonais lifting du visage pour redessiner l'ovale et raviver l'éclat naturel.</p>
+            </div>
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Microneedling</div>
+              <p class="fs-item-desc">Stimulation naturelle du collagène pour estomper les ridules et texturer la peau.</p>
+            </div>
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Soins spécifiques</div>
+              <p class="fs-item-desc">Protocole anti-âge, anti-taches et anti-acné — chaque soin ciblé pour vos besoins précis.</p>
+            </div>
+          </div>
+          <div class="featured-cta-row">
+            <a href={settings.whatsapp} target="_blank" rel="noopener" class="btn-primary">
+              Prendre RDV
+            </a>
+            <a href="/services/soins-visage" class="btn-secondary-link">Voir tous les détails →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       ÉPILATION & LASER
+  =================================================== -->
+  <section id="laser" class="featured-service" style="background: var(--cream);">
+    <div class="section-inner">
+      <div class="featured-grid reverse">
+        <div class="featured-visual laser reveal">
+          <div class="featured-visual-label">Laser</div>
+        </div>
+        <div class="reveal">
+          <span class="section-tag">04 — Épilation &amp; Laser</span>
+          <h2 class="section-title">Peau lisse,<br /><em>durablement</em></h2>
+          <div class="divider"></div>
+          <p class="section-desc">
+            Des solutions durables pour une peau lisse et lumineuse, avec des technologies adaptées à tous les types de peau.
+          </p>
+          <div class="featured-services-list">
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Épilation laser diode</div>
+              <p class="fs-item-desc">La référence en épilation permanente — efficace sur tous les phototypes, résultats durables.</p>
+            </div>
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Détatouage laser</div>
+              <p class="fs-item-desc">Effacement progressif et efficace — sur devis, selon la taille et les couleurs du tatouage.</p>
+            </div>
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Épilation à la cire</div>
+              <p class="fs-item-desc">Méthode traditionnelle experte, pratiquée avec soin et hygiène pour un résultat impeccable.</p>
+            </div>
+          </div>
+          <div class="featured-cta-row">
+            <a href={settings.whatsapp} target="_blank" rel="noopener" class="btn-primary">
+              Prendre RDV
+            </a>
+            <a href="/services/epilation-laser" class="btn-secondary-link">Voir tous les détails →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       HAMMAM
+  =================================================== -->
+  <section id="hammam" class="featured-service">
+    <div class="section-inner">
+      <div class="featured-grid">
+        <div class="featured-visual hammam reveal">
+          <div class="featured-visual-label">Hammam</div>
+        </div>
+        <div class="reveal">
+          <span class="section-tag">05 — Hammam Traditionnel</span>
+          <h2 class="section-title">Un rituel ancestral<br /><em>de purification</em></h2>
+          <div class="divider"></div>
+          <p class="section-desc">
+            Notre Hammam traditionnel marocain offre une expérience de détente absolue. Vapeur bienfaisante, gommage au savon beldi, enveloppement au ghassoul... Un rituel de purification ancestral pour le corps et l'esprit.
+          </p>
+          <div class="featured-services-list">
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Accès Hammam</div>
+              <p class="fs-item-desc">Baignez-vous dans une vapeur bienfaisante pour ouvrir les pores et préparer votre peau.</p>
+            </div>
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Gommage Kessa</div>
+              <p class="fs-item-desc">Exfoliation traditionnelle au gant kessa pour éliminer les cellules mortes et révéler une peau neuve.</p>
+            </div>
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Savon Beldi &amp; Ghassoul</div>
+              <p class="fs-item-desc">Nettoyage en profondeur avec le savon beldi traditionnel et l'argile purifiante ghassoul.</p>
+            </div>
+            <div class="fs-item">
+              <div class="fs-item-gold"></div>
+              <div class="fs-item-title">Enveloppement argile</div>
+              <p class="fs-item-desc">Enveloppement minéralisant et purifiant pour une peau douce et lumineuse.</p>
+            </div>
+          </div>
+          <div class="featured-cta-row">
+            <a href={settings.whatsapp} target="_blank" rel="noopener" class="btn-primary">
+              Réserver le Hammam
+            </a>
+            <a href="/hammam" class="btn-secondary-link">Voir tous les détails →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       TECHNOLOGIES
+  =================================================== -->
+  <section class="tech-section">
+    <div class="section-inner">
+      <div class="reveal" style="text-align:center; max-width:600px; margin: 0 auto 1rem;">
+        <span class="section-tag">Nos Standards</span>
+        <h2 class="section-title" style="color:#2D2D2D;">Équipements &amp;<br /><em>Technologies</em></h2>
+        <div class="divider" style="margin: 1.5rem auto;"></div>
+        <p class="section-desc" style="color:#6B636B; margin: 0 auto;">Nous sélectionnons avec rigueur les meilleures technologies certifiées pour vous garantir des résultats visibles et durables.</p>
+      </div>
+
+      <div class="tech-pillars">
+        <div class="tech-pillar reveal">
+          <div class="tech-pillar-icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3 class="tech-pillar-title">Technologies Certifiées</h3>
+          <p class="tech-pillar-desc">Chaque équipement est rigoureusement sélectionné parmi les meilleures innovations médicales et cosmétiques du marché.</p>
+        </div>
+        <div class="tech-pillar reveal">
+          <div class="tech-pillar-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3 class="tech-pillar-title">Résultats Cliniquement Prouvés</h3>
+          <p class="tech-pillar-desc">Nos protocoles s'appuient sur des études cliniques reconnues pour vous offrir des résultats mesurables et durables.</p>
+        </div>
+        <div class="tech-pillar reveal">
+          <div class="tech-pillar-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 4.93l1.41 1.41M4.93 19.07l1.41-1.41M19.07 19.07l-1.41-1.41M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+          </div>
+          <h3 class="tech-pillar-title">Protocoles Personnalisés</h3>
+          <p class="tech-pillar-desc">Chaque programme est adapté à votre morphologie, vos objectifs et votre rythme de vie pour des résultats optimaux.</p>
+        </div>
+        <div class="tech-pillar reveal">
+          <div class="tech-pillar-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3 class="tech-pillar-title">Suivi Individualisé</h3>
+          <p class="tech-pillar-desc">Notre équipe de professionnelles assure un suivi personnalisé tout au long de votre parcours beauté et bien-être.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       EXPÉRIENCE INFRASLIM
+  =================================================== -->
+  <section class="experience-section">
+    <div class="section-inner">
+      <div class="reveal" style="max-width:580px;">
+        <span class="section-tag">Ce qui nous distingue</span>
+        <h2 class="section-title">L'Expérience<br /><em>INFRASLIM</em></h2>
+        <div class="divider"></div>
+        <p class="section-desc">Notre engagement : vous offrir le meilleur de la beauté et du bien-être dans un cadre intime et sécurisant, avec des résultats à la hauteur de vos attentes.</p>
+      </div>
+
+      <div class="experience-grid">
+        <div class="exp-card reveal">
+          <div class="exp-icon">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <div>
+            <h3 class="exp-title">100% Féminin</h3>
+            <p class="exp-desc">Un espace intime, bienveillant et sécurisant — exclusivement réservé aux femmes, avec un personnel 100% féminin.</p>
+          </div>
+        </div>
+        <div class="exp-card reveal">
+          <div class="exp-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          </div>
+          <div>
+            <h3 class="exp-title">Expertise &amp; Suivi</h3>
+            <p class="exp-desc">Des professionnelles qualifiées et à votre écoute, avec un suivi personnalisé à chaque étape de votre parcours.</p>
+          </div>
+        </div>
+        <div class="exp-card reveal">
+          <div class="exp-icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div>
+            <h3 class="exp-title">Technologies de Pointe</h3>
+            <p class="exp-desc">Les meilleures innovations beauté sélectionnées avec rigueur pour des résultats cliniquement prouvés.</p>
+          </div>
+        </div>
+        <div class="exp-card reveal">
+          <div class="exp-icon">
+            <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <div>
+            <h3 class="exp-title">Résultats Visibles</h3>
+            <p class="exp-desc">Des protocoles éprouvés, des clientes satisfaites. Des résultats mesurables dès les premières séances.</p>
+          </div>
+        </div>
+        <div class="exp-card reveal">
+          <div class="exp-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div>
+            <h3 class="exp-title">Flexibilité</h3>
+            <p class="exp-desc">Des horaires adaptés, du lundi au samedi, de 08h00 à 20h00 — pour s'intégrer facilement dans votre quotidien.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       TARIFS
+  =================================================== -->
+  <section id="tarifs" class="tarifs">
+    <div class="section-inner">
+      <div class="reveal" style="max-width:580px;">
+        <span class="section-tag">Tarifs 2026</span>
+        <h2 class="section-title">Nos<br /><em>Tarifs</em></h2>
+        <div class="divider"></div>
+        <p class="section-desc">Des packs avantageux pour optimiser votre budget. Tarifs en MAD. Packs personnalisés disponibles sur demande.</p>
+      </div>
+
+      <div class="tarifs-tabs reveal">
+        <button class="tarif-tab active" data-panel="sport">Sport</button>
+        <button class="tarif-tab" data-panel="amincissants">Amincissants</button>
+        <button class="tarif-tab" data-panel="visage">Visage</button>
+        <button class="tarif-tab" data-panel="laser-t">Épilation &amp; Laser</button>
+        <button class="tarif-tab" data-panel="hammam-t">Hammam</button>
+      </div>
+
+      <!-- Sport -->
+      <div class="tarif-panel active reveal" id="tarif-sport">
+        <table class="tarif-table">
+          <thead>
+            <tr>
+              <th>Soin</th>
+              <th>1 Séance</th>
+              <th>Pack 10 séances</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>InfraBike</td><td><span class="price-badge">100 MAD</span></td><td><span class="pack-badge">800 MAD</span></td></tr>
+            <tr><td>Tapis roulant infrarouge</td><td><span class="price-badge">100 MAD</span></td><td><span class="pack-badge">800 MAD</span></td></tr>
+            <tr><td>Infra Roller</td><td><span class="price-badge">150 MAD</span></td><td><span class="pack-badge">1 200 MAD</span></td></tr>
+            <tr><td>Renforcement musculaire</td><td><span class="price-badge">100 MAD</span></td><td><span class="pack-badge">800 MAD</span></td></tr>
+          </tbody>
+        </table>
+        <div class="tarif-note">Économisez jusqu'à 20% avec nos packs 10 séances.</div>
+      </div>
+
+      <!-- Amincissants -->
+      <div class="tarif-panel reveal" id="tarif-amincissants">
+        <table class="tarif-table">
+          <thead>
+            <tr>
+              <th>Soin</th>
+              <th>1 Séance</th>
+              <th>Pack 10 séances</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>VelaShape</td><td><span class="price-badge">350 MAD</span></td><td><span class="pack-badge">2 800 MAD</span></td></tr>
+            <tr><td>Madérothérapie</td><td><span class="price-badge">200 MAD</span></td><td><span class="pack-badge">1 600 MAD</span></td></tr>
+            <tr><td>Drainage lymphatique</td><td><span class="price-badge">200 MAD</span></td><td><span class="pack-badge">1 600 MAD</span></td></tr>
+            <tr><td>Pressothérapie</td><td><span class="price-badge">150 MAD</span></td><td><span class="pack-badge">1 200 MAD</span></td></tr>
+            <tr><td>Sauna dôme</td><td><span class="price-badge">100 MAD</span></td><td><span class="pack-badge">800 MAD</span></td></tr>
+            <tr><td>Couverture chauffante</td><td><span class="price-badge">100 MAD</span></td><td><span class="pack-badge">800 MAD</span></td></tr>
+            <tr><td>Massages</td><td><span class="price-badge">200 MAD</span></td><td><span class="pack-badge">1 600 MAD</span></td></tr>
+          </tbody>
+        </table>
+        <div class="tarif-note">Packs combinés disponibles — contactez-nous pour un programme personnalisé.</div>
+      </div>
+
+      <!-- Visage -->
+      <div class="tarif-panel reveal" id="tarif-visage">
+        <table class="tarif-table">
+          <thead>
+            <tr>
+              <th>Soin</th>
+              <th>1 Séance</th>
+              <th>Pack 10 séances</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Soin visage classique</td><td><span class="price-badge">200 MAD</span></td><td><span class="pack-badge">1 600 MAD</span></td></tr>
+            <tr><td>Hydrafacial</td><td><span class="price-badge">500 MAD</span></td><td><span class="pack-badge">4 000 MAD</span></td></tr>
+            <tr><td>Carbon Peel</td><td><span class="price-badge">400 MAD</span></td><td><span class="pack-badge">3 200 MAD</span></td></tr>
+            <tr><td>Kobido</td><td><span class="price-badge">300 MAD</span></td><td><span class="pack-badge">2 400 MAD</span></td></tr>
+            <tr><td>Microneedling</td><td><span class="price-badge">400 MAD</span></td><td><span class="pack-badge">3 200 MAD</span></td></tr>
+            <tr><td>Soin anti-âge</td><td><span class="price-badge">300 MAD</span></td><td><span class="pack-badge">2 400 MAD</span></td></tr>
+            <tr><td>Soin anti-taches</td><td><span class="price-badge">300 MAD</span></td><td><span class="pack-badge">2 400 MAD</span></td></tr>
+            <tr><td>Soin anti-acné</td><td><span class="price-badge">250 MAD</span></td><td><span class="pack-badge">2 000 MAD</span></td></tr>
+          </tbody>
+        </table>
+        <div class="tarif-note">Protocoles sur mesure selon votre diagnostic peau — consultation gratuite incluse.</div>
+      </div>
+
+      <!-- Laser -->
+      <div class="tarif-panel reveal" id="tarif-laser-t">
+        <table class="tarif-table">
+          <thead>
+            <tr>
+              <th>Soin</th>
+              <th>Tarif</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Épilation laser diode</td><td><span class="price-badge">À partir de 150 MAD</span></td></tr>
+            <tr><td>Détatouage laser</td><td><span class="price-badge">Sur devis</span></td></tr>
+            <tr><td>Épilation à la cire</td><td><span class="price-badge">À partir de 50 MAD</span></td></tr>
+          </tbody>
+        </table>
+        <div class="tarif-note">Les tarifs d'épilation laser varient selon la zone traitée. Contactez-nous pour un devis personnalisé.</div>
+      </div>
+
+      <!-- Hammam -->
+      <div class="tarif-panel reveal" id="tarif-hammam-t">
+        <table class="tarif-table">
+          <thead>
+            <tr>
+              <th>Formule</th>
+              <th>Tarif</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Accès seul</td><td><span class="price-badge">80 MAD</span></td></tr>
+            <tr><td>Hammam + Gommage</td><td><span class="price-badge">150 MAD</span></td></tr>
+            <tr><td>Rituel complet</td><td><span class="pack-badge">250 MAD</span></td></tr>
+          </tbody>
+        </table>
+        <div class="tarif-note">Le rituel complet inclut : accès hammam, gommage kessa, savon beldi et enveloppement ghassoul.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       FAQ — ACCORDÉON OFFICIEL CADRE BLANC & BORDURE ROUGE
+  =================================================== -->
+  <section id="faq" class="faq">
+    <div class="section-inner">
+      <div class="reveal" style="max-width:580px;">
+        <span class="section-tag">Questions fréquentes</span>
+        <h2 class="section-title">Tout ce que vous<br />voulez <em>savoir</em></h2>
+        <div class="divider"></div>
+      </div>
+
+      <FaqAccordion faqs={faqs} defaultOpenIndex={0} />
+    </div>
+  </section>
+
+  <!-- ===================================================
+       CTA CONVERSION (MAUVE LUMINEUX)
+  =================================================== -->
+  <section id="contact" class="cta-section">
+    <div class="section-inner" style="text-align:center; max-width:700px; margin: 0 auto;">
+      <div class="reveal">
+        <span class="section-tag" style="color:var(--mauve-light)">Prendre Rendez-vous</span>
+        <h2 class="section-title" style="color:#FFFFFF;">Prête à commencer<br />votre <em>parcours ?</em></h2>
+        <div class="divider" style="margin: 1.5rem auto;"></div>
+        <p class="cta-desc">
+          Contactez-nous par WhatsApp pour prendre rendez-vous ou obtenir des informations personnalisées. Notre équipe vous répond rapidement.
+        </p>
+        <div class="cta-buttons">
+          <a href={settings.whatsapp} target="_blank" rel="noopener" class="btn-wa">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+          <a href={`tel:${settings.phone.replace(/\s+/g, '')}`} class="btn-tel">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.03 1.19 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            {settings.phone}
+          </a>
+        </div>
+        <p style="margin-top: 2rem; font-size: 0.8rem; color: rgba(247,243,247,0.7); letter-spacing: 0.1em; text-transform: uppercase;">
+          Lundi au Samedi · 08h00 – 20h00 · Agdal, Rabat
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================
+       NOUS TROUVER + FORMULAIRE DE CONTACT
+  =================================================== -->
+  <section id="nous-trouver" class="find-us-section">
+    <div class="find-us-inner">
+      <div class="find-us-eyebrow">Nous trouver</div>
+      <h2 class="find-us-title">Centre INFRASLIM à Agdal, Rabat</h2>
+      <div class="find-us-grid">
+        <div>
+          <div class="in-map-frame">
+            <iframe
+              src="https://www.google.com/maps?q=43+Rue+Oum+Rabia,+Agdal,+Rabat,+Maroc&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Localisation INFRASLIM Agdal Rabat">
+            </iframe>
+          </div>
+          <div class="in-info-list">
+            <div class="in-info-item">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>{settings.address}</span>
+            </div>
+            <div class="in-info-item">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>{settings.hours}</span>
+            </div>
+            <div class="in-info-item">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.03 1.19 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <a href={`tel:${settings.phone.replace(/\s+/g, '')}`}>{settings.phone}</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="in-form-card">
+          <h3>Écrivez-nous</h3>
+          <p class="in-form-sub">Laissez-nous un message, nous vous rappelons. Pour une réponse immédiate, écrivez-nous sur WhatsApp.</p>
+          <form id="homeContactForm">
+            <div class="in-form-row">
+              <div class="in-field">
+                <label for="hc-name">Nom et prénom</label>
+                <input type="text" id="hc-name" name="name" placeholder="Votre nom" required />
+              </div>
+              <div class="in-field">
+                <label for="hc-phone">Téléphone</label>
+                <input type="tel" id="hc-phone" name="phone" placeholder="06 00 00 00 00" required />
+              </div>
+            </div>
+            <div class="in-field">
+              <label for="hc-service">Votre demande</label>
+              <select id="hc-service" name="service">
+                <option value="Diagnostic InBody offert">Diagnostic InBody offert (Gratuit)</option>
+                <option value="Sport Nouvelle Génération">Sport Nouvelle Génération</option>
+                <option value="Soins Amincissants">Soins Amincissants</option>
+                <option value="Soins du Visage">Soins du Visage</option>
+                <option value="Épilation & Laser">Épilation &amp; Laser</option>
+                <option value="Hammam">Hammam</option>
+                <option value="Tarifs & Packs">Tarifs &amp; Packs</option>
+              </select>
+            </div>
+            <div class="in-field">
+              <label for="hc-msg">Message</label>
+              <textarea id="hc-msg" name="message" placeholder="Précisez vos disponibilités ou votre question..."></textarea>
+            </div>
+            <button type="submit" class="in-submit-btn full">Envoyer ma demande</button>
+            <div class="in-form-feedback" id="homeFormFeedback"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* =====================================================
+     HERO TEXTE — 3 SLIDES AUTO-ROTATION (DU SITE HTML)
+  ===================================================== */
+  .hero-text {
+    position: relative;
+    background:
+      linear-gradient(135deg, rgba(145, 100, 142, 0.76) 0%, rgba(74, 40, 75, 0.72) 100%),
+      url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1920&q=85') center/cover no-repeat;
+    min-height: 600px;
+    height: 82vh;
+    max-height: 780px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0 2rem;
+  }
+  .hero-text::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(51, 21, 53, 0.25) 0%, rgba(51, 21, 53, 0.55) 100%);
+    pointer-events: none;
+  }
+  .ht-slides {
+    position: relative;
+    max-width: 820px;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+  }
+  .ht-slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.4rem;
+    animation: htFadeIn 0.7s ease both;
+  }
+  .ht-slide.active { display: flex; }
+
+  @keyframes htFadeIn {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .ht-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 0.3rem 1rem;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .ht-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: #FFFFFF;
+    letter-spacing: 0.01em;
+  }
+  .ht-title em {
+    font-style: italic;
+    font-weight: 700;
+    color: #FFFFFF;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 2px;
+  }
+  .ht-sub {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.88);
+    max-width: 520px;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+  .ht-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+  .ht-btn-red {
+    display: inline-flex;
+    align-items: center;
+    background: #BB2026;
+    color: #FFFFFF;
+    padding: 0.85rem 2rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    transition: background 0.25s, transform 0.2s;
+    box-shadow: 0 6px 20px rgba(187, 32, 38, 0.35);
+  }
+  .ht-btn-red:hover { background: #8f1a1f; transform: translateY(-2px); }
+  .ht-btn-white {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.18);
+    color: #FFFFFF;
+    padding: 0.85rem 2rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    border: 1.5px solid rgba(255, 255, 255, 0.45);
+    transition: background 0.25s, border-color 0.25s, transform 0.2s;
+  }
+  .ht-btn-white:hover { background: rgba(255, 255, 255, 0.28); border-color: #FFFFFF; transform: translateY(-2px); }
+
+  .ht-dots {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.6rem;
+    z-index: 10;
+  }
+  .ht-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0;
+  }
+  .ht-dot.active {
+    background: #FFFFFF;
+    border-color: #BB2026;
+    transform: scale(1.25);
+  }
+
+  /* =====================================================
+     ABOUT SECTION DU SITE HTML
+  ===================================================== */
+  .about { background: var(--bg); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .about-visual {
+    position: relative;
+  }
+  .about-visual-main {
+    height: 480px;
+    border-radius: var(--radius-lg);
+    background:
+      linear-gradient(135deg, rgba(187, 32, 38, 0.5) 0%, rgba(51, 21, 53, 0.85) 100%),
+      url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: flex-end;
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+  }
+  .visual-text .vt-title {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--white);
+    letter-spacing: 0.05em;
+  }
+  .visual-text .vt-sub {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .about-badge {
+    position: absolute;
+    top: -1.5rem;
+    right: -1.5rem;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: var(--red);
+    color: var(--white);
+    font-family: var(--font-serif);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-gold);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+  }
+  .stat-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform var(--transition), border-color var(--transition);
+  }
+  .stat-box:hover {
+    transform: translateY(-4px);
+    border-color: var(--red);
+  }
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--red);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .hours-box {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--red);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .hours-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--red);
+    fill: none;
+    stroke-width: 1.5;
+  }
+  .hours-text strong {
+    display: block;
+    font-size: 0.9rem;
+    color: #2D2D2D;
+  }
+  .hours-text span {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  /* =====================================================
+     SERVICES OVERVIEW CAROUSEL
+  ===================================================== */
+  .services-overview {
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .services-carousel-wrap {
+    position: relative;
+    margin-top: 3.5rem;
+  }
+  .services-carousel {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-bottom: 2rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .services-carousel::-webkit-scrollbar { display: none; }
+  .service-card {
+    flex: 0 0 calc(33.333% - 1rem);
+    min-width: 300px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    scroll-snap-align: start;
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  }
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+    border-color: var(--red);
+  }
+  .service-card-bg {
+    height: 220px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+  }
+  .service-card-bg.sport {
+    background-image:
+      linear-gradient(180deg, rgba(187, 32, 38, 0.4) 0%, rgba(51, 21, 53, 0.7) 100%),
+      url('https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80');
+  }
+  .service-card-bg.slim {
+    background-image:
+      linear-gradient(180deg, rgba(175, 132, 172, 0.4) 0%, rgba(51, 21, 53, 0.7) 100%),
+      url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80');
+  }
+  .service-card-bg.visage {
+    background-image:
+      linear-gradient(180deg, rgba(187, 32, 38, 0.3) 0%, rgba(145, 100, 142, 0.7) 100%),
+      url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=600&q=80');
+  }
+  .service-card-bg.laser {
+    background-image:
+      linear-gradient(180deg, rgba(0, 113, 188, 0.35) 0%, rgba(51, 21, 53, 0.7) 100%),
+      url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=600&q=80');
+  }
+  .service-card-bg.hammam {
+    background-image:
+      linear-gradient(180deg, rgba(175, 132, 172, 0.4) 0%, rgba(51, 21, 53, 0.75) 100%),
+      url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=600&q=80');
+  }
+  .service-card-icon {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  .service-card-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--red);
+    fill: none;
+    stroke-width: 1.8;
+  }
+  .service-card-content {
+    padding: 2rem;
+  }
+  .service-card-num {
+    font-size: 0.75rem;
+    color: var(--mauve);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  .service-card-title {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #2D2D2D;
+  }
+  .service-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .service-tag {
+    font-size: 0.75rem;
+    background: var(--white);
+    color: #4A354C;
+    padding: 0.3rem 0.75rem;
+    border-radius: 50px;
+    border: 1px solid var(--border);
+  }
+  .carousel-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  .carousel-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--red);
+    font-size: 1.2rem;
+    transition: background var(--transition), color var(--transition), border-color var(--transition);
+  }
+  .carousel-btn:hover {
+    background: var(--red);
+    color: white;
+    border-color: var(--red);
+  }
+  .carousel-dots {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(187, 32, 38, 0.2);
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition);
+  }
+  .carousel-dot.active {
+    background: var(--red);
+    transform: scale(1.3);
+  }
+
+  /* =====================================================
+     FEATURED SERVICE SECTIONS (DU SITE HTML)
+  ===================================================== */
+  .featured-service {
+    background: var(--white);
+  }
+  .featured-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .featured-grid.reverse {
+    direction: rtl;
+  }
+  .featured-grid.reverse > * {
+    direction: ltr;
+  }
+  .featured-visual {
+    height: 520px;
+    border-radius: var(--radius-lg);
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    box-shadow: var(--shadow);
+  }
+  .featured-visual.sport {
+    background-image:
+      linear-gradient(135deg, rgba(187, 32, 38, 0.45) 0%, rgba(51, 21, 53, 0.65) 100%),
+      url('https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80');
+  }
+  .featured-visual.slim {
+    background-image:
+      linear-gradient(135deg, rgba(175, 132, 172, 0.45) 0%, rgba(51, 21, 53, 0.65) 100%),
+      url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80');
+  }
+  .featured-visual.visage {
+    background-image:
+      linear-gradient(135deg, rgba(187, 32, 38, 0.35) 0%, rgba(145, 100, 142, 0.65) 100%),
+      url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80');
+  }
+  .featured-visual.laser {
+    background-image:
+      linear-gradient(135deg, rgba(0, 113, 188, 0.4) 0%, rgba(51, 21, 53, 0.65) 100%),
+      url('https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=800&q=80');
+  }
+  .featured-visual.hammam {
+    background-image:
+      linear-gradient(135deg, rgba(175, 132, 172, 0.45) 0%, rgba(51, 21, 53, 0.7) 100%),
+      url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80');
+  }
+  .featured-visual-label {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--white);
+    background: rgba(187, 32, 38, 0.9);
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .featured-services-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  .fs-item {
+    position: relative;
+    padding-left: 1rem;
+    border-left: 2px solid var(--red);
+  }
+  .fs-item-title {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #2D2D2D;
+    margin-bottom: 0.3rem;
+  }
+  .fs-item-desc {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .featured-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2.5rem;
+  }
+
+  /* =====================================================
+     TECHNOLOGIES & EXPÉRIENCE
+  ===================================================== */
+  .tech-section {
+    background: var(--bg);
+  }
+  .tech-pillars {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 3.5rem;
+  }
+  .tech-pillar {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .tech-pillar:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  }
+  .tech-pillar-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(187, 32, 38, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+  .tech-pillar-icon svg {
+    width: 26px;
+    height: 26px;
+    stroke: var(--red);
+    fill: none;
+    stroke-width: 1.5;
+  }
+  .tech-pillar-title {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    color: #2D2D2D;
+  }
+  .tech-pillar-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .experience-section {
+    background: var(--white);
+  }
+  .experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3.5rem;
+  }
+  .exp-card {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    transition: transform var(--transition), border-color var(--transition);
+  }
+  .exp-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--red);
+  }
+  .exp-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  }
+  .exp-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--red);
+    fill: none;
+    stroke-width: 1.5;
+  }
+  .exp-title {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    color: #2D2D2D;
+  }
+  .exp-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* =====================================================
+     TARIFS TABS & TABLES
+  ===================================================== */
+  .tarifs { background: var(--bg); }
+  .tarifs-tabs {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin: 2.5rem 0 2rem;
+  }
+  .tarif-tab {
+    padding: 0.65rem 1.75rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: var(--white);
+    border: 1px solid var(--border);
+    color: #2D2D2D;
+    transition: all var(--transition);
+  }
+  .tarif-tab.active, .tarif-tab:hover {
+    background: var(--red);
+    color: white;
+    border-color: var(--red);
+  }
+  .tarif-panel { display: none; }
+  .tarif-panel.active { display: block; }
+  .tarif-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  }
+  .tarif-table th, .tarif-table td {
+    padding: 1.2rem 1.75rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(175, 132, 172, 0.15);
+  }
+  .tarif-table th {
+    background: #F0EAF0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--red);
+  }
+  .tarif-table td { font-size: 0.95rem; color: #2D2D2D; }
+  .price-badge { font-weight: 600; color: var(--red); }
+  .pack-badge { font-weight: 600; color: #0071BC; }
+  .tarif-note {
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: rgba(187, 32, 38, 0.06);
+    border-left: 3px solid var(--red);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  /* =====================================================
+     CTA CONVERSION (MAUVE LUMINEUX)
+  ===================================================== */
+  .cta-section {
+    background: linear-gradient(135deg, #AF84AC 0%, #91648e 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-desc {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.92);
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+  }
+  .cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .btn-wa {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #25D366;
+    color: white;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 24px rgba(37, 211, 102, 0.3);
+  }
+  .btn-wa:hover {
+    background: #20bd5a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(37, 211, 102, 0.4);
+  }
+  .btn-wa svg { width: 20px; height: 20px; fill: white; }
+  .btn-tel {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: transparent;
+    color: #FFFFFF;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(247, 243, 247, 0.4);
+    transition: border-color var(--transition), color var(--transition), transform 0.2s;
+  }
+  .btn-tel:hover {
+    border-color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+  .btn-tel svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.5; }
+
+  /* =====================================================
+     NOUS TROUVER & FORMULAIRE
+  ===================================================== */
+  .find-us-section {
+    background: #F4E9F0;
+    padding: 5.5rem 2rem;
+  }
+  .find-us-inner { max-width: 1200px; margin: 0 auto; }
+  .find-us-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.6rem;
+  }
+  .find-us-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 2px;
+    background: var(--red);
+  }
+  .find-us-title {
+    font-family: var(--font-serif);
+    font-size: clamp(1.9rem, 3.5vw, 2.75rem);
+    font-weight: 600;
+    color: #3D1F3F;
+    margin-bottom: 2.5rem;
+  }
+  .find-us-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.35fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  .in-map-frame {
+    width: 100%;
+    height: 270px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(175, 132, 172, 0.3);
+    margin-bottom: 1.5rem;
+    background: #E8D9E5;
+  }
+  .in-map-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .in-info-list { display: flex; flex-direction: column; gap: 0.85rem; }
+  .in-info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: #4A354C;
+  }
+  .in-info-item svg {
+    width: 18px !important;
+    height: 18px !important;
+    stroke: var(--red);
+    fill: none;
+    stroke-width: 1.8;
+    flex-shrink: 0;
+  }
+  .in-info-item a { color: var(--red); font-weight: 600; text-decoration: underline; }
+
+  .in-form-card {
+    background: var(--white);
+    border-radius: 14px;
+    border-top: 3px solid var(--red);
+    padding: 2.5rem;
+    box-shadow: 0 12px 40px rgba(61, 31, 63, 0.08);
+  }
+  .in-form-card h3 {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #3D1F3F;
+    margin-bottom: 0.4rem;
+  }
+  .in-form-card .in-form-sub {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin-bottom: 1.8rem;
+  }
+  .in-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.15rem;
+    margin-bottom: 1.15rem;
+  }
+  .in-field { margin-bottom: 1.15rem; }
+  .in-form-row .in-field { margin-bottom: 0; }
+  .in-field label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #5A475C;
+    margin-bottom: 0.45rem;
+  }
+  .in-field input, .in-field select, .in-field textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #DFD5DF;
+    border-radius: 8px;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .in-field input:focus, .in-field select:focus, .in-field textarea:focus {
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(187, 32, 38, 0.08);
+  }
+  .in-field textarea { min-height: 115px; resize: vertical; }
+  .in-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    padding: 0.95rem 2.2rem;
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.2s;
+  }
+  .in-submit-btn:hover { background: var(--red-dark); transform: translateY(-1px); }
+  .in-submit-btn.full { width: 100%; }
+  .in-form-feedback {
+    display: none;
+    margin-top: 1rem;
+    padding: 0.9rem 1.2rem;
+    border-radius: 8px;
+    background: #EAF8EF;
+    border: 1px solid #25D366;
+    color: #165B33;
+    font-size: 0.88rem;
+  }
+  .in-form-feedback.show { display: block; }
+
+  @media (max-width: 1024px) {
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .featured-grid, .featured-grid.reverse { grid-template-columns: 1fr; gap: 3rem; }
+    .featured-visual { height: 380px; }
+    .tech-pillars { grid-template-columns: 1fr 1fr; }
+    .find-us-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    .section-inner { padding: 4rem 1.5rem; }
+    .featured-services-list { grid-template-columns: 1fr; }
+    .in-form-row { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  // =====================================================
+  // PARTICLES CANVAS DU SITE HTML
+  // =====================================================
+  (function() {
+    const canvas = document.getElementById('particles-canvas') as HTMLCanvasElement;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    let particles: any[] = [];
+    let W: number, H: number;
+
+    function resize() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+
+    function Particle(this: any) {
+      this.x = Math.random() * W;
+      this.y = Math.random() * H;
+      this.size = Math.random() * 1.5 + 0.3;
+      this.speedX = (Math.random() - 0.5) * 0.3;
+      this.speedY = (Math.random() - 0.5) * 0.3;
+      this.opacity = Math.random() * 0.5 + 0.1;
+      this.color = Math.random() > 0.6 ? '#BB2026' : (Math.random() > 0.5 ? '#AF84AC' : '#F7F3F7');
+    }
+
+    Particle.prototype.update = function() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+      if (this.x < 0) this.x = W;
+      if (this.x > W) this.x = 0;
+      if (this.y < 0) this.y = H;
+      if (this.y > H) this.y = 0;
+    };
+
+    Particle.prototype.draw = function() {
+      if (!ctx) return;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = this.color;
+      ctx.globalAlpha = this.opacity;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+    };
+
+    function init() {
+      resize();
+      particles = [];
+      const count = Math.min(100, Math.floor(W * H / 10000));
+      for (let i = 0; i < count; i++) particles.push(new (Particle as any)());
+    }
+
+    function animate() {
+      if (!ctx) return;
+      ctx.clearRect(0, 0, W, H);
+      particles.forEach(p => { p.update(); p.draw(); });
+      requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', init);
+    init();
+    animate();
+  })();
+
+  // =====================================================
+  // HERO TEXTE — 3 SLIDES AUTO-ROTATION DU SITE HTML
+  // =====================================================
+  (function() {
+    const slides = document.querySelectorAll('.ht-slide');
+    const dots = document.querySelectorAll('.ht-dot');
+    if (!slides.length) return;
+    let current = 0;
+    let timer: any;
+
+    function goTo(idx: number) {
+      slides[current]?.classList.remove('active');
+      dots[current]?.classList.remove('active');
+      current = (idx + slides.length) % slides.length;
+      slides[current]?.classList.add('active');
+      dots[current]?.classList.add('active');
+    }
+
+    function next() { goTo(current + 1); }
+    function startAuto() { clearInterval(timer); timer = setInterval(next, 5000); }
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        goTo(parseInt(dot.getAttribute('data-idx') || '0', 10));
+        startAuto();
+      });
+    });
+
+    startAuto();
+  })();
+
+  // =====================================================
+  // SERVICES CAROUSEL HORIZONTAL DU SITE HTML
+  // =====================================================
+  (function() {
+    const carousel = document.getElementById('servicesCarousel');
+    if (!carousel) return;
+    const cards = carousel.querySelectorAll('.service-card') as NodeListOf<HTMLElement>;
+    const prevBtn = document.getElementById('carouselPrev');
+    const nextBtn = document.getElementById('carouselNext');
+    const dots = document.querySelectorAll('.carousel-dot');
+
+    let currentIndex = 0;
+
+    function getVisibleCount() {
+      if (window.innerWidth <= 640) return 1;
+      if (window.innerWidth <= 1024) return 2;
+      return 3;
+    }
+
+    function getMaxIndex() {
+      return Math.max(0, cards.length - getVisibleCount());
+    }
+
+    function scrollTo(index: number) {
+      currentIndex = Math.max(0, Math.min(index, getMaxIndex()));
+      const firstCard = cards[0];
+      const cardWidth = firstCard ? firstCard.offsetWidth + 24 : 320;
+      carousel?.scrollTo({ left: currentIndex * cardWidth, behavior: 'smooth' });
+      dots.forEach((d, i) => {
+        d.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    prevBtn?.addEventListener('click', () => scrollTo(currentIndex - 1));
+    nextBtn?.addEventListener('click', () => scrollTo(currentIndex + 1));
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => scrollTo(parseInt(dot.getAttribute('data-index') || '0', 10)));
+    });
+  })();
+
+  // =====================================================
+  // TARIFS TABS DU SITE HTML
+  // =====================================================
+  (function() {
+    const tabs = document.querySelectorAll('.tarif-tab');
+    const panels = document.querySelectorAll('.tarif-panel');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', (e) => {
+        const target = e.currentTarget as HTMLElement;
+        const panelId = target.getAttribute('data-panel');
+        tabs.forEach(t => t.classList.remove('active'));
+        panels.forEach(p => p.classList.remove('active'));
+        target.classList.add('active');
+        if (panelId) {
+          document.getElementById('tarif-' + panelId)?.classList.add('active');
+        }
+      });
+    });
+  })();
+
+  // =====================================================
+  // FORMULAIRE DE CONTACT
+  // =====================================================
+  (function() {
+    const form = document.getElementById('homeContactForm');
+    const feedback = document.getElementById('homeFormFeedback');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = (document.getElementById('hc-name') as HTMLInputElement)?.value;
+      const phone = (document.getElementById('hc-phone') as HTMLInputElement)?.value;
+      const service = (document.getElementById('hc-service') as HTMLSelectElement)?.value;
+      const msg = (document.getElementById('hc-msg') as HTMLTextAreaElement)?.value;
+
+      const waMsg = `Bonjour INFRASLIM,\nJe suis ${name} (${phone}).\nDemande : ${service}\nMessage : ${msg || 'Aucun message spécifique.'}`;
+      window.open(`https://wa.me/212615109898?text=${encodeURIComponent(waMsg)}`, '_blank');
+
+      if (feedback) {
+        feedback.textContent = 'Votre demande a été préparée sur WhatsApp avec succès.';
+        feedback.classList.add('show');
+      }
+    });
+  })();
+</script>

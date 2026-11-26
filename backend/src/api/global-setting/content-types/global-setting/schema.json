@@ -1,0 +1,44 @@
+{
+  "kind": "singleType",
+  "collectionName": "global_settings",
+  "info": {
+    "singularName": "global-setting",
+    "pluralName": "global-settings",
+    "displayName": "Paramètres Généraux"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "centerName": {
+      "type": "string",
+      "default": "INFRASLIM"
+    },
+    "tagline": {
+      "type": "string",
+      "default": "Centre Santé & Beauté 100% Femmes"
+    },
+    "address": {
+      "type": "string",
+      "default": "43 Rue Oum Rabiâ, Appt. N°2, Agdal, Rabat (Parking Kaïs à 240m)"
+    },
+    "phone": {
+      "type": "string",
+      "default": "+212 615 10 98 98"
+    },
+    "whatsapp": {
+      "type": "string",
+      "default": "https://wa.me/212615109898"
+    },
+    "hours": {
+      "type": "string",
+      "default": "Lundi au Samedi : 08h00 – 20h00 (sur rendez-vous)"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "facebook": {
+      "type": "string"
+    }
+  }
+}

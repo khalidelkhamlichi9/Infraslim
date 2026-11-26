@@ -1,0 +1,555 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getGlobalSettings } from '../lib/strapi';
+
+const settings = await getGlobalSettings();
+const waLink = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\D/g,'')}?text=Bonjour%20INFRASLIM%2C%20je%20souhaite%20b%C3%A9n%C3%A9ficier%20du%20diagnostic%20InBody%20offert.`;
+---
+
+<Layout title="Le Centre INFRASLIM | Centre Santé & Beauté 100% Femmes à Rabat" currentPath="/le-centre">
+
+  <!-- ============================================================
+       HERO — Mauve Dégradé avec breadcrumb
+  ============================================================ -->
+  <section class="centre-hero">
+    <div class="centre-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a>&nbsp;/&nbsp; Le Centre
+      </div>
+      <div class="hero-eyebrow">— LE CENTRE</div>
+      <h1 class="hero-title">INFRASLIM, centre santé et beauté 100 % femmes à Rabat</h1>
+      <p class="hero-desc">Un espace entièrement féminin ouvert en 2023 à Agdal. Du vestiaire à la salle de sport, il n'y a que des femmes.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FLOATING STATS BAR — Carte blanche qui chevauchent le hero
+  ============================================================ -->
+  <div class="floating-stats-bar">
+    <div class="stats-card-white">
+      <div class="sc-item">
+        <div class="sc-num">2023</div>
+        <div class="sc-label">Année d'ouverture</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-num">100 %</div>
+        <div class="sc-label">Femmes, sans exception</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-num">5</div>
+        <div class="sc-label">Univers de soins</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-num">Agdal</div>
+        <div class="sc-label">Parking à 2 minutes</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       POURQUOI 100% FEMMES — 2 colonnes: visuel + texte
+  ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="two-col-why reveal">
+        <div class="why-visual-wrap">
+          <div class="wv-box-1"></div>
+          <div class="wv-box-2"></div>
+        </div>
+        <div class="why-text">
+          <span class="section-eyebrow">— NOTRE PARTI PRIS</span>
+          <h2 class="section-title">Pourquoi un centre 100 % femmes ?</h2>
+          <p>Parce que beaucoup de femmes renoncent au sport ou aux soins pour une raison qu'on n'ose pas toujours dire : le regard des autres.</p>
+          <p>Ici, personne ne vous observe pendant que vous pédalez. Vous n'avez pas à choisir votre tenue en fonction de qui sera dans la salle. Vous ne croisez pas d'hommes entre deux cabines.</p>
+          <p>Ce confort n'est pas un détail. C'est souvent ce qui fait la différence entre venir une fois et revenir toutes les semaines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TOUT AU MÊME ENDROIT — Grille 5 univers de soins
+  ============================================================ -->
+  <section class="section univers-section">
+    <div class="container">
+      <span class="section-eyebrow">— NOS UNIVERS —</span>
+      <h2 class="section-title">Tout au même endroit</h2>
+      <p style="max-width:700px; margin:0 auto; color:#6B636B; font-size:0.95rem; line-height:1.8;">
+        Un parcours minceur ne se joue pas sur un seul soin. Réunir l'effort, les soins du corps et la régularité dans un même lieu évite d'éparpiller son temps et son budget entre trois adresses.
+      </p>
+
+      <div class="univers-grid reveal">
+        <a href="/services/sport-nouvelle-generation" class="univers-card">
+          <div class="uc-title">Sport nouvelle génération</div>
+        </a>
+        <a href="/services/soins-amincissants" class="univers-card">
+          <div class="uc-title">Soins amincissants</div>
+        </a>
+        <a href="/services/soins-visage" class="univers-card">
+          <div class="uc-title">Soins du visage</div>
+        </a>
+        <a href="/services/epilation-laser" class="univers-card">
+          <div class="uc-title">Épilation et laser</div>
+        </a>
+        <a href="/hammam" class="univers-card">
+          <div class="uc-title">Hammam</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BANDEAU TECHNOLOGIE — fond mauve dégradé
+  ============================================================ -->
+  <section class="tech-strip">
+    <div class="tech-strip-inner reveal">
+      <span class="section-eyebrow" style="color:rgba(255,255,255,0.8);">— NOTRE TECHNOLOGIE</span>
+      <h2>1 300 calories brûlées en 30 minutes</h2>
+      <p>Nos équipements associent chaleur infrarouge et pression négative. L'infrarouge fait travailler le corps en profondeur, le vacuum stimule la circulation là où la graisse s'installe le plus chez la femme : cuisses, hanches et fesses.</p>
+      <a href="/services/sport-nouvelle-generation" class="btn-tech-outline">
+        Découvrir le sport nouvelle génération
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ON MESURE AVANT DE PROPOSER — 2 colonnes: méthode + visite
+  ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="method-grid reveal">
+        <div class="method-left">
+          <span class="section-eyebrow">— NOTRE MÉTHODE</span>
+          <h2 class="section-title">On mesure avant de proposer</h2>
+          <p>Avant tout programme, Ghizlane réalise votre diagnostic InBody, offert et sans engagement. L'appareil mesure votre masse grasse, votre masse musculaire, votre eau corporelle et la répartition de tout cela zone par zone.</p>
+          <p>Vous repartez avec votre fiche de résultats. C'est elle qui sert de point de départ, et de point de comparaison quelques semaines plus tard.</p>
+          <p>Sans ces chiffres, on vendrait au hasard. Avec eux, on sait si votre problème est la masse grasse, la rétention d'eau ou un manque de masse musculaire, et ces trois situations n'appellent pas les mêmes réponses.</p>
+        </div>
+
+        <div class="visit-box">
+          <span class="vb-title">— UNE PREMIÈRE VISITE</span>
+          <div class="vb-step">
+            <div class="vb-dot">1</div>
+            <div class="vb-text">
+              <strong>Le diagnostic</strong>
+              <span>Offert et sans engagement. La mesure dure moins d'une minute.</span>
+            </div>
+          </div>
+          <div class="vb-step">
+            <div class="vb-dot">2</div>
+            <div class="vb-text">
+              <strong>Votre programme</strong>
+              <span>Les séances adaptées à votre objectif, votre emploi du temps et votre budget.</span>
+            </div>
+          </div>
+          <div class="vb-step">
+            <div class="vb-dot">3</div>
+            <div class="vb-text">
+              <strong>Le suivi</strong>
+              <span>Vous êtes accompagnée séance après séance, avec des points réguliers.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           CALLOUT DIAGNOSTIC INBODY OFFERT
+      ============================================================ -->
+      <div class="inbody-callout reveal">
+        <div>
+          <span class="inbody-badge">OFFERT</span>
+          <h3 class="inbody-title">Votre diagnostic InBody est offert</h3>
+          <p class="inbody-desc">Masse grasse, masse musculaire, eau corporelle et répartition par zone. La mesure prend moins d'une minute, l'échange qui suit une vingtaine. Ghizlane vous explique vos résultats et vous repartez avec votre fiche.</p>
+        </div>
+        <a href={waLink} target="_blank" rel="noopener" class="btn-inbody-rdv">
+          Prendre rendez-vous →
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* =====================================================
+     CSS VARIABLES (héritées du global mais redéfinies ici
+     pour s'assurer de la cohérence)
+  ===================================================== */
+  :root {
+    --red:        #BB2026;
+    --red-dark:   #8f1a1f;
+    --mauve:      #AF84AC;
+    --mauve-light:#c4a1c2;
+    --mauve-dark: #4A284B;
+    --bg:         #F7F3F7;
+  }
+
+  /* =====================================================
+     HERO
+  ===================================================== */
+  .centre-hero {
+    background: linear-gradient(135deg, #AF84AC 0%, #91648e 100%);
+    color: #FFFFFF;
+    padding: 4.5rem 2rem 7rem;
+    position: relative;
+  }
+  .centre-hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .breadcrumb {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 2rem;
+  }
+  .breadcrumb a {
+    color: rgba(255,255,255,0.65);
+    transition: color 0.2s;
+    text-decoration: none;
+  }
+  .breadcrumb a:hover { color: #FFFFFF; }
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--mauve-light);
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+  .hero-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(2.3rem, 5vw, 3.8rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+    color: #FFFFFF;
+    max-width: 850px;
+  }
+  .hero-desc {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.85);
+    max-width: 720px;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* =====================================================
+     FLOATING STATS BAR
+  ===================================================== */
+  .floating-stats-bar {
+    max-width: 1100px;
+    margin: -3.5rem auto 5rem;
+    position: relative;
+    z-index: 10;
+    padding: 0 1.5rem;
+  }
+  .stats-card-white {
+    background: #FFFFFF;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.06);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 2.2rem 1.5rem;
+    text-align: center;
+  }
+  .sc-item {
+    padding: 0 1.5rem;
+    border-right: 1px solid rgba(0,0,0,0.08);
+  }
+  .sc-item:last-child { border-right: none; }
+  .sc-num {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: #2D2D2D;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .sc-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #888888;
+    font-weight: 500;
+  }
+
+  /* =====================================================
+     SECTIONS COMMUNES
+  ===================================================== */
+  .section { padding: 5rem 2rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.8rem;
+    display: block;
+    font-weight: 600;
+  }
+  .section-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(2rem, 3.8vw, 3rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #2D2D2D;
+  }
+
+  /* =====================================================
+     POURQUOI 100% FEMMES — 2 colonnes
+  ===================================================== */
+  .two-col-why {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 5rem;
+    align-items: center;
+  }
+  .why-visual-wrap {
+    position: relative;
+    height: 420px;
+  }
+  .wv-box-1 {
+    position: absolute;
+    top: 0; left: 0;
+    width: 78%;
+    height: 82%;
+    background: #DEC9DD;
+    border-radius: 8px;
+  }
+  .wv-box-2 {
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 58%;
+    height: 60%;
+    background: #CEB4CD;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  }
+  .why-text p {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: #555555;
+    margin-bottom: 1.25rem;
+  }
+
+  /* =====================================================
+     UNIVERS DE SOINS
+  ===================================================== */
+  .univers-section {
+    background: #FAF7FA;
+    text-align: center;
+  }
+  .univers-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.2rem;
+    margin-top: 3.5rem;
+  }
+  .univers-card {
+    aspect-ratio: 3/4.2;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #C7A3C5 0%, #4A214D 100%);
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: left;
+    color: #FFFFFF;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(74,33,77,0.15);
+  }
+  .univers-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 35px rgba(74,33,77,0.25);
+  }
+  .uc-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.25;
+    color: #FFFFFF;
+  }
+
+  /* =====================================================
+     TECH STRIP — fond mauve dégradé
+  ===================================================== */
+  .tech-strip {
+    background: linear-gradient(135deg, #AF84AC 0%, #91648e 100%);
+    color: #FFFFFF;
+    padding: 5rem 2rem;
+  }
+  .tech-strip-inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .tech-strip h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+    color: #FFFFFF;
+  }
+  .tech-strip p {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 2rem;
+  }
+  .btn-tech-outline {
+    display: inline-block;
+    border: 2px solid rgba(255,255,255,0.7);
+    color: #FFFFFF;
+    padding: 0.85rem 2rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+  .btn-tech-outline:hover {
+    background: #FFFFFF;
+    color: #AF84AC;
+  }
+
+  /* =====================================================
+     MÉTHODE — 2 colonnes: texte + visit-box
+  ===================================================== */
+  .method-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+  .method-left p {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: #555555;
+    margin-bottom: 1.25rem;
+  }
+  .visit-box {
+    border: 1px solid rgba(0,0,0,0.08);
+    background: #FAF7FA;
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+  }
+  .vb-title {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #888888;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    display: block;
+  }
+  .vb-step {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 1.8rem;
+  }
+  .vb-step:last-child { margin-bottom: 0; }
+  .vb-dot {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--red);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .vb-text strong {
+    display: block;
+    font-size: 0.95rem;
+    color: #2D2D2D;
+    margin-bottom: 0.25rem;
+  }
+  .vb-text span {
+    font-size: 0.85rem;
+    color: #777777;
+    line-height: 1.6;
+    display: block;
+  }
+
+  /* =====================================================
+     INBODY CALLOUT
+  ===================================================== */
+  .inbody-callout {
+    background: #F4E8F3;
+    border-left: 4px solid var(--red);
+    border-radius: 0 8px 8px 0;
+    padding: 2.8rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+  .inbody-badge {
+    display: inline-block;
+    background: var(--red);
+    color: #FFFFFF;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+  }
+  .inbody-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.7rem;
+    color: #2D2D2D;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+  }
+  .inbody-desc {
+    font-size: 0.9rem;
+    color: #555555;
+    line-height: 1.75;
+    max-width: 650px;
+  }
+  .btn-inbody-rdv {
+    background: var(--red);
+    color: #FFFFFF !important;
+    padding: 0.9rem 2.2rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background 0.3s;
+    flex-shrink: 0;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-inbody-rdv:hover { background: var(--red-dark); }
+
+  /* =====================================================
+     RESPONSIVE
+  ===================================================== */
+  @media (max-width: 1024px) {
+    .stats-card-white { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .sc-item { border-right: none; }
+    .univers-grid { grid-template-columns: repeat(3, 1fr); }
+    .two-col-why { grid-template-columns: 1fr; }
+    .why-visual-wrap { height: 300px; }
+    .method-grid { grid-template-columns: 1fr; }
+    .inbody-callout { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  }
+  @media (max-width: 768px) {
+    .univers-grid { grid-template-columns: repeat(2, 1fr); }
+    .floating-stats-bar { margin-bottom: 3rem; }
+    .centre-hero { padding: 4rem 1.5rem 6rem; }
+    .inbody-callout { padding: 2rem 1.5rem; }
+  }
+</style>

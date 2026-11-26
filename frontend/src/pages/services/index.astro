@@ -1,0 +1,668 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getGlobalSettings } from '../../lib/strapi';
+
+const settings = await getGlobalSettings();
+const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\D/g, '')}`;
+---
+
+<Layout title="Nos Services & Pôles d'Expertise | INFRASLIM Rabat" currentPath="/services">
+
+  <!-- ============================================================
+       HERO SERVICES
+  ============================================================ -->
+  <section class="services-hero">
+    <div class="services-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a> &nbsp;/&nbsp; <span>Nos Services</span>
+      </div>
+      <span class="hero-eyebrow">— EXPERTISE · BIENVEILLANCE · HAUTE TECHNOLOGIE</span>
+      <h1 class="hero-title">Nos Pôles de Soins &amp; Bien-Être</h1>
+      <p class="hero-subtitle">
+        Un centre 100% dédié aux femmes à Agdal, Rabat. Explorez nos 5 univers complémentaires associant technologies de pointe, protocoles d'amincissement sur-mesure et rituels traditionnels.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ENGAGEMENTS (BARRE DE 4 ENGAGEMENTS)
+  ============================================================ -->
+  <div class="trust-strip">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <h4>100% Femmes</h4>
+        <p>Espace intime, bienveillant et discret</p>
+      </div>
+      <div class="trust-item">
+        <h4>Bilan InBody Offert</h4>
+        <p>Impédancemétrie médicale avant chaque cure</p>
+      </div>
+      <div class="trust-item">
+        <h4>Technologies Certifiées</h4>
+        <p>Équipements aux normes médicales européennes</p>
+      </div>
+      <div class="trust-item">
+        <h4>Suivi Personnalisé</h4>
+        <p>Accompagnement continu par nos praticiennes</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       LES 5 UNIVERS DE SOINS DÉTAILLÉS
+  ============================================================ -->
+  <section class="services-universe-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-eyebrow">— PARCOURS COMPLET —</span>
+        <h2 class="section-title">5 Univers Dédiés à Votre Silhouette</h2>
+        <p class="section-subtitle">Chaque univers a été conçu pour répondre précisément à vos objectifs corporels, de santé et d'éclat.</p>
+      </div>
+
+      <!-- 1. SPORT NOUVELLE GÉNÉRATION -->
+      <article class="service-universe-card reveal">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80" alt="Sport Infrarouge INFRASLIM Rabat" />
+          <span class="card-badge">Pôle Sportif</span>
+        </div>
+        <div class="card-content">
+          <span class="card-category">01 · Effort &amp; Infrarouge</span>
+          <h3 class="card-title">Sport Nouvelle Génération</h3>
+          <p class="card-desc">
+            Brûlez jusqu'à 1300 calories en seulement 30 minutes. L'alliance unique du cardio training et de la chaleur infrarouge pénètre en profondeur pour activer le déstockage des graisses, drainer et booster l'énergie sans agresser les articulations.
+          </p>
+          <div class="card-subservices">
+            <span class="subservice-pill">InfraBike Allongé</span>
+            <span class="subservice-pill">Tapis Roulant Infrarouge</span>
+            <span class="subservice-pill">Infra Roller Massage</span>
+            <span class="subservice-pill">Renforcement Musculaire</span>
+          </div>
+          <div class="card-actions">
+            <a href="/services/sport-nouvelle-generation" class="btn-detail">Découvrir le Pôle Sport &gt;</a>
+            <a href="/tarifs" class="btn-price-link">Consulter les tarifs</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. SOINS AMINCISSANTS -->
+      <article class="service-universe-card reverse reveal">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80" alt="Soins Amincissants INFRASLIM Rabat" />
+          <span class="card-badge">Pôle Minceur</span>
+        </div>
+        <div class="card-content">
+          <span class="card-category">02 · Remodelage &amp; Drainage</span>
+          <h3 class="card-title">Soins Amincissants</h3>
+          <p class="card-desc">
+            Dites adieu aux capitons et à la rétention d'eau. Nos praticiennes certifiées combinent des technologies de remodelage de référence (VelaShape, radiofréquence, ultrasons) à des soins manuels experts pour cibler chaque zone rebelle.
+          </p>
+          <div class="card-subservices">
+            <span class="subservice-pill">VelaShape Anti-Cellulite</span>
+            <span class="subservice-pill">Madérothérapie Sculptante</span>
+            <span class="subservice-pill">Drainage Lymphatique Renata</span>
+            <span class="subservice-pill">Pressothérapie Médicale</span>
+            <span class="subservice-pill">Sauna Dôme Détox</span>
+          </div>
+          <div class="card-actions">
+            <a href="/services/soins-amincissants" class="btn-detail">Découvrir les Soins Minceur &gt;</a>
+            <a href="/tarifs" class="btn-price-link">Consulter les tarifs</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. SOINS DU VISAGE -->
+      <article class="service-universe-card reveal">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1200&q=80" alt="Soins du Visage INFRASLIM Rabat" />
+          <span class="card-badge">Pôle Esthétique Visage</span>
+        </div>
+        <div class="card-content">
+          <span class="card-category">03 · Pureté &amp; Anti-Âge</span>
+          <h3 class="card-title">Soins du Visage</h3>
+          <p class="card-desc">
+            Une peau éclatante, purifiée en profondeur et visiblement repulpée dès la première séance. Protocoles médico-esthétiques rigoureux et massages ancestraux liftants pour réveiller le glow naturel de votre teint.
+          </p>
+          <div class="card-subservices">
+            <span class="subservice-pill">Hydrafacial Deluxe</span>
+            <span class="subservice-pill">Carbon Peel Laser Hollywood</span>
+            <span class="subservice-pill">Massage Kobido Liftant</span>
+            <span class="subservice-pill">Microneedling &amp; Sérums</span>
+          </div>
+          <div class="card-actions">
+            <a href="/services/soins-visage" class="btn-detail">Découvrir les Soins Visage &gt;</a>
+            <a href="/tarifs" class="btn-price-link">Consulter les tarifs</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. ÉPILATION & LASER -->
+      <article class="service-universe-card reverse reveal">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1200&q=80" alt="Épilation Laser Diode Rabat INFRASLIM" />
+          <span class="card-badge">Pôle Laser</span>
+        </div>
+        <div class="card-content">
+          <span class="card-category">04 · Netteté &amp; Confort Durable</span>
+          <h3 class="card-title">Épilation &amp; Laser</h3>
+          <p class="card-desc">
+            Débarrassez-vous définitivement de la corvée de l'épilation. Notre laser diode de dernière génération avec système de refroidissement intégré garantit des séances rapides, confortables et sécurisées sur tous les phototypes de peau.
+          </p>
+          <div class="card-subservices">
+            <span class="subservice-pill">Laser Diode Tri-Longueur d'Onde</span>
+            <span class="subservice-pill">Détatouage &amp; Taches Pigmentaires</span>
+            <span class="subservice-pill">Épilation à la Cire Douce</span>
+          </div>
+          <div class="card-actions">
+            <a href="/services/epilation-laser" class="btn-detail">Découvrir l'Épilation Laser &gt;</a>
+            <a href="/tarifs" class="btn-price-link">Consulter les tarifs</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. HAMMAM TRADITIONNEL -->
+      <article class="service-universe-card reveal">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80" alt="Hammam Traditionnel INFRASLIM Rabat" />
+          <span class="card-badge">Pôle Bien-Être Beldi</span>
+        </div>
+        <div class="card-content">
+          <span class="card-category">05 · Rituels Ancestraux</span>
+          <h3 class="card-title">Hammam Traditionnel</h3>
+          <p class="card-desc">
+            Un havre de paix 100% féminin inspiré des plus grands rituels du hammam marocain. Vapeur tiède et chaude, savon noir beldi aux huiles essentielles, gommage méticuleux au gant Kessa et enveloppement purifiant au ghassoul de l'Atlas.
+          </p>
+          <div class="card-subservices">
+            <span class="subservice-pill">Savon Noir &amp; Eucalyptus</span>
+            <span class="subservice-pill">Gommage Kessa Traditionnel</span>
+            <span class="subservice-pill">Enveloppement Ghassoul Royal</span>
+            <span class="subservice-pill">Massage de Clôture aux Huiles</span>
+          </div>
+          <div class="card-actions">
+            <a href="/hammam" class="btn-detail">Découvrir le Hammam &gt;</a>
+            <a href="/tarifs" class="btn-price-link">Consulter les tarifs</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION BILAN INBODY OFFERT & FORMULAIRE
+  ============================================================ -->
+  <section class="booking-section">
+    <div class="booking-grid reveal">
+      <div class="booking-text">
+        <span class="section-eyebrow">— DIAGNOSTIC PERSONNALISÉ —</span>
+        <h3>Vous hésitez entre plusieurs soins ?</h3>
+        <p>
+          Nos expertes vous reçoivent dans notre centre d'Agdal pour un diagnostic corporel complet offert (bilan InBody + étude de vos besoins). Nous construirons ensemble la cure adaptée à votre métabolisme et vos disponibilités.
+        </p>
+        <ul class="booking-benefits">
+          <li>Mesure précise masse grasse, masse musculaire et rétention d'eau</li>
+          <li>Recommandation transparente du programme optimal</li>
+          <li>Sans aucun engagement obligatoire</li>
+        </ul>
+      </div>
+
+      <div class="booking-form-card">
+        <h4>Réserver mon Bilan Gratuit</h4>
+        <p>Remplissez ce formulaire, nous vous confirmons votre créneau en moins de 2 heures.</p>
+        
+        <form id="servicesConsultationForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="sf-nom">Nom &amp; Prénom *</label>
+              <input type="text" id="sf-nom" class="form-input" placeholder="Votre nom complet" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="sf-tel">Téléphone (WhatsApp) *</label>
+              <input type="tel" id="sf-tel" class="form-input" placeholder="06 12 34 56 78" required />
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="sf-service">Pôle de soin principal *</label>
+            <select id="sf-service" class="form-select" required>
+              <option value="" disabled selected>Sélectionnez un univers</option>
+              <option value="Bilan Global Offert (InBody)">Bilan InBody Global Offert (Gratuit)</option>
+              <option value="Sport Infrarouge (InfraBike/Tapis)">Sport Nouvelle Génération</option>
+              <option value="Soins Amincissants (VelaShape/Drainage)">Soins Amincissants</option>
+              <option value="Soins du Visage (Hydrafacial/Kobido)">Soins du Visage</option>
+              <option value="Épilation Laser Diode">Épilation Laser Diode</option>
+              <option value="Hammam Traditionnel">Hammam Traditionnel</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="sf-message">Vos objectifs ou disponibilités</label>
+            <textarea id="sf-message" class="form-textarea" rows="3" placeholder="Ex: Perte de centimètres au niveau de la taille, disponible le matin..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Valider ma demande de rendez-vous</button>
+          <div id="servicesFormSuccessMsg" class="form-success-msg">
+            Merci ! Votre demande a été enregistrée. Notre équipe vous recontacte rapidement par WhatsApp.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  const form = document.getElementById('servicesConsultationForm');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const nom = (document.getElementById('sf-nom') as HTMLInputElement)?.value.trim() || '';
+      const tel = (document.getElementById('sf-tel') as HTMLInputElement)?.value.trim() || '';
+      const service = (document.getElementById('sf-service') as HTMLSelectElement)?.value || '';
+      const msg = (document.getElementById('sf-message') as HTMLTextAreaElement)?.value.trim() || '';
+      
+      const successMsg = document.getElementById('servicesFormSuccessMsg');
+      if (successMsg) successMsg.style.display = 'block';
+
+      const waText = encodeURIComponent('Bonjour INFRASLIM, je souhaite réserver un bilan pour le pôle : ' + service + ' | Nom : ' + nom + ' | Téléphone : ' + tel + (msg ? ' | Note : ' + msg : ''));
+      window.open('https://wa.me/212615109898?text=' + waText, '_blank');
+      (form as HTMLFormElement).reset();
+    });
+  }
+</script>
+
+<style>
+  :root {
+    --red: #BB2026;
+    --red-dark: #8f1a1f;
+    --mauve: #AF84AC;
+    --mauve-dark: #4A284B;
+    --bg: #F7F3F7;
+    --muted: #6B636B;
+    --border: rgba(175, 132, 172, 0.25);
+  }
+
+  .services-hero {
+    background: linear-gradient(135deg, #AF84AC 0%, #91648e 100%);
+    color: #FFFFFF;
+    padding: 4.5rem 2rem 5.5rem;
+    position: relative;
+    text-align: left;
+  }
+  .services-hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .breadcrumb {
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; }
+  .breadcrumb a:hover { color: #FFFFFF; }
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #DEC9DD;
+    margin-bottom: 1rem;
+    display: inline-block;
+    font-weight: 600;
+  }
+  .hero-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(2.3rem, 5vw, 3.8rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    color: #FFFFFF;
+  }
+  .hero-subtitle {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.92);
+    max-width: 680px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* BARRE D'ENGAGEMENTS */
+  .trust-strip {
+    background: #FFFFFF;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding: 1.8rem 2rem;
+  }
+  .trust-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+  }
+  .trust-item h4 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2D2D2D;
+    margin-bottom: 0.25rem;
+  }
+  .trust-item p {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  /* GRILLE DES 5 UNIVERS */
+  .services-universe-section {
+    padding: 5rem 2rem;
+    background: #F7F3F7;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+  .section-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 400;
+    color: #2D2D2D;
+    line-height: 1.2;
+  }
+  .section-subtitle {
+    font-size: 0.95rem;
+    color: var(--muted);
+    max-width: 650px;
+    margin: 0.75rem auto 0;
+  }
+
+  /* SERVICE CARD EXPANDED */
+  .service-universe-card {
+    background: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.06);
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .service-universe-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(175, 132, 172, 0.18);
+  }
+  .service-universe-card.reverse {
+    grid-template-columns: 1fr 1fr;
+    direction: rtl;
+  }
+  .service-universe-card.reverse .card-content {
+    direction: ltr;
+  }
+  .service-universe-card.reverse .card-image {
+    direction: ltr;
+  }
+
+  .card-image {
+    position: relative;
+    min-height: 380px;
+    overflow: hidden;
+  }
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .service-universe-card:hover .card-image img {
+    transform: scale(1.04);
+  }
+  .card-badge {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background: var(--red);
+    color: #FFFFFF;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border-radius: 50px;
+  }
+
+  .card-content {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .card-category {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mauve);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+  }
+  .card-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #2D2D2D;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+  .card-desc {
+    font-size: 0.92rem;
+    color: #555555;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-subservices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  .subservice-pill {
+    background: #F7F3F7;
+    color: #333333;
+    font-size: 0.8rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 4px;
+    font-weight: 500;
+    border: 1px solid rgba(175, 132, 172, 0.2);
+  }
+
+  .card-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+  .btn-detail {
+    background: var(--red);
+    color: #FFFFFF;
+    padding: 0.75rem 1.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.25s, transform 0.2s;
+  }
+  .btn-detail:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+  }
+  .btn-price-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--mauve-dark);
+    border-bottom: 1px solid var(--mauve);
+    padding-bottom: 2px;
+    text-decoration: none;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-price-link:hover {
+    color: var(--red);
+    border-color: var(--red);
+  }
+
+  /* SECTION FORMULAIRE / DIAGNOSTIC */
+  .booking-section {
+    padding: 5rem 2rem;
+    background: #FFFFFF;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+  .booking-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .booking-text h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #2D2D2D;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+  .booking-text p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+  }
+  .booking-benefits {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 0;
+  }
+  .booking-benefits li {
+    font-size: 0.9rem;
+    color: #333333;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .booking-benefits li::before {
+    content: '✓';
+    color: var(--red);
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  .booking-form-card {
+    background: #F7F3F7;
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(175, 132, 172, 0.2);
+  }
+  .booking-form-card h4 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2D2D2D;
+    margin-bottom: 0.4rem;
+  }
+  .booking-form-card p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .form-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #444444;
+    margin-bottom: 0.4rem;
+  }
+  .form-input, .form-select, .form-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(0,0,0,0.12);
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: #2D2D2D;
+    background: #FFFFFF;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    outline: none;
+    border-color: var(--red);
+    box-shadow: 0 0 0 3px rgba(187, 32, 38, 0.1);
+  }
+  .btn-submit {
+    width: 100%;
+    background: var(--red);
+    color: #FFFFFF;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.25s;
+    margin-top: 0.5rem;
+  }
+  .btn-submit:hover { background: var(--red-dark); }
+  .form-success-msg {
+    display: none;
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    .service-universe-card, .service-universe-card.reverse {
+      grid-template-columns: 1fr;
+      direction: ltr;
+    }
+    .card-image { min-height: 260px; }
+    .card-content { padding: 2rem; }
+    .trust-grid { grid-template-columns: 1fr 1fr; }
+    .booking-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+  @media (max-width: 600px) {
+    .trust-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>

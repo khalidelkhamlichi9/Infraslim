@@ -1,0 +1,591 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getGlobalSettings } from '../lib/strapi';
+
+const settings = await getGlobalSettings();
+const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\D/g, '')}`;
+---
+
+<Layout title="Hammam Traditionnel Marocain | INFRASLIM Agdal Rabat" currentPath="/hammam">
+
+  <!-- ============================================================
+       HERO HAMMAM (STYLE CLAIR / MAUVE DÉGRADÉ)
+  ============================================================ -->
+  <section class="hammam-hero">
+    <div class="hammam-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a> &nbsp;/&nbsp; Hammam
+      </div>
+      <div class="hero-eyebrow">— RITUEL ANCESTRAL MAROCAIN · 100% FÉMININ</div>
+      <h1 class="hero-title">Le <em>Hammam</em></h1>
+      <p class="hero-desc">Un voyage sensoriel au cœur de la tradition marocaine. Vapeur bienfaisante, gommage ritualisé au gant kessa, enveloppement au ghassoul — laissez-vous purifier dans un espace d'intimité absolue.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MARQUEE STRIP
+  ============================================================ -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <div class="marquee-item"><span>Vapeur Traditionnelle</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Gommage Kessa</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Savon Beldi</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Masque Ghassoul</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Rituel Complet</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>100% Féminin</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Agdal · Rabat</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Vapeur Traditionnelle</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Gommage Kessa</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Savon Beldi</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Masque Ghassoul</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Rituel Complet</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>100% Féminin</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Agdal · Rabat</span><span class="sep"></span></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SECTION INTRO
+  ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="intro-layout reveal">
+        <div>
+          <span class="section-label">Notre espace</span>
+          <h2 class="section-title">Une parenthèse hors du temps</h2>
+          <p class="section-text">Notre Hammam traditionnel marocain vous invite à un moment suspendu, loin du tumulte quotidien. La chaleur douce et enveloppante de la vapeur ouvre les pores, prépare la peau et détend les muscles en profondeur. Le gommage minutieux au savon beldi, le masque purifiant au ghassoul... chaque étape du rituel a été pensée pour vous offrir une purification totale et une détente absolue de l'esprit.</p>
+          <p class="section-text" style="margin-top:1.5rem;">Un espace intime, exclusivement féminin, où votre confort et votre pudeur sont strictement préservés.</p>
+        </div>
+        <div class="intro-visual">
+          <div class="iv-ornament">
+            <div class="iv-center">☽</div>
+            <div class="iv-label">Hammam</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LE RITUEL ÉTAPE PAR ÉTAPE (6 ÉTAPES)
+  ============================================================ -->
+  <section class="section section-cream">
+    <div class="container">
+      <div class="text-center reveal" style="text-align:center;margin-bottom:2.5rem;">
+        <span class="section-label">Le déroulement</span>
+        <h2 class="section-title">Le Rituel, étape par étape</h2>
+        <p class="section-text" style="margin:0 auto;">Chaque instant du hammam est une invitation au lâcher-prise. Voici le cheminement de votre expérience.</p>
+      </div>
+
+      <div class="ritual-grid reveal">
+        <div class="ritual-step">
+          <div class="rs-num">01</div>
+          <div class="rs-content">
+            <div class="rs-title">Accueil &amp; préparation</div>
+            <p class="rs-text">Vous êtes accueillie avec bienveillance par notre équipe féminine et guidée vers l'espace hammam chauffé à température douce pour commencer la détente.</p>
+          </div>
+        </div>
+        <div class="ritual-step">
+          <div class="rs-num">02</div>
+          <div class="rs-content">
+            <div class="rs-title">Vapeur bienfaisante</div>
+            <p class="rs-text">La chaleur humide ouvre progressivement les pores, active la microcirculation cutanée, dénoue les tensions musculaires et prépare l'épiderme.</p>
+          </div>
+        </div>
+        <div class="ritual-step">
+          <div class="rs-num">03</div>
+          <div class="rs-content">
+            <div class="rs-title">Gommage kessa</div>
+            <p class="rs-text">Le gommage traditionnel au gant kessa exfolie en douceur toutes les cellules mortes, révélant un grain de peau infiniment soyeux et lumineux.</p>
+          </div>
+        </div>
+        <div class="ritual-step">
+          <div class="rs-num">04</div>
+          <div class="rs-content">
+            <div class="rs-title">Savon beldi</div>
+            <p class="rs-text">Application généreuse du savon noir traditionnel enrichi à l'huile d'olive et à l'eucalyptus pour assouplir la peau et la nourrir en profondeur.</p>
+          </div>
+        </div>
+        <div class="ritual-step">
+          <div class="rs-num">05</div>
+          <div class="rs-content">
+            <div class="rs-title">Masque ghassoul</div>
+            <p class="rs-text">Application de l'argile volcanique marocaine du Moyen Atlas, reconnue pour ses vertus purifiantes exceptionnelles qui absorbent impuretés et toxines.</p>
+          </div>
+        </div>
+        <div class="ritual-step">
+          <div class="rs-num">06</div>
+          <div class="rs-content">
+            <div class="rs-title">Enveloppement final</div>
+            <p class="rs-text">Le rituel s'achève par un rinçage doux et un enveloppement protecteur pour sceller l'hydratation et prolonger la sensation de légèreté absolue.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GRILLE DES 3 FORMULES TARIFS
+  ============================================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal" style="text-align:center;margin-bottom:2.5rem;">
+        <span class="section-label">Tarifs Hammam</span>
+        <h2 class="section-title">Choisissez votre rituel</h2>
+        <p class="section-text" style="margin:0 auto;">Trois formules sur-mesure pour s'adapter à votre emploi du temps et à vos envies de détente.</p>
+      </div>
+
+      <div class="pricing-plans reveal">
+        <!-- Formule 1 -->
+        <div class="plan">
+          <div class="plan-name">Accès seul</div>
+          <div class="plan-price">80</div>
+          <div class="plan-unit">MAD par séance</div>
+          <div class="plan-features">
+            <div class="plan-feature">Accès libre à l'espace hammam</div>
+            <div class="plan-feature">Vapeur bienfaisante &amp; détente</div>
+            <div class="plan-feature">Durée : 45 min environ</div>
+          </div>
+          <a href={`${waBase}?text=Bonjour%20INFRASLIM%2C%20je%20souhaite%20r%C3%A9server%20un%20Acc%C3%A8s%20Hammam%20seul.`} target="_blank" rel="noopener" class="plan-btn">Réserver</a>
+        </div>
+
+        <!-- Formule 2 -->
+        <div class="plan featured">
+          <div class="plan-badge">Le plus populaire</div>
+          <div class="plan-name">Hammam + Gommage</div>
+          <div class="plan-price">150</div>
+          <div class="plan-unit">MAD par séance</div>
+          <div class="plan-features">
+            <div class="plan-feature">Accès à l'espace hammam</div>
+            <div class="plan-feature">Vapeur apaisante continue</div>
+            <div class="plan-feature">Gommage complet au gant kessa</div>
+            <div class="plan-feature">Application de savon noir beldi</div>
+            <div class="plan-feature">Durée : 1h environ</div>
+          </div>
+          <a href={`${waBase}?text=Bonjour%20INFRASLIM%2C%20je%20souhaite%20r%C3%A9server%20la%20formule%20Hammam%20%2B%20Gommage.`} target="_blank" rel="noopener" class="plan-btn">Réserver</a>
+        </div>
+
+        <!-- Formule 3 -->
+        <div class="plan">
+          <div class="plan-name">Rituel Complet Impérial</div>
+          <div class="plan-price">250</div>
+          <div class="plan-unit">MAD par séance</div>
+          <div class="plan-features">
+            <div class="plan-feature">Accès espace hammam</div>
+            <div class="plan-feature">Vapeur bienfaisante</div>
+            <div class="plan-feature">Gommage kessa approfondi</div>
+            <div class="plan-feature">Savon beldi parfumé</div>
+            <div class="plan-feature">Masque purifiant au ghassoul</div>
+            <div class="plan-feature">Enveloppement doux de fin de soin</div>
+            <div class="plan-feature">Durée : 1h30 – 2h</div>
+          </div>
+          <a href={`${waBase}?text=Bonjour%20INFRASLIM%2C%20je%20souhaite%20r%C3%A9server%20le%20Rituel%20Complet%20Hammam.`} target="_blank" rel="noopener" class="plan-btn">Réserver</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       INFORMATIONS PRATIQUES (4 CARTES)
+  ============================================================ -->
+  <section class="section section-cream">
+    <div class="container">
+      <span class="section-label reveal">Informations pratiques</span>
+      <h2 class="section-title reveal">Votre visite en toute sérénité</h2>
+      <div class="practical-grid reveal">
+        <div class="prac-item">
+          <div class="prac-title">Sur rendez-vous uniquement</div>
+          <p class="prac-text">Le hammam fonctionne exclusivement sur réservation afin de vous garantir un espace préservé et intime. Contactez-nous par WhatsApp ou téléphone au 06 15 10 98 98.</p>
+        </div>
+        <div class="prac-item">
+          <div class="prac-title">Que préparer ?</div>
+          <p class="prac-text">Des mules sont conseillées pour circuler dans les espaces humides. Tous les produits de soin (savon beldi, kessa, ghassoul) sont fournis par le centre.</p>
+        </div>
+        <div class="prac-item">
+          <div class="prac-title">Espace 100% féminin</div>
+          <p class="prac-text">Notre hammam est strictement réservé aux femmes. Seule une équipe féminine professionnelle est présente pour votre sérénité et votre confort.</p>
+        </div>
+        <div class="prac-item">
+          <div class="prac-title">Horaires &amp; Créneaux</div>
+          <p class="prac-text">Du lundi au samedi, de 08h00 à 20h00. Comptez entre 45 minutes et 2 heures selon la formule choisie.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA CONVERSION
+  ============================================================ -->
+  <section class="cta-section">
+    <div class="container" style="text-align:center;">
+      <span class="section-label" style="color:rgba(255,255,255,0.85)">Réservation</span>
+      <h2 class="cta-title">Offrez-vous un moment de pure détente</h2>
+      <p class="cta-text">Réservez votre rituel hammam par WhatsApp. Notre équipe vous confirme votre créneau immédiatement selon vos disponibilités.</p>
+      <div class="cta-buttons">
+        <a href={`${waBase}?text=Bonjour%20INFRASLIM%2C%20je%20souhaite%20r%C3%A9server%20un%20rituel%20hammam.`} target="_blank" rel="noopener" class="btn-primary">
+          📲 Réserver par WhatsApp
+        </a>
+        <a href="tel:+212615109898" class="btn-secondary">
+          📞 06 15 10 98 98
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  :root {
+    --red: #BB2026;
+    --red-dark: #8f1a1f;
+    --mauve: #AF84AC;
+    --mauve-light: #c4a1c2;
+    --bg: #F7F3F7;
+    --cream: #FAF7FA;
+    --border: rgba(175, 132, 172, 0.25);
+    --muted: #6B636B;
+  }
+
+  .hammam-hero {
+    background: linear-gradient(135deg, #AF84AC 0%, #91648e 100%);
+    color: #FFFFFF;
+    padding: 4.5rem 2rem 5.5rem;
+    text-align: center;
+  }
+  .hammam-hero-inner { max-width: 820px; margin: 0 auto; }
+  .breadcrumb {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #DEC9DD;
+    margin-bottom: 1rem;
+    display: block;
+    font-weight: 600;
+  }
+  .hero-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(2.3rem, 5vw, 3.8rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+  .hero-title em { font-style: italic; color: #FFFFFF; }
+  .hero-desc {
+    font-size: 1.02rem;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.75;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .section { padding: 5rem 2rem; background: #FFFFFF; }
+  .section-cream { background: #FAF7FA; }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.75rem;
+    display: block;
+    font-weight: 600;
+  }
+  .section-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(1.9rem, 3.8vw, 3rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+    color: #2D2D2D;
+  }
+  .section-text {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: #555555;
+    max-width: 700px;
+  }
+
+  /* Intro Layout */
+  .intro-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .intro-visual {
+    height: 380px;
+    background: linear-gradient(145deg, #DEC9DD 0%, #CEB4CD 100%);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  }
+  .iv-ornament {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .iv-center {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 4.5rem;
+    color: var(--red);
+    opacity: 0.45;
+  }
+  .iv-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    color: var(--red);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* Ritual Steps */
+  .ritual-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .ritual-step {
+    display: flex;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  }
+  .ritual-step:hover {
+    border-color: var(--red);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(175, 132, 172, 0.15);
+  }
+  .rs-num {
+    width: 44px; height: 44px;
+    background: #F7F3F7;
+    border: 1px solid var(--red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.2rem;
+    color: var(--red);
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+  .rs-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+    color: #2D2D2D;
+  }
+  .rs-text {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* Pricing Plans */
+  .pricing-plans {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+    margin-top: 2rem;
+  }
+  .plan {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2.5rem;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .plan:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  }
+  .plan.featured {
+    border: 2px solid var(--red);
+    box-shadow: 0 12px 35px rgba(187,32,38,0.12);
+  }
+  .plan-badge {
+    position: absolute;
+    top: -12px; left: 50%;
+    transform: translateX(-50%);
+    background: var(--red);
+    color: #FFFFFF;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.25rem 0.9rem;
+    border-radius: 50px;
+    white-space: nowrap;
+  }
+  .plan-name {
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+  }
+  .plan-price {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1;
+    color: #2D2D2D;
+    margin-bottom: 0.4rem;
+  }
+  .plan-unit {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 1.75rem;
+  }
+  .plan-features {
+    text-align: left;
+    margin-bottom: 2rem;
+    flex: 1;
+  }
+  .plan-feature {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+    font-size: 0.88rem;
+    color: #555;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+  .plan-feature::before {
+    content: '✦';
+    color: var(--red);
+    font-size: 0.7rem;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+  }
+  .plan-btn {
+    display: block;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--red);
+    color: #FFFFFF;
+    border-radius: 4px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  .plan-btn:hover { background: var(--red-dark); }
+
+  /* Practical Grid */
+  .practical-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .prac-item {
+    background: #FFFFFF;
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--red);
+    border: 1px solid var(--border);
+    border-left-width: 4px;
+    border-left-color: var(--red);
+  }
+  .prac-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #2D2D2D;
+  }
+  .prac-text {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: linear-gradient(135deg, #AF84AC 0%, #91648e 100%);
+    color: #FFFFFF;
+    padding: 5rem 2rem;
+  }
+  .cta-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+  }
+  .cta-text {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.9);
+    margin: 0 auto 2.5rem;
+    max-width: 600px;
+    line-height: 1.8;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--red);
+    color: #FFFFFF;
+    padding: 0.9rem 2.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  .btn-primary:hover { background: var(--red-dark); }
+  .btn-secondary {
+    border: 2px solid rgba(255,255,255,0.7);
+    color: #FFFFFF;
+    padding: 0.9rem 2.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-secondary:hover {
+    background: #FFFFFF;
+    color: #AF84AC;
+  }
+
+  @media (max-width: 1024px) {
+    .intro-layout { grid-template-columns: 1fr; }
+    .pricing-plans { grid-template-columns: 1fr; }
+    .practical-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    .ritual-grid { grid-template-columns: 1fr; }
+    .cta-buttons { flex-direction: column; }
+    .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+  }
+</style>

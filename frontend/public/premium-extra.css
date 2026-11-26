@@ -1,0 +1,238 @@
+/* =====================================================================
+   INFRASLIM — DESIGN SYSTEM CLAIR & UNIFIÉ v4.0 (ZÉRO DARK MODE)
+   Charte stricte : Rouge #BB2026 · Mauve #AF84AC · Bleu #0071BC · Fond #F7F3F7 · Blanc #FFFFFF
+   ===================================================================== */
+
+:root {
+  --red:        #BB2026;
+  --red-light:  #d44348;
+  --red-dark:   #8f1a1f;
+  --mauve:      #AF84AC;
+  --mauve-light:#c4a1c2;
+  --mauve-dark: #91648e;
+  --blue:       #0071BC;
+  --bg:         #F7F3F7;
+  --white:      #FFFFFF;
+  --text:       #2D2D2D;
+  --muted:      #6B636B;
+  --border:     rgba(175, 132, 172, 0.25);
+  --gold:       #BB2026;
+  --cream:      #F7F3F7;
+  --font-serif:   'Josefin Sans', sans-serif;
+  --font-heading: 'Josefin Sans', sans-serif;
+  --font-sans:    'Poppins', sans-serif;
+  --font-body:    'Poppins', sans-serif;
+  --font-accent:  'Josefin Sans', sans-serif;
+}
+
+body {
+  background: #FFFFFF !important;
+  color: #2D2D2D !important;
+  font-family: 'Poppins', sans-serif !important;
+  overflow-x: clip !important;
+}
+
+/* ─── TOP BAR ROUGE & NAVBAR BLANCHE (LOGO GRAND & VISIBLE) ─── */
+.top-bar {
+  background: #BB2026 !important;
+  color: #FFFFFF !important;
+  font-size: 0.78rem !important;
+  padding: 0.4rem 2.5rem !important;
+}
+.navbar, .header {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.06) !important;
+  border-bottom: 2px solid #331535 !important;
+  padding: 0 2.5rem !important;
+  height: 78px !important;
+  min-height: 78px !important;
+  transition: all 0.25s ease !important;
+}
+.navbar.scrolled, .header.scrolled {
+  background: #FFFFFF !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.09) !important;
+  border-bottom: 2px solid #331535 !important;
+}
+.navbar .nav-container, .header .nav {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  height: 78px !important;
+  min-height: 78px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1.5rem !important;
+}
+
+/* ─── CONTENEUR DU LOGO AVEC ROGNAGE INTELLIGENT DE L'ESPACE BLANC ─── */
+.nav-logo {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 68px !important;
+  width: 220px !important;
+  min-width: 180px !important;
+  overflow: hidden !important;
+  flex-shrink: 0 !important;
+  position: relative !important;
+  text-decoration: none !important;
+}
+.nav-logo img {
+  height: 230px !important;
+  width: 230px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  filter: none !important;
+  display: block !important;
+  transform: translateY(2px) !important;
+  transition: transform 0.25s ease !important;
+}
+.nav-logo:hover img {
+  transform: translateY(2px) scale(1.04) !important;
+}
+
+.navbar .nav-links, .header .nav-links {
+  display: flex !important;
+  align-items: center !important;
+  gap: 2rem !important;
+  margin-left: auto !important;
+  list-style: none !important;
+}
+.navbar .nav-links a, .header .nav-links a {
+  color: #333333 !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  padding: 0.35rem 0.2rem !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  transition: color 0.2s ease !important;
+}
+.navbar .nav-links a:hover, .navbar .nav-links a.active,
+.header .nav-links a:hover, .header .nav-links a.active {
+  color: #BB2026 !important;
+}
+
+/* ─── SUPPRESSION DU BOUTON WHATSAPP DU HEADER (DEMANDE UTILISATEUR) ─── */
+.btn-whatsapp-nav,
+.btn-wa-nav,
+.nav-cta-wrap {
+  display: none !important;
+}
+
+/* ─── FAQ ACCORDÉON UNIFIÉ (STYLE MAQUETTE OFFICIELLE) ────────────────── */
+.faq, .faq-section {
+  background: #F7F3F7 !important;
+}
+.faq-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.9rem !important;
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.faq-item {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(175, 132, 172, 0.25) !important;
+  border-left: 4px solid #BB2026 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.025) !important;
+  overflow: hidden !important;
+  margin-bottom: 0 !important;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+.faq-item:hover {
+  border-color: rgba(187, 32, 38, 0.45) !important;
+  border-left-color: #BB2026 !important;
+}
+.faq-item.open {
+  border-color: rgba(187, 32, 38, 0.35) !important;
+  border-left: 4px solid #BB2026 !important;
+  box-shadow: 0 8px 25px rgba(175, 132, 172, 0.14) !important;
+}
+.faq-question {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1.2rem !important;
+  padding: 1.35rem 1.75rem !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  text-align: left !important;
+  user-select: none !important;
+  font-family: 'Josefin Sans', sans-serif !important;
+  font-size: 1.15rem !important;
+  font-weight: 500 !important;
+  color: #2D2D2D !important;
+  line-height: 1.4 !important;
+}
+.faq-q-text {
+  font-family: 'Josefin Sans', sans-serif !important;
+  font-size: 1.15rem !important;
+  font-weight: 500 !important;
+  color: #2D2D2D !important;
+  line-height: 1.4 !important;
+}
+.faq-icon, .faq-toggle {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 50% !important;
+  background: #F6DCE8 !important;
+  border: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  transition: background 0.25s ease, transform 0.25s ease !important;
+  position: relative !important;
+}
+.faq-icon svg, .faq-toggle svg {
+  width: 15px !important;
+  height: 15px !important;
+  stroke: #BB2026 !important;
+  fill: none !important;
+  stroke-width: 2.2 !important;
+  transition: transform 0.25s ease, stroke 0.25s ease !important;
+}
+.faq-item.open .faq-icon,
+.faq-item.open .faq-toggle {
+  background: #BB2026 !important;
+  transform: none !important;
+}
+.faq-item.open .faq-icon svg,
+.faq-item.open .faq-toggle svg {
+  stroke: #FFFFFF !important;
+  transform: rotate(180deg) !important;
+}
+.faq-answer {
+  max-height: 0 !important;
+  overflow: hidden !important;
+  transition: max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), padding 0.3s ease !important;
+  padding: 0 1.75rem !important;
+}
+.faq-item.open .faq-answer {
+  max-height: 600px !important;
+  padding: 0 1.75rem 1.4rem !important;
+}
+.faq-answer p {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.92rem !important;
+  color: #555555 !important;
+  line-height: 1.75 !important;
+  padding: 0 !important;
+}

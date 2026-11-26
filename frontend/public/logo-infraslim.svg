@@ -1,0 +1,24 @@
+<svg viewBox="0 0 1000 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <!-- INFRASLIM EXACT LOGO SVG -->
+  <g transform="translate(40, 60)">
+    <text x="50" y="115" font-family="'Josefin Sans', sans-serif" font-weight="700" font-size="96" fill="#BB2026" letter-spacing="4">INFRA</text>
+    <text x="430" y="115" font-family="'Josefin Sans', sans-serif" font-weight="300" font-size="96" fill="#AF84AC" letter-spacing="6">SLIM</text>
+    <text x="65" y="165" font-family="'Poppins', sans-serif" font-weight="600" font-size="28" fill="#BB2026" letter-spacing="0.5">Centre Santé &amp; Beauté 100% Femmes</text>
+    
+    <!-- Silhouette danseuse avec cerceaux -->
+    <g transform="translate(670, 0)">
+      <!-- Tête et bras -->
+      <path d="M40 25 C30 15, 10 5, -30 -5 C-32 -6, -34 -4, -32 -2 C-10 8, 15 22, 28 32 C35 38, 48 44, 52 48" fill="none" stroke="#AF84AC" stroke-width="5" stroke-linecap="round"/>
+      <ellipse cx="42" cy="18" rx="14" ry="10" fill="#AF84AC" transform="rotate(-20 42 18)"/>
+      <!-- Buste -->
+      <path d="M52 48 C56 55, 58 68, 52 82 C48 92, 42 98, 40 105" fill="none" stroke="#AF84AC" stroke-width="6" stroke-linecap="round"/>
+      <!-- Cerceaux rouges Infrarouge -->
+      <path d="M15 95 C5 82, 60 70, 85 90 C95 98, 85 110, 45 112 C20 114, 5 102, 18 95" fill="#BB2026"/>
+      <path d="M22 100 C15 92, 55 82, 78 96 C85 102, 78 112, 48 114 C28 115, 16 106, 25 100" fill="none" stroke="#8f1a1f" stroke-width="2.5"/>
+      <path d="M25 108 C35 118, 70 120, 80 110 C88 102, 85 96, 75 92" fill="none" stroke="#BB2026" stroke-width="4.5" stroke-linecap="round"/>
+      <!-- Jambes et arabesque -->
+      <path d="M40 115 C42 135, 43 155, 30 180 C24 192, 22 208, 25 222 C23 205, 35 185, 45 165 C52 152, 54 135, 48 118 Z" fill="#AF84AC"/>
+      <path d="M48 118 C58 125, 75 140, 78 155 C82 170, 70 185, 52 195 C62 188, 72 178, 70 165 C68 152, 55 138, 45 125" fill="#AF84AC"/>
+    </g>
+  </g>
+</svg>

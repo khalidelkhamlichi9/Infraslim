@@ -1,0 +1,132 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Politique de Confidentialité | INFRASLIM Agdal Rabat" currentPath="/confidentialite">
+
+  <!-- HERO CONFIDENTIALITÉ -->
+  <section class="legal-hero">
+    <div class="legal-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a> &nbsp;/&nbsp; <span>Confidentialité</span>
+      </div>
+      <span class="hero-eyebrow">— PROTECTION DES DONNÉES (LOI 09-08)</span>
+      <h1 class="hero-title">Politique de <em>Confidentialité</em></h1>
+      <p class="hero-desc">Protection de votre vie privée et engagement de sécurité selon la loi marocaine 09-08.</p>
+    </div>
+  </section>
+
+  <!-- CONTENU CONFIDENTIALITÉ -->
+  <main class="legal-content">
+    <div class="legal-section">
+      <h2>1. Engagement de confidentialité</h2>
+      <p>INFRASLIM accorde la plus haute importance au respect et à la protection des données personnelles de ses clientes. La présente politique détaille notre engagement envers vous conformément aux dispositions de la <strong>loi n° 09-08</strong> relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>2. Données collectées</h2>
+      <p>Dans le cadre de votre relation avec notre centre, nous pouvons être amenées à collecter :</p>
+      <ul>
+        <li><strong>Identité &amp; Contact :</strong> Nom, prénom, numéro de téléphone (WhatsApp), adresse email.</li>
+        <li><strong>Informations de rendez-vous :</strong> Date, heure, prestations demandées, historique des soins.</li>
+        <li><strong>Informations de suivi personnalisé :</strong> Objectifs de remise en forme, contre-indications éventuelles (grossesse, antécédents médicaux déclarés librement pour adapter les soins technologiques en toute sécurité).</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>3. Finalités du traitement</h2>
+      <p>Vos données sont exclusivement utilisées pour :</p>
+      <ul>
+        <li>La gestion, confirmation et suivi de vos rendez-vous.</li>
+        <li>L'élaboration de protocoles de soins adaptés et sécurisés.</li>
+        <li>La communication d'offres promotionnelles ou nouveautés du centre (uniquement si vous y avez consenti).</li>
+        <li>L'amélioration constante de notre service client et de nos prestations.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2>4. Non-divulgation à des tiers</h2>
+      <p>INFRASLIM s'engage formellement à ne <strong>jamais vendre, louer ni céder</strong> vos données personnelles à des organismes tiers à des fins commerciales ou publicitaires. Vos données demeurent strictement confidentielles au sein de l'équipe féminine du centre.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2>5. Vos droits (Loi 09-08)</h2>
+      <p>Conformément à la loi 09-08, vous disposez à tout moment d’un droit d’accès, de rectification et d’opposition au traitement de vos données personnelles.</p>
+      <p>Pour exercer vos droits, vous pouvez nous adresser votre demande par message WhatsApp au <strong>06 15 10 98 98</strong> ou par email à <strong>contact@infraslim.ma</strong>.</p>
+    </div>
+  </main>
+
+</Layout>
+
+<style>
+  .legal-hero {
+    background: linear-gradient(135deg, #AF84AC 0%, #91648e 100%);
+    color: #FFFFFF;
+    padding: 4.5rem 2rem 5.5rem;
+    text-align: center;
+  }
+  .legal-hero-inner { max-width: 820px; margin: 0 auto; }
+  .breadcrumb {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 1.5rem;
+  }
+  .breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #DEC9DD;
+    margin-bottom: 1rem;
+    display: block;
+    font-weight: 600;
+  }
+  .hero-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: clamp(2.3rem, 5vw, 3.8rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+  .hero-title em { font-style: italic; color: #FFFFFF; }
+  .hero-desc {
+    font-size: 1.02rem;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.75;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .legal-content {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+  }
+  .legal-section {
+    margin-bottom: 2.5rem;
+    background: #FFFFFF;
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(175, 132, 172, 0.25);
+    border-left: 4px solid #BB2026;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  }
+  .legal-section h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    color: #2D2D2D;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(175, 132, 172, 0.2);
+    padding-bottom: 0.5rem;
+  }
+  .legal-section p, .legal-section ul {
+    font-size: 0.95rem;
+    color: #4A4A4A;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  .legal-section ul { padding-left: 1.5rem; }
+  .legal-section li { margin-bottom: 0.5rem; }
+</style>

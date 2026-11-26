@@ -1,0 +1,194 @@
+---
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = "" } = Astro.props;
+---
+
+<header class="header" id="header">
+  <nav class="nav">
+    <a href="/" class="nav-logo" aria-label="INFRASLIM Accueil">
+      <img src="/logo-infraslim.jpg" alt="INFRASLIM – Centre Santé & Beauté 100% Femmes" />
+    </a>
+
+    <ul class="nav-links">
+      <li>
+        <a href="/le-centre" class={currentPath === "/le-centre" ? "active" : ""}>Le Centre</a>
+      </li>
+      <li>
+        <a href="/services" class={currentPath.startsWith("/services") ? "active" : ""}>
+          Services
+          <svg class="nav-chevron" viewBox="0 0 24 24">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </a>
+      </li>
+      <li>
+        <a href="/tarifs" class={currentPath === "/tarifs" ? "active" : ""}>Tarifs</a>
+      </li>
+      <li>
+        <a href="/blog" class={currentPath.startsWith("/blog") ? "active" : ""}>Blog</a>
+      </li>
+      <li>
+        <a href="/contact" class={currentPath === "/contact" ? "active" : ""}>Contact</a>
+      </li>
+    </ul>
+
+    <!-- Menu Hamburger Mobile -->
+    <button class="hamburger" id="hamburger" aria-label="Menu Mobile">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Menu Mobile Déroulant -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/le-centre" class="mob-link">Le Centre</a>
+    <a href="/services" class="mob-link">Services</a>
+    <a href="/tarifs" class="mob-link">Tarifs</a>
+    <a href="/blog" class="mob-link">Blog</a>
+    <a href="/contact" class="mob-link">Contact</a>
+    <a href="https://wa.me/212615109898?text=Bonjour%20INFRASLIM%2C%20je%20souhaite%20prendre%20rendez-vous." target="_blank" rel="noopener" class="mobile-cta mob-link">WhatsApp</a>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #FFFFFF;
+    box-shadow: 0 2px 18px rgba(0,0,0,0.06);
+    border-bottom: 2px solid #331535;
+    padding: 0 2.5rem;
+    height: 78px;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+  .header.scrolled {
+    box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+  }
+  .nav {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .nav-logo {
+    display: inline-flex;
+    align-items: center;
+    height: 64px;
+    width: 220px;
+    text-decoration: none;
+  }
+  .nav-logo img {
+    height: 58px;
+    width: auto;
+    display: block;
+    transition: transform 0.25s ease;
+  }
+  .nav-logo:hover img {
+    transform: scale(1.02);
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links a {
+    color: #2D2D2D;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    transition: color 0.2s ease;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    color: #BB2026;
+  }
+  .nav-chevron {
+    width: 10px;
+    height: 10px;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    fill: none;
+  }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+  }
+  .hamburger span {
+    width: 24px;
+    height: 2px;
+    background: #2D2D2D;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 78px; left: 0; right: 0; bottom: 0;
+    background: #FFFFFF;
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #2D2D2D;
+    text-decoration: none;
+  }
+  .mobile-menu a:hover { color: #BB2026; }
+  .mobile-menu .mobile-cta {
+    margin-top: 1rem;
+    background: #BB2026;
+    color: white;
+    padding: 0.8rem 2.2rem;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .header { padding: 0 1.5rem; height: 68px; }
+    .nav-logo img { height: 48px; }
+  }
+</style>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger?.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu?.classList.toggle('open');
+  });
+</script>
