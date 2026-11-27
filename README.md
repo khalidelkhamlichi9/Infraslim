@@ -20,7 +20,6 @@ cd backend
 npm install
 npm run develop
 ```
-- Accédez au panneau d'administration Strapi : `http://localhost:1337/admin`
 - Créez votre compte administrateur.
 - **Auto-configuration intégrée :** Au premier démarrage (`src/index.js`), Strapi pré-remplit automatiquement les 5 Services, les 3 Articles de Blog, les 6 FAQ et les Paramètres Généraux, et active les permissions publiques de lecture (`find` / `findOne`).
 
@@ -31,8 +30,6 @@ cd frontend
 npm install
 npm run dev
 ```
-- Le site sera disponible sur `http://localhost:4321`
-
 > **💡 Fonctionnement Autonome Intégré :**  
 > Le connecteur `src/lib/strapi.ts` intègre des données officielles de secours (*fallback*). Ainsi, **le frontend Astro fonctionne immédiatement et affiche tout le contenu d'INFRASLIM** même si le serveur Strapi n'est pas encore démarré ! Dès que Strapi est actif, Astro récupère automatiquement vos contenus modifiés dans le CMS.
 
