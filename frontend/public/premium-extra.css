@@ -324,13 +324,35 @@ body {
 ===================================================== */
 .hero-bg-photo {
   position: absolute;
-  inset: -5% 0;
+  inset: 0;
   width: 100%;
-  height: 115%;
+  height: 100%;
   object-fit: cover;
+  object-position: center 25%;
   z-index: 0;
   filter: saturate(0.9) contrast(1.04);
   pointer-events: none;
+}
+
+/* Cadrage optimisé pour toutes les photos (évite les têtes et machines coupées) */
+.sv-frame img,
+.img-wrap-zoom img,
+.split-visual img,
+.inbody-card-photo img,
+.inbody-card-pro img,
+.wv-main-photo img,
+.wv-inset-photo img {
+  object-fit: cover !important;
+  object-position: center 25% !important;
+}
+
+.about-inset-photo {
+  width: 265px !important;
+  height: 195px !important;
+}
+.about-inset-photo img {
+  object-fit: cover !important;
+  object-position: center 22% !important;
 }
 
 .hero-photo-overlay {
