@@ -1,0 +1,420 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { PRESTATIONS, type PrestationData } from '../../../data/prestations';
+import { getGlobalSettings } from '../../../lib/strapi';
+
+export function getStaticPaths() {
+  return PRESTATIONS.map((p) => ({
+    params: { category: p.category, prestation: p.slug },
+    props: { data: p },
+  }));
+}
+
+interface Props {
+  data: PrestationData;
+}
+
+const { data } = Astro.props;
+const settings = await getGlobalSettings();
+const waNumber = (settings.whatsapp || '212615109898').replace(/\D/g, '');
+const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(`Bonjour INFRASLIM, je souhaite réserver ou avoir des informations sur : ${data.h1}`)}`;
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": data.faq.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+};
+---
+
+<Layout title={data.metaTitle} description={data.metaDescription} currentPath={`/services/${data.category}/${data.slug}`}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- ============================================================
+       1. HERO PRESTATION FULL-BLEED + PARALLAX
+  ============================================================ -->
+  <section class="srv-hero">
+    <img src={data.heroImage} alt={data.h1} class="hero-bg-photo" />
+    <div class="hero-photo-overlay"></div>
+    <div class="srv-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a> &nbsp;/&nbsp;
+        <a href="/services">Services</a> &nbsp;/&nbsp;
+        <a href={`/services/${data.category}`}>{data.categoryName}</a> &nbsp;/&nbsp;
+        <span>{data.slug}</span>
+      </div>
+      <span class="hero-eyebrow">— {data.eyebrow}</span>
+      <h1 class="hero-title">{data.h1}</h1>
+      <p class="hero-desc">{data.leadIntro}</p>
+      <div class="hero-actions">
+        <a href="#reserver-prestation" class="ht-btn-red">Réserver cette séance →</a>
+        <a href="#tarif-prestation" class="ht-btn-white">{data.priceSingle}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       2. BARRE FLOTTANTE TARIF & RÉASSURANCE
+  ============================================================ -->
+  <div class="floating-stats-bar">
+    <div class="stats-card-white">
+      <div class="sc-item">
+        <div class="sc-num">{data.priceSingle}</div>
+        <div class="sc-label">À la séance</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-num">100 %</div>
+        <div class="sc-label">Centre Féminin</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-num">InBody</div>
+        <div class="sc-label">Diagnostic Offert</div>
+      </div>
+      <div class="sc-item">
+        <div class="sc-num">Agdal</div>
+        <div class="sc-label">Rabat · Lun–Sam</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       3. MARQUEE STRIP ANIMÉ
+  ============================================================ -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <div class="marquee-item"><span>{data.categoryName}</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>{data.priceSingle}</span><span class="sep"></span></div>
+      {data.pricePack && <div class="marquee-item"><span>{data.pricePack}</span><span class="sep"></span></div>}
+      <div class="marquee-item"><span>Diagnostic InBody Offert</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Agdal · Rabat</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>{data.categoryName}</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>{data.priceSingle}</span><span class="sep"></span></div>
+      {data.pricePack && <div class="marquee-item"><span>{data.pricePack}</span><span class="sep"></span></div>}
+      <div class="marquee-item"><span>Diagnostic InBody Offert</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Agdal · Rabat</span><span class="sep"></span></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       4. SECTIONS ALTERNÉES SECTION PAR SECTION (PRO & ANIMÉ)
+  ============================================================ -->
+  {data.sections.map((sec, idx) => {
+    const isCream = idx % 2 === 1;
+    const isReversed = idx % 2 === 1;
+    const hasBullets = Boolean(sec.bullets && sec.bullets.length > 0);
+    const hasOrdered = Boolean(sec.ordered && sec.ordered.length > 0);
+
+    return (
+      <section class={`srv-sec ${isCream ? 'srv-sec-cream' : 'srv-sec-white'}`}>
+        <div class="srv-container">
+          {hasBullets ? (
+            <div class="reveal">
+              <div class="sec-head-center">
+                <span class="section-eyebrow">— 0{idx + 1} · BÉNÉFICES CLÉS</span>
+                <h2 class="section-title">{sec.h2}</h2>
+                {sec.paragraphs.map((p) => <p class="sec-intro-p">{p}</p>)}
+              </div>
+              <div class="pro-cards-grid stagger-cards">
+                {sec.bullets!.map((b, bIdx) => (
+                  <div class="pro-card">
+                    <span class="pc-num">0{bIdx + 1}</span>
+                    <p>{b}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : hasOrdered ? (
+            <div class="reveal">
+              <div class="sec-head-center">
+                <span class="section-eyebrow">— 0{idx + 1} · DÉROULEMENT DU SOIN</span>
+                <h2 class="section-title">{sec.h2}</h2>
+                {sec.paragraphs.map((p) => <p class="sec-intro-p">{p}</p>)}
+              </div>
+              <div class="pro-cards-grid stagger-cards">
+                {sec.ordered!.map((step, sIdx) => (
+                  <div class="pro-card">
+                    <span class="pc-num">0{sIdx + 1}</span>
+                    <p>{step}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div class={`split-layout reveal ${isReversed ? 'reversed' : ''}`}>
+              <div class="split-text">
+                <span class="section-eyebrow">— 0{idx + 1} · DÉTAILS DU PROTOCOLE</span>
+                <h2 class="section-title">{sec.h2}</h2>
+                <div class="divider"></div>
+                {sec.paragraphs.map((p) => <p class="split-p">{p}</p>)}
+              </div>
+              <div class="split-visual parallax-img">
+                <div class="sv-frame img-wrap-zoom">
+                  <img src={data.heroImage} alt={sec.h2} />
+                  <div class="sv-overlay"></div>
+                </div>
+                <div class="floating-chip luxury-float" style="bottom: 18px; left: 18px;">
+                  {data.categoryName} · 100 % Femmes
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+    );
+  })}
+
+  <!-- ============================================================
+       5. SECTION TARIF & DIAGNOSTIC INBODY
+  ============================================================ -->
+  <section id="tarif-prestation" class="srv-sec srv-sec-cream">
+    <div class="srv-container">
+      <div class="pricing-inbody-grid reveal">
+        <div class="pricing-card-pro">
+          <span class="section-eyebrow">— TARIFS OFFICIELS</span>
+          <h2 class="section-title" style="font-size: 2rem;">Tarifs de la prestation</h2>
+          <div class="p-row">
+            <span>À la séance</span>
+            <strong>{data.priceSingle}</strong>
+          </div>
+          {data.pricePack && (
+            <div class="p-row">
+              <span>Formule avantageuse</span>
+              <strong class="highlight">{data.pricePack}</strong>
+            </div>
+          )}
+          {data.priceNote && <p class="price-note">{data.priceNote}</p>}
+          <a href="/tarifs" class="link-all">Voir toute la grille tarifaire →</a>
+        </div>
+
+        <div class="inbody-card-pro">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=85" alt="Diagnostic InBody INFRASLIM" />
+          <div class="icp-content">
+            <span class="inbody-badge">OFFERT &amp; SANS ENGAGEMENT</span>
+            <h3>Diagnostic InBody par Ghizlane</h3>
+            <p>{data.ctaText} Analyse complète de votre composition corporelle avant de démarrer.</p>
+            <a href={waLink} target="_blank" rel="noopener" class="btn-inbody-rdv">Prendre RDV →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. FAQ ACCORDÉON SECTION
+  ============================================================ -->
+  <section class="srv-sec srv-sec-white">
+    <div class="srv-container" style="max-width: 920px;">
+      <div class="sec-head-center reveal">
+        <span class="section-eyebrow">— QUESTIONS FRÉQUENTES</span>
+        <h2 class="section-title">Vos questions sur ce soin</h2>
+      </div>
+
+      <div class="faq-list reveal">
+        {data.faq.map((item, idx) => (
+          <div class={`faq-item ${idx === 0 ? 'open' : ''}`}>
+            <button type="button" class="faq-question">
+              <span class="faq-q-text">{item.q}</span>
+              <span class="faq-icon">
+                <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer">
+              <p>{item.a}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="related-links reveal">
+        <h4>À découvrir également</h4>
+        <div class="related-pills">
+          {data.related.map((r) => (
+            <a href={r.href} class="related-pill">{r.label}</a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7. SECTION RÉSERVATION & CONVERSION MAUVE LUXE
+  ============================================================ -->
+  <section id="reserver-prestation" class="srv-cta-band">
+    <div class="srv-container">
+      <div class="cta-split reveal">
+        <div class="cta-split-text">
+          <span class="section-eyebrow" style="color: rgba(255,255,255,0.85);">— PRENDRE RENDEZ-VOUS</span>
+          <h2 class="cta-title">Réserver : {data.h1}</h2>
+          <p class="cta-desc">{data.ctaText} Du lundi au samedi de 08h00 à 20h00 au 43 Rue Oum Rabiâ, Agdal, Rabat.</p>
+          <div class="cta-perks">
+            <span>✓ Réponse rapide sur WhatsApp</span>
+            <span>✓ Centre 100 % femmes</span>
+            <span>✓ Parking Kaïs à 3 min</span>
+          </div>
+          <a href={waLink} target="_blank" rel="noopener" class="btn-wa-direct-lg">
+            Écrire sur WhatsApp (06 15 10 98 98) →
+          </a>
+        </div>
+
+        <div class="cta-form-glass">
+          <h3>Demande de créneau</h3>
+          <form id="prestationRdvForm" class="sticky-rdv-form">
+            <input type="hidden" id="srv-name" value={data.h1} />
+            <div class="s-field">
+              <label for="srv-nom">Nom &amp; Prénom</label>
+              <input type="text" id="srv-nom" placeholder="Votre nom complet" required />
+            </div>
+            <div class="s-field">
+              <label for="srv-tel">Téléphone (WhatsApp)</label>
+              <input type="tel" id="srv-tel" placeholder="06 00 00 00 00" required />
+            </div>
+            <div class="s-field">
+              <label for="srv-slot">Moment préféré</label>
+              <select id="srv-slot">
+                <option value="Peu importe">Peu importe</option>
+                <option value="Matin (08h-12h)">Matin (08h-12h)</option>
+                <option value="Après-midi (12h-17h)">Après-midi (12h-17h)</option>
+                <option value="Fin de journée (17h-20h)">Fin de journée (17h-20h)</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-rdv-submit">Confirmer sur WhatsApp →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const form = document.getElementById('prestationRdvForm');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const srv = (document.getElementById('srv-name') as HTMLInputElement)?.value || '';
+    const nom = (document.getElementById('srv-nom') as HTMLInputElement)?.value || '';
+    const tel = (document.getElementById('srv-tel') as HTMLInputElement)?.value || '';
+    const slot = (document.getElementById('srv-slot') as HTMLSelectElement)?.value || '';
+    const msg = `Bonjour INFRASLIM,\nJe souhaite réserver : ${srv}\nNom : ${nom}\nTéléphone : ${tel}\nCréneau : ${slot}`;
+    window.open(`https://wa.me/212615109898?text=${encodeURIComponent(msg)}`, '_blank');
+  });
+
+  document.querySelectorAll('.faq-question').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      item?.classList.toggle('open');
+    });
+  });
+</script>
+
+<style>
+  .srv-hero { background: linear-gradient(135deg, #AF84AC 0%, #4A284B 100%); color: #FFFFFF; padding: 5.5rem 2rem 7.5rem; position: relative; overflow: hidden; text-align: center; }
+  .srv-hero-inner { max-width: 920px; margin: 0 auto; position: relative; z-index: 2; }
+  .breadcrumb { font-size: 0.78rem; color: rgba(255,255,255,0.75); margin-bottom: 1.25rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.88); text-decoration: none; }
+  .breadcrumb a:hover { color: #FFFFFF; text-decoration: underline; }
+  .hero-eyebrow { display: block; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: #DEC9DD; margin-bottom: 1rem; font-weight: 600; }
+  .hero-title { font-family: 'Josefin Sans', sans-serif; font-size: clamp(2.1rem, 4.5vw, 3.6rem); font-weight: 700; line-height: 1.15; margin-bottom: 1.25rem; color: #FFFFFF; }
+  .hero-desc { font-size: 1.02rem; color: rgba(255,255,255,0.92); max-width: 760px; margin: 0 auto 2.2rem; line-height: 1.75; font-weight: 300; }
+  .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .ht-btn-red { background: #BB2026; color: #FFFFFF !important; padding: 0.9rem 2rem; border-radius: 30px; font-size: 0.84rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: all 0.25s; box-shadow: 0 8px 22px rgba(187,32,38,0.35); }
+  .ht-btn-red:hover { background: #8f1a1f; transform: translateY(-2px); }
+  .ht-btn-white { background: rgba(255,255,255,0.16); color: #FFFFFF !important; border: 1.5px solid rgba(255,255,255,0.5); padding: 0.9rem 2rem; border-radius: 30px; font-size: 0.84rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; backdrop-filter: blur(6px); transition: all 0.25s; }
+  .ht-btn-white:hover { background: #FFFFFF; color: #4A284B !important; }
+
+  .floating-stats-bar { max-width: 1120px; margin: -3.2rem auto 0; padding: 0 1.5rem; position: relative; z-index: 10; }
+  .stats-card-white { background: #FFFFFF; border-radius: 14px; padding: 1.8rem 2rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; box-shadow: 0 18px 45px rgba(51,21,53,0.12); border: 1px solid rgba(175,132,172,0.22); text-align: center; }
+  .sc-item { border-right: 1px solid rgba(175,132,172,0.2); }
+  .sc-item:last-child { border-right: none; }
+  .sc-num { font-family: 'Josefin Sans', sans-serif; font-size: 1.65rem; font-weight: 700; color: #BB2026; line-height: 1.1; margin-bottom: 0.3rem; }
+  .sc-label { font-size: 0.78rem; color: #6B636B; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+
+  .srv-sec { padding: 5rem 2rem; }
+  .srv-sec-white { background: #FFFFFF; }
+  .srv-sec-cream { background: #F7F3F7; }
+  .srv-container { max-width: 1200px; margin: 0 auto; }
+
+  .sec-head-center { text-align: center; max-width: 780px; margin: 0 auto 3rem; }
+  .section-eyebrow { display: inline-block; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: #BB2026; font-weight: 700; margin-bottom: 0.65rem; }
+  .section-title { font-family: 'Josefin Sans', sans-serif; font-size: clamp(1.9rem, 3.5vw, 2.8rem); font-weight: 700; color: #2D2D2D; line-height: 1.2; margin-bottom: 0.9rem; }
+  .sec-intro-p { font-size: 0.98rem; color: #555; line-height: 1.75; }
+
+  .split-layout { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center; }
+  .split-layout.reversed .split-text { order: 2; }
+  .split-layout.reversed .split-visual { order: 1; }
+  .divider { width: 56px; height: 3px; background: #BB2026; margin: 1.1rem 0 1.5rem; }
+  .split-p { font-size: 0.98rem; color: #4A4A4A; line-height: 1.85; margin-bottom: 1.1rem; }
+
+  .split-visual { position: relative; height: 400px; }
+  .sv-frame { width: 100%; height: 100%; border-radius: 16px; overflow: hidden; box-shadow: 0 22px 50px rgba(51,21,53,0.16); position: relative; }
+  .sv-frame img { width: 100%; height: 100%; object-fit: cover; }
+  .sv-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(51,21,53,0.45) 100%); pointer-events: none; }
+
+  .pro-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .pro-card { background: #FFFFFF; border: 1px solid rgba(175,132,172,0.25); border-top: 4px solid #BB2026; border-radius: 14px; padding: 2rem; box-shadow: 0 10px 28px rgba(51,21,53,0.05); transition: transform 0.35s ease, box-shadow 0.35s ease; }
+  .pro-card:hover { transform: translateY(-6px); box-shadow: 0 20px 42px rgba(51,21,53,0.12); }
+  .pc-num { font-family: 'Josefin Sans', sans-serif; font-size: 1.35rem; font-weight: 700; color: #BB2026; background: #FAF7FA; width: 42px; height: 42px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(187,32,38,0.2); margin-bottom: 1rem; }
+  .pro-card p { font-size: 0.95rem; color: #333; line-height: 1.7; margin: 0; }
+
+  .pricing-inbody-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: stretch; }
+  .pricing-card-pro { background: #FFFFFF; border-radius: 16px; padding: 2.5rem; border: 1px solid rgba(175,132,172,0.25); box-shadow: 0 12px 32px rgba(51,21,53,0.06); display: flex; flex-direction: column; justify-content: center; }
+  .p-row { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 0.98rem; gap: 1rem; }
+  .p-row strong.highlight { color: #BB2026; font-size: 1.05rem; text-align: right; }
+  .price-note { font-size: 0.86rem; color: #6B636B; margin-top: 1rem; }
+  .link-all { display: inline-block; margin-top: 1rem; font-size: 0.86rem; font-weight: 700; color: #BB2026; text-decoration: none; }
+  .link-all:hover { text-decoration: underline; }
+
+  .inbody-card-pro { background: #FFFFFF; border-radius: 16px; border: 2px solid #BB2026; overflow: hidden; display: grid; grid-template-columns: 0.8fr 1.2fr; box-shadow: 0 14px 36px rgba(187,32,38,0.1); }
+  .inbody-card-pro img { width: 100%; height: 100%; object-fit: cover; min-height: 220px; }
+  .icp-content { padding: 2rem; display: flex; flex-direction: column; justify-content: center; }
+  .inbody-badge { align-self: flex-start; background: #BB2026; color: #FFFFFF; padding: 0.25rem 0.75rem; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; border-radius: 4px; margin-bottom: 0.8rem; }
+  .icp-content h3 { font-family: 'Josefin Sans', sans-serif; font-size: 1.45rem; font-weight: 700; color: #2D2D2D; margin-bottom: 0.6rem; }
+  .icp-content p { font-size: 0.9rem; color: #555; line-height: 1.65; margin-bottom: 1.25rem; }
+  .btn-inbody-rdv { align-self: flex-start; background: #BB2026; color: #FFFFFF !important; padding: 0.75rem 1.5rem; border-radius: 30px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: all 0.25s; }
+  .btn-inbody-rdv:hover { background: #8f1a1f; transform: translateY(-2px); }
+
+  .related-links { margin-top: 3.5rem; text-align: center; }
+  .related-links h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.14em; color: #6B636B; margin-bottom: 1rem; }
+  .related-pills { display: flex; flex-wrap: wrap; gap: 0.65rem; justify-content: center; }
+  .related-pill { background: #F7F3F7; border: 1px solid rgba(175,132,172,0.3); color: #331535; padding: 0.5rem 1.15rem; border-radius: 25px; font-size: 0.84rem; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+  .related-pill:hover { background: #BB2026; color: #FFFFFF; border-color: #BB2026; }
+
+  .srv-cta-band { background: linear-gradient(135deg, #AF84AC 0%, #4A284B 100%); color: #FFFFFF; padding: 5.5rem 2rem; }
+  .cta-split { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3.5rem; align-items: center; }
+  .cta-title { font-family: 'Josefin Sans', sans-serif; font-size: clamp(2rem, 3.8vw, 3rem); font-weight: 700; color: #FFFFFF; margin-bottom: 1rem; line-height: 1.18; }
+  .cta-desc { font-size: 1rem; color: rgba(255,255,255,0.92); line-height: 1.75; margin-bottom: 1.5rem; }
+  .cta-perks { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; font-size: 0.86rem; font-weight: 600; color: #FFFFFF; }
+  .btn-wa-direct-lg { display: inline-block; background: #25D366; color: #FFFFFF !important; padding: 1rem 2.2rem; border-radius: 40px; font-size: 0.9rem; font-weight: 700; text-decoration: none; box-shadow: 0 10px 25px rgba(0,0,0,0.22); transition: all 0.25s; }
+  .btn-wa-direct-lg:hover { background: #1eb954; transform: translateY(-2px); }
+
+  .cta-form-glass { background: #FFFFFF; border-radius: 16px; padding: 2.2rem; color: #2D2D2D; box-shadow: 0 22px 50px rgba(0,0,0,0.22); border-top: 4px solid #BB2026; }
+  .cta-form-glass h3 { font-family: 'Josefin Sans', sans-serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.25rem; color: #2D2D2D; }
+  .sticky-rdv-form { display: flex; flex-direction: column; gap: 0.95rem; }
+  .s-field label { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #4A284B; margin-bottom: 0.35rem; }
+  .s-field input, .s-field select { width: 100%; padding: 0.78rem 0.95rem; border: 1px solid rgba(175,132,172,0.35); border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 0.88rem; color: #2D2D2D; background: #FAF7FA; box-sizing: border-box; }
+  .s-field input:focus, .s-field select:focus { outline: none; border-color: #BB2026; background: #FFFFFF; }
+  .btn-rdv-submit { background: #BB2026; color: #FFFFFF; border: none; border-radius: 30px; padding: 0.95rem 1.4rem; font-size: 0.84rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 0.25s, transform 0.2s; margin-top: 0.35rem; }
+  .btn-rdv-submit:hover { background: #8f1a1f; transform: translateY(-2px); }
+
+  @media (max-width: 960px) {
+    .stats-card-white { grid-template-columns: repeat(2, 1fr); }
+    .sc-item { border-right: none; }
+    .split-layout, .pricing-inbody-grid, .cta-split { grid-template-columns: 1fr; gap: 2.2rem; }
+    .split-layout.reversed .split-text { order: 1; }
+    .split-layout.reversed .split-visual { order: 2; }
+    .split-visual { height: 320px; }
+  }
+  @media (max-width: 600px) {
+    .srv-hero { padding: 4rem 1.25rem 5.5rem; }
+    .srv-sec { padding: 3.5rem 1.25rem; }
+    .inbody-card-pro { grid-template-columns: 1fr; }
+    .pricing-card-pro, .cta-form-glass { padding: 1.6rem; }
+  }
+  @media (max-width: 480px) {
+    .stats-card-white { padding: 1.25rem 1rem; gap: 1rem; }
+    .sc-num { font-size: 1.4rem; }
+    .split-visual { height: 260px; }
+    .floating-chip { font-size: 0.7rem; padding: 0.4rem 0.85rem; bottom: 12px !important; left: 12px !important; }
+  }
+</style>

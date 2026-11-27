@@ -6,19 +6,21 @@ const settings = await getGlobalSettings();
 const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\D/g, '')}`;
 ---
 
-<Layout title="Blog & Conseils Beauté | INFRASLIM — Agdal, Rabat" currentPath="/blog">
+<Layout title="Blog minceur et beauté à Rabat | INFRASLIM" description="Conseils minceur, sport, soins du visage et bien-être, par le centre INFRASLIM à Agdal, Rabat. Articles écrits par notre équipe." currentPath="/blog">
 
   <!-- ============================================================
        HERO BLOG
   ============================================================ -->
   <section class="blog-hero">
+    <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1920&q=85" alt="Le Journal INFRASLIM Beauté et Bien-Être" class="hero-bg-photo" />
+    <div class="hero-photo-overlay"></div>
     <div class="blog-hero-inner">
       <div class="breadcrumb">
         <a href="/">Accueil</a> &nbsp;/&nbsp; <span>Blog</span>
       </div>
-      <div class="hero-eyebrow">— MAGAZINE · CONSEILS · BIEN-ÊTRE</div>
-      <h1 class="hero-title">Le Journal <em>INFRASLIM</em></h1>
-      <p class="hero-desc">Astuces minceur, secrets de soins visage, technologies infrarouges et rituels beauté pensés pour les femmes à Rabat.</p>
+      <div class="hero-eyebrow">— CONSEILS · MINCEUR · BEAUTÉ · BIEN-ÊTRE</div>
+      <h1 class="hero-title">Conseils minceur, beauté et bien-être à <em>Rabat</em></h1>
+      <p class="hero-desc">Nos conseils pour comprendre les soins, choisir ce qui vous convient et prendre soin de vous entre deux séances.</p>
     </div>
   </section>
 
@@ -30,11 +32,11 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
       
       <!-- Boutons de filtre -->
       <div class="blog-filters">
-        <button class="filter-btn active" data-cat="all">Tous les articles</button>
-        <button class="filter-btn" data-cat="sport">Sport Infrarouge</button>
+        <button class="filter-btn active" data-cat="all">Tous</button>
         <button class="filter-btn" data-cat="minceur">Amincissement</button>
-        <button class="filter-btn" data-cat="visage">Soins Visage</button>
-        <button class="filter-btn" data-cat="hammam">Hammam &amp; Laser</button>
+        <button class="filter-btn" data-cat="sport">Sport</button>
+        <button class="filter-btn" data-cat="visage">Visage</button>
+        <button class="filter-btn" data-cat="hammam">Bien-être</button>
       </div>
 
       <!-- Grille des 6 articles officiels -->
@@ -148,7 +150,7 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
       paragraphs: [
         "L'InfraBike associe le pédalage couché à la chaleur douce des lampes infrarouges et à l'effet sous vide. Pendant 30 minutes, votre corps travaille en profondeur tout en préservant vos articulations.",
         "La chaleur infrarouge pénètre les tissus adipeux, stimule la microcirculation et accélère la sudation, ce qui permet d'optimiser la dépense énergétique et de lisser l'aspect peau d'orange.",
-        "Chez INFRASLIM Agdal, nos coachs adaptent l'intensité à votre niveau dès la première séance. Disponible à l'unité (100 MAD) ou en pack 10 séances (800 MAD)."
+        "Chez INFRASLIM Agdal, nos coachs adaptent l'intensité à votre niveau dès la première séance. Disponible à l'unité (300 DH) ou en pack 10 séances (1 500 DH)."
       ]
     },
     {
@@ -239,12 +241,14 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
   }
 
   .blog-hero {
-    background: linear-gradient(135deg, #AF84AC 0%, #91648e 100%);
+    background: linear-gradient(135deg, #AF84AC 0%, #4A284B 100%);
     color: #FFFFFF;
-    padding: 4.5rem 2rem 5.5rem;
+    padding: 5rem 2rem 6rem;
     text-align: center;
+    position: relative;
+    overflow: hidden;
   }
-  .blog-hero-inner { max-width: 820px; margin: 0 auto; }
+  .blog-hero-inner { max-width: 820px; margin: 0 auto; position: relative; z-index: 2; }
   .breadcrumb {
     font-size: 0.75rem;
     letter-spacing: 0.08em;

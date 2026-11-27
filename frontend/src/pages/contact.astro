@@ -6,19 +6,22 @@ const settings = await getGlobalSettings();
 const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\D/g, '')}`;
 ---
 
-<Layout title="Contact & Rendez-vous | INFRASLIM — Centre Beauté Agdal Rabat" currentPath="/contact">
+<Layout title="Contact et accès, Agdal Rabat | INFRASLIM" description="Contactez INFRASLIM à Agdal, Rabat. WhatsApp, téléphone, formulaire. Du lundi au samedi, 08h00 à 20h00, sur rendez-vous." currentPath="/contact">
 
   <!-- ============================================================
        HERO CONTACT (STYLE CLAIR / MAUVE DÉGRADÉ)
   ============================================================ -->
   <section class="contact-hero">
+    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=85" alt="Contact & Rendez-vous INFRASLIM Agdal" class="hero-bg-photo" />
+    <div class="hero-photo-overlay"></div>
+    <div class="hero-bg-overlay"></div>
     <div class="contact-hero-inner">
       <div class="breadcrumb">
         <a href="/">Accueil</a> &nbsp;/&nbsp; Contact
       </div>
-      <div class="hero-eyebrow">— LUN–SAM 08H–20H · AGDAL, RABAT</div>
-      <h1 class="hero-title">Prendre <em>Rendez-vous</em></h1>
-      <p class="hero-desc">Notre équipe est à votre écoute du lundi au samedi de 08h00 à 20h00, exclusivement sur rendez-vous. Contactez-nous par WhatsApp pour une prise en charge rapide.</p>
+      <div class="hero-eyebrow">— LUN–SAM 08H–20H · SUR RENDEZ-VOUS</div>
+      <h1 class="hero-title">Centre INFRASLIM à <em>Agdal, Rabat</em></h1>
+      <p class="hero-desc">Toutes nos prestations se font sur rendez-vous. Écrivez-nous sur WhatsApp au 06 15 10 98 98, nous vous proposons un créneau dans la journée.</p>
     </div>
   </section>
 
@@ -27,53 +30,86 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
   ============================================================ -->
   <div class="marquee-strip">
     <div class="marquee-track">
-      <div class="marquee-item"><span>Sur Rendez-vous</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Sur Rendez-vous Uniquement</span><span class="sep"></span></div>
       <div class="marquee-item"><span>WhatsApp : 06 15 10 98 98</span><span class="sep"></span></div>
       <div class="marquee-item"><span>Lun–Sam 08h–20h</span><span class="sep"></span></div>
       <div class="marquee-item"><span>Agdal · Rabat</span><span class="sep"></span></div>
       <div class="marquee-item"><span>Centre 100% Féminin</span><span class="sep"></span></div>
-      <div class="marquee-item"><span>Réponse Rapide</span><span class="sep"></span></div>
-      <div class="marquee-item"><span>Sur Rendez-vous</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Réponse Rapide Garantie</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Sur Rendez-vous Uniquement</span><span class="sep"></span></div>
       <div class="marquee-item"><span>WhatsApp : 06 15 10 98 98</span><span class="sep"></span></div>
       <div class="marquee-item"><span>Lun–Sam 08h–20h</span><span class="sep"></span></div>
       <div class="marquee-item"><span>Agdal · Rabat</span><span class="sep"></span></div>
       <div class="marquee-item"><span>Centre 100% Féminin</span><span class="sep"></span></div>
-      <div class="marquee-item"><span>Réponse Rapide</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Réponse Rapide Garantie</span><span class="sep"></span></div>
     </div>
   </div>
+
+  <!-- ============================================================
+       BIENVENUE AU CENTRE AGDAL (VITRINE PHOTO)
+  ============================================================ -->
+  <section class="section" style="padding-bottom: 2rem;">
+    <div class="container">
+      <div class="welcome-lounge-card reveal">
+        <div class="wlc-photo">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=85" alt="Accueil & Lounge INFRASLIM Agdal" />
+          <div class="wlc-overlay"></div>
+          <div class="wlc-badge">
+            Espace d'Accueil Privatisé · Agdal Rabat
+          </div>
+        </div>
+        <div class="wlc-content">
+          <span class="section-label">— UN ACCUEIL SUR-MESURE</span>
+          <h2 class="wlc-title">Un havre de paix dédié aux femmes</h2>
+          <p class="wlc-desc">Dès que vous franchissez nos portes au 43 Rue Oum Rabiâ, vous pénétrez dans un environnement calme, lumineux et bienveillant. Notre salon d'accueil a été pensé pour vous offrir confort, tisanes bienfaisantes et écoute attentive avant vos soins.</p>
+          <div class="wlc-features">
+            <div class="wf-item">✓ Accueil chaleureux sans attente</div>
+            <div class="wf-item">✓ Parking public Kaïs à 2 min à pied</div>
+            <div class="wf-item">✓ Équipe féminine dévouée</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ============================================================
        CARTES CONTACT (3 MODES)
   ============================================================ -->
   <section class="section">
     <div class="container">
-      <div class="reveal" style="margin-bottom:2.5rem; text-align:center;">
-        <span class="section-label">Prendre contact</span>
+      <div class="reveal" style="margin-bottom:3rem; text-align:center;">
+        <span class="section-label">— MODES DE PRISE DE CONTACT</span>
         <h2 class="section-title">Comment nous joindre</h2>
-        <p class="section-text" style="margin:0 auto;">Choisissez le mode de contact qui vous convient le mieux. La prise de rendez-vous s'effectue simplement par WhatsApp ou téléphone.</p>
+        <p class="section-text" style="margin:0 auto;">Choisissez le canal qui vous convient le mieux. La prise de rendez-vous s'effectue simplement et rapidement par WhatsApp ou téléphone.</p>
       </div>
 
       <div class="contact-cards reveal">
         <div class="cc">
-          <div class="cc-icon">💬</div>
-          <div class="cc-title">WhatsApp</div>
-          <p class="cc-desc">La façon la plus rapide et privilégiée de nous joindre. Réponse garantie dans la journée.</p>
+          <div class="cc-icon">
+            <svg class="h-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <div class="cc-title">WhatsApp Direct</div>
+          <p class="cc-desc">La façon la plus rapide et privilégiée de nous joindre. Réponse garantie et réservation immédiate.</p>
           <div class="cc-info">06 15 10 98 98</div>
           <a href={`${waBase}?text=Bonjour%20INFRASLIM%2C%20je%20souhaite%20prendre%20rendez-vous.`} target="_blank" rel="noopener" class="cc-btn wa">Écrire sur WhatsApp</a>
         </div>
         <div class="cc">
-          <div class="cc-icon">📞</div>
-          <div class="cc-title">Téléphone</div>
-          <p class="cc-desc">Appelez directement nos praticiennes pendant nos horaires d'ouverture.</p>
+          <div class="cc-icon">
+            <svg class="h-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="cc-title">Téléphone Direct</div>
+          <p class="cc-desc">Appelez directement nos praticiennes pour échanger de vive voix pendant nos horaires d'ouverture.</p>
           <div class="cc-info">06 15 10 98 98</div>
           <a href="tel:+212615109898" class="cc-btn">Appeler maintenant</a>
         </div>
         <div class="cc">
-          <div class="cc-icon">📍</div>
-          <div class="cc-title">Adresse</div>
-          <p class="cc-desc">Venez nous rendre visite dans notre écrin bienveillant à Agdal, Rabat.</p>
+          <div class="cc-icon">
+            <svg class="h-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="cc-title">Notre Adresse</div>
+          <p class="cc-desc">Venez nous rendre visite dans notre écrin au cœur d'Agdal, à 240 m du parking Kaïs.</p>
           <div class="cc-info">43 Rue Oum Rabiâ, Appt. N°2, Agdal</div>
-          <a href="https://maps.google.com/?q=43+Rue+Oum+Rabia,+Agdal,+Rabat,+Maroc" target="_blank" rel="noopener" class="cc-btn">Voir sur la carte</a>
+          <a href="https://maps.google.com/?q=43+Rue+Oum+Rabia,+Agdal,+Rabat,+Maroc" target="_blank" rel="noopener" class="cc-btn">Itinéraire Google Maps</a>
         </div>
       </div>
     </div>
@@ -94,36 +130,36 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
           <div class="hour-row"><span class="hour-day">Jeudi</span><span class="hour-time">08h00 – 20h00</span></div>
           <div class="hour-row"><span class="hour-day">Vendredi</span><span class="hour-time">08h00 – 20h00</span></div>
           <div class="hour-row"><span class="hour-day">Samedi</span><span class="hour-time">08h00 – 20h00</span></div>
-          <div class="hour-row closed"><span class="hour-day">Dimanche</span><span class="hour-time">Fermé</span></div>
+          <div class="hour-row closed"><span class="hour-day">Dimanche</span><span class="hour-time">Fermé (Repos)</span></div>
         </div>
 
         <!-- Informations pratiques -->
         <div class="hours-info">
           <div class="hi-title">Informations pratiques</div>
           <div class="hi-item">
-            <div class="hi-icon">📅</div>
+            <div class="hi-icon"><svg class="h-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
             <div>
-              <div class="hi-label">Réservation</div>
-              <div class="hi-value">Sur rendez-vous uniquement, par WhatsApp ou téléphone. Accueil personnalisé sans attente.</div>
+              <div class="hi-label">Réservation Obligatoire</div>
+              <div class="hi-value">Sur rendez-vous uniquement, par WhatsApp ou appel direct. Accueil personnalisé sans salle d'attente encombrée.</div>
             </div>
           </div>
           <div class="hi-item">
-            <div class="hi-icon">🏠</div>
+            <div class="hi-icon"><svg class="h-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="7" rx="2"/><path d="M5 11l2-5h10l2 5"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div>
             <div>
-              <div class="hi-label">Accès &amp; Parking</div>
-              <div class="hi-value">43 Rue Oum Rabiâ, Appt. N°2, Agdal, Rabat. Parking public Kaïs accessible à 240m (2 min à pied).</div>
+              <div class="hi-label">Accès &amp; Stationnement</div>
+              <div class="hi-value">43 Rue Oum Rabiâ, Appt. N°2, Agdal, Rabat. Parking public Kaïs accessible à 240 m (2 minutes à pied).</div>
             </div>
           </div>
           <div class="hi-item">
-            <div class="hi-icon">🔒</div>
+            <div class="hi-icon"><svg class="h-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
             <div>
-              <div class="hi-label">Confidentialité &amp; Pudeur</div>
+              <div class="hi-label">Intimité &amp; Pudeur Garantie</div>
               <div class="hi-value">Espace 100% féminin. Seul le personnel féminin qualifié est présent dans l'établissement.</div>
             </div>
           </div>
           <div class="info-box">
-            <div class="ib-icon">ℹ️</div>
-            <div class="ib-text"><strong>INFRASLIM est un centre exclusivement féminin.</strong> Votre intimité, votre confort et votre bien-être sont au cœur de nos engagements.</div>
+            <div class="ib-icon"><svg class="h-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+            <div class="ib-text"><strong>INFRASLIM est un centre exclusivement féminin.</strong> Votre sérénité, votre confort et l'excellence de vos soins sont nos priorités absolues.</div>
           </div>
         </div>
       </div>
@@ -134,11 +170,11 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
        FORMULAIRE DE CONTACT AVEC REDIRECTION WHATSAPP
   ============================================================ -->
   <section class="section" style="background:#FFFFFF;">
-    <div class="container" style="max-width:860px;">
+    <div class="container" style="max-width:880px;">
       <div class="in-form-card reveal">
-        <div class="find-us-eyebrow">— FORMULAIRE —</div>
-        <h3>Écrivez-nous</h3>
-        <p class="in-form-sub">Laissez-nous un message, notre équipe vous rappelle ou vous répond par WhatsApp.</p>
+        <div class="find-us-eyebrow">— FORMULAIRE DE CONTACT PRIVILÉGIÉ —</div>
+        <h3>Transmettez-nous votre demande</h3>
+        <p class="in-form-sub">Laissez-nous vos coordonnées, notre équipe vous rappelle ou vous transmet toutes les informations nécessaires par WhatsApp.</p>
         
         <form id="pageContactForm">
           <div class="in-form-row">
@@ -147,29 +183,29 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
               <input type="text" id="pc-name" name="name" placeholder="Votre nom et prénom" required />
             </div>
             <div class="in-field">
-              <label for="pc-phone">Téléphone (WhatsApp) *</label>
-              <input type="tel" id="pc-phone" name="phone" placeholder="06 00 00 00 00" required />
+              <label for="pc-phone">Numéro WhatsApp *</label>
+              <input type="tel" id="pc-phone" name="phone" placeholder="06 15 10 98 98" required />
             </div>
           </div>
           <div class="in-field">
-            <label for="pc-email">E-mail</label>
-            <input type="email" id="pc-email" name="email" placeholder="exemple@email.com" />
+            <label for="pc-email">Adresse e-mail (optionnelle)</label>
+            <input type="email" id="pc-email" name="email" placeholder="votre.email@domaine.com" />
           </div>
           <div class="in-form-row">
             <div class="in-field">
-              <label for="pc-service">Votre demande *</label>
+              <label for="pc-service">Pôle ou soin souhaité *</label>
               <select id="pc-service" name="service" required>
                 <option value="Diagnostic InBody offert">Diagnostic InBody offert (Gratuit)</option>
                 <option value="Sport Nouvelle Génération">Sport Nouvelle Génération (InfraBike/Tapis)</option>
                 <option value="Soins Amincissants">Soins Amincissants (VelaShape/Drainage)</option>
                 <option value="Soins du Visage">Soins du Visage (Hydrafacial/Kobido)</option>
                 <option value="Épilation & Laser">Épilation &amp; Laser Diode</option>
-                <option value="Hammam Traditionnel">Hammam Traditionnel</option>
-                <option value="Tarifs & Packs">Renseignements Tarifs &amp; Packs</option>
+                <option value="Hammam Traditionnel">Hammam Traditionnel Marocain</option>
+                <option value="Tarifs & Packs 10 séances">Renseignements Tarifs &amp; Packs 10 séances</option>
               </select>
             </div>
             <div class="in-field">
-              <label for="pc-time">Moment préféré</label>
+              <label for="pc-time">Créneau préféré</label>
               <select id="pc-time" name="time">
                 <option value="Peu importe">Peu importe</option>
                 <option value="Matin (08h – 12h)">Matin (08h – 12h)</option>
@@ -179,14 +215,14 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
             </div>
           </div>
           <div class="in-field">
-            <label for="pc-msg">Message ou précision</label>
-            <textarea id="pc-msg" name="message" rows="3" placeholder="Précisez vos objectifs ou vos disponibilités..."></textarea>
+            <label for="pc-msg">Message ou précision particulière</label>
+            <textarea id="pc-msg" name="message" rows="3" placeholder="Indiquez vos objectifs ou questions particulières..."></textarea>
           </div>
           <label class="in-checkbox">
             <input type="checkbox" id="pc-consent" required checked />
             <span>J'accepte d'être recontactée par l'équipe INFRASLIM au sujet de ma demande.</span>
           </label>
-          <button type="submit" class="in-submit-btn">Envoyer ma demande</button>
+          <button type="submit" class="in-submit-btn">Envoyer ma demande par WhatsApp →</button>
           <div class="in-form-feedback" id="pageFormFeedback"></div>
         </form>
       </div>
@@ -198,9 +234,9 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
   ============================================================ -->
   <section class="section section-cream">
     <div class="container">
-      <div class="find-us-eyebrow reveal" style="text-align:center;">— NOUS TROUVER —</div>
-      <h2 class="section-title reveal" style="margin-bottom:2rem;text-align:center;">Centre INFRASLIM à Agdal, Rabat</h2>
-      <div class="in-map-frame reveal" style="height:380px;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06);">
+      <div class="find-us-eyebrow reveal" style="text-align:center;">— SITUATION GÉOGRAPHIQUE —</div>
+      <h2 class="section-title reveal" style="margin-bottom:2.5rem;text-align:center;">Centre INFRASLIM à Agdal, Rabat</h2>
+      <div class="in-map-frame reveal">
         <iframe
           src="https://www.google.com/maps?q=43+Rue+Oum+Rabia,+Agdal,+Rabat,+Maroc&output=embed"
           width="100%"
@@ -220,8 +256,8 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
   <div class="wa-big">
     <div class="container" style="text-align:center;">
       <span class="section-label" style="color:rgba(255,255,255,0.85)">Le moyen le plus rapide</span>
-      <h2 class="wa-title">Prenez rendez-vous sur WhatsApp</h2>
-      <p class="wa-text">Envoyez-nous un message directement. Notre équipe vous confirme votre créneau dans les plus brefs délais, du lundi au samedi de 08h00 à 20h00.</p>
+      <h2 class="wa-title">Prenez rendez-vous directement sur WhatsApp</h2>
+      <p class="wa-text">Envoyez-nous un message. Notre équipe vous confirme votre rendez-vous dans les plus brefs délais, du lundi au samedi de 08h00 à 20h00.</p>
       <a href={`${waBase}?text=Bonjour%20INFRASLIM%2C%20je%20souhaite%20prendre%20rendez-vous.%20Pourriez-vous%20m%27indiquer%20vos%20disponibilit%C3%A9s%20%3F`} target="_blank" rel="noopener" class="wa-btn-big">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         06 15 10 98 98 — Écrire sur WhatsApp
@@ -245,12 +281,14 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
       const fb = document.getElementById('pageFormFeedback');
       
       if (fb) {
-        fb.innerHTML = 'Merci <strong>' + name + '</strong> ! Votre demande (' + service + ') a bien été enregistrée. Notre équipe vous recontacte au <strong>' + phone + '</strong>.';
+        fb.innerHTML = 'Merci <strong>' + name + '</strong> ! Votre demande (' + service + ') a bien été enregistrée. Redirection vers WhatsApp en cours...';
         fb.classList.add('show');
       }
 
       const waText = encodeURIComponent('Bonjour INFRASLIM, je suis ' + name + ' (' + phone + '). Demande : ' + service + ' | Créneau souhaité : ' + time + (msg ? ' | Précision : ' + msg : ''));
-      window.open('https://wa.me/212615109898?text=' + waText, '_blank', 'noopener');
+      setTimeout(() => {
+        window.open('https://wa.me/212615109898?text=' + waText, '_blank', 'noopener');
+      }, 700);
       (pageForm as HTMLFormElement).reset();
     });
   }
@@ -269,43 +307,53 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
   }
 
   .contact-hero {
-    background: linear-gradient(135deg, #AF84AC 0%, #91648e 100%);
+    background: linear-gradient(135deg, #AF84AC 0%, #4A284B 100%);
     color: #FFFFFF;
-    padding: 4.5rem 2rem 5.5rem;
+    padding: 5rem 2rem 6.5rem;
     text-align: center;
+    position: relative;
+    overflow: hidden;
   }
-  .contact-hero-inner { max-width: 820px; margin: 0 auto; }
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(255,255,255,0.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .contact-hero-inner { max-width: 850px; margin: 0 auto; position: relative; z-index: 2; }
   .breadcrumb {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     letter-spacing: 0.08em;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255,255,255,0.75);
     margin-bottom: 1.5rem;
   }
-  .breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: underline; }
   .breadcrumb a:hover { color: #fff; }
   .hero-eyebrow {
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: #DEC9DD;
+    color: var(--mauve-light);
     margin-bottom: 1rem;
     display: block;
-    font-weight: 600;
+    font-weight: 700;
   }
   .hero-title {
     font-family: 'Josefin Sans', sans-serif;
     font-size: clamp(2.3rem, 5vw, 3.8rem);
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.15;
     margin-bottom: 1.25rem;
+    color: #FFFFFF;
   }
   .hero-title em { font-style: italic; color: #FFFFFF; }
   .hero-desc {
-    font-size: 1.02rem;
-    color: rgba(255,255,255,0.9);
-    line-height: 1.75;
-    max-width: 680px;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.92);
+    line-height: 1.8;
+    max-width: 720px;
     margin: 0 auto;
+    font-weight: 300;
   }
 
   .section { padding: 5rem 2rem; background: #FFFFFF; }
@@ -313,282 +361,380 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
   .container { max-width: 1100px; margin: 0 auto; }
 
   .section-label, .find-us-eyebrow {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--red);
     margin-bottom: 0.75rem;
     display: block;
-    font-weight: 600;
+    font-weight: 700;
   }
   .section-title {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: clamp(1.9rem, 3.8vw, 3rem);
-    font-weight: 400;
+    font-size: clamp(2rem, 3.8vw, 3rem);
+    font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1.25rem;
     color: #2D2D2D;
   }
   .section-text {
-    font-size: 0.95rem;
+    font-size: 0.96rem;
     line-height: 1.85;
     color: #555555;
     max-width: 700px;
+  }
+
+  /* WELCOME LOUNGE CARD */
+  .welcome-lounge-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    border: 1px solid rgba(175,132,172,0.22);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    box-shadow: 0 16px 45px rgba(51,21,53,0.08);
+  }
+  .wlc-photo {
+    position: relative;
+    min-height: 380px;
+  }
+  .wlc-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .wlc-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(51,21,53,0.4) 100%);
+  }
+  .wlc-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #331535;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  }
+  .wlc-badge span { color: var(--red); margin-right: 0.4rem; }
+  .wlc-content {
+    padding: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .wlc-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #2D2D2D;
+    margin-bottom: 1rem;
+    line-height: 1.25;
+  }
+  .wlc-desc {
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.8;
+    margin-bottom: 1.8rem;
+  }
+  .wlc-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .wf-item {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #331535;
   }
 
   /* Contact Cards */
   .contact-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.8rem;
+    gap: 2rem;
     margin-top: 2rem;
   }
   .cc {
     background: #FFFFFF;
     border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 2.5rem;
+    border-radius: 14px;
+    padding: 2.8rem 2.2rem;
     text-align: center;
     position: relative;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s, border-color 0.4s;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
   }
   .cc:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 40px rgba(175, 132, 172, 0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(175, 132, 172, 0.2);
     border-color: var(--red);
   }
-  .cc-icon { font-size: 2.5rem; margin-bottom: 1.25rem; }
+  .cc-icon { font-size: 2.8rem; margin-bottom: 1.25rem; }
   .cc-title {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 0.5rem;
+    font-size: 1.55rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
     color: #2D2D2D;
   }
   .cc-desc {
-    font-size: 0.88rem;
+    font-size: 0.9rem;
     color: var(--muted);
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
     line-height: 1.6;
+    flex: 1;
   }
   .cc-info {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 1.75rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 1.8rem;
     color: var(--red);
   }
   .cc-btn {
     display: inline-block;
-    padding: 0.8rem 1.8rem;
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
+    padding: 0.9rem 1.8rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-weight: 600;
-    border-radius: 4px;
+    font-weight: 700;
+    border-radius: 30px;
     text-decoration: none;
     transition: all 0.3s;
-    border: 1px solid var(--red);
+    border: 2px solid var(--red);
     color: var(--red);
   }
-  .cc-btn:hover { background: var(--red); color: #FFFFFF; }
+  .cc-btn:hover { background: var(--red); color: #FFFFFF !important; transform: translateY(-2px); }
   .cc-btn.wa {
     background: #25D366;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     border-color: #25D366;
+    box-shadow: 0 6px 18px rgba(37,211,102,0.3);
   }
   .cc-btn.wa:hover {
-    background: #1db954;
-    border-color: #1db954;
+    background: #1eb954;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(37,211,102,0.4);
   }
 
   /* Hours Section */
   .hours-section {
     display: grid;
-    grid-template-columns: 1fr 1.1fr;
+    grid-template-columns: 1fr 1.15fr;
     gap: 4rem;
-    align-items: start;
+    align-items: center;
   }
   .hours-visual {
     background: #FFFFFF;
-    padding: 3rem;
-    border-radius: 12px;
     border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2.5rem;
     box-shadow: 0 8px 30px rgba(0,0,0,0.04);
   }
   .hv-title {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.45rem;
+    font-weight: 700;
     color: #2D2D2D;
-    margin-bottom: 2rem;
-    border-left: 4px solid var(--red);
-    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--red);
+    padding-bottom: 0.8rem;
   }
   .hour-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0.85rem 0;
-    border-bottom: 1px solid #F0E8F0;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    font-size: 0.94rem;
   }
-  .hour-row:last-child { border-bottom: none; }
-  .hour-day { font-size: 0.92rem; color: #555; }
-  .hour-time { font-size: 0.92rem; color: #2D2D2D; font-weight: 600; }
-  .hour-row.closed .hour-time { color: var(--red); font-weight: 700; }
+  .hour-day { font-weight: 600; color: #331535; }
+  .hour-time { color: #555555; }
+  .hour-row.closed { color: var(--red); font-weight: 700; }
+  .hour-row.closed .hour-day, .hour-row.closed .hour-time { color: var(--red); }
 
-  .hours-info { padding: 0.5rem 0; }
-  .hi-title {
+  .hours-info .hi-title {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 400;
-    margin-bottom: 1.5rem;
+    font-size: 1.45rem;
+    font-weight: 700;
     color: #2D2D2D;
+    margin-bottom: 1.5rem;
   }
   .hi-item {
     display: flex;
     gap: 1.25rem;
-    align-items: flex-start;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.6rem;
   }
-  .hi-item:last-child { border-bottom: none; margin-bottom: 0; }
-  .hi-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .hi-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+  }
   .hi-label {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--red);
     font-weight: 700;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.25rem;
   }
   .hi-value {
     font-size: 0.92rem;
-    color: #444;
+    color: #555555;
     line-height: 1.65;
   }
-
   .info-box {
-    background: #F7F3F7;
+    background: #FFFFFF;
     border-left: 4px solid var(--red);
-    padding: 1.5rem;
     border-radius: 0 8px 8px 0;
+    padding: 1.2rem 1.6rem;
     display: flex;
     gap: 1rem;
-    align-items: flex-start;
-    margin-top: 1.5rem;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    margin-top: 2rem;
   }
-  .ib-icon { font-size: 1.25rem; flex-shrink: 0; }
-  .ib-text { font-size: 0.88rem; color: #555; line-height: 1.7; }
-  .ib-text strong { color: #2D2D2D; }
+  .ib-icon { color: var(--red); font-size: 1.2rem; }
+  .ib-text { font-size: 0.88rem; color: #4A284B; line-height: 1.6; }
 
-  /* Form Card */
+  /* Form */
   .in-form-card {
-    background: #F7F3F7;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 3rem;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.03);
+    background: #FAF7FA;
+    border: 1px solid rgba(175,132,172,0.25);
+    border-radius: 16px;
+    padding: 3.5rem;
+    box-shadow: 0 16px 45px rgba(51,21,53,0.06);
   }
   .in-form-card h3 {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 2rem;
+    font-size: 2.1rem;
+    font-weight: 700;
     color: #2D2D2D;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
   }
   .in-form-sub {
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     color: var(--muted);
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
   }
   .in-form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
+    gap: 1.5rem;
   }
   .in-field {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
   }
   .in-field label {
     display: block;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #444;
-    margin-bottom: 0.4rem;
+    color: #4A284B;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
   }
   .in-field input, .in-field select, .in-field textarea {
     width: 100%;
-    padding: 0.85rem 1rem;
-    border: 1px solid rgba(0,0,0,0.12);
-    border-radius: 4px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.92rem;
+    padding: 0.95rem 1.2rem;
+    border: 1px solid rgba(175,132,172,0.35);
+    border-radius: 8px;
     background: #FFFFFF;
+    font-family: inherit;
+    font-size: 0.94rem;
     color: #2D2D2D;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: all 0.25s ease;
   }
   .in-field input:focus, .in-field select:focus, .in-field textarea:focus {
     outline: none;
     border-color: var(--red);
-    box-shadow: 0 0 0 3px rgba(187,32,38,0.1);
+    box-shadow: 0 0 0 3px rgba(187,32,38,0.12);
   }
   .in-checkbox {
     display: flex;
-    gap: 0.6rem;
     align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
     font-size: 0.85rem;
-    color: #555;
-    margin-bottom: 1.5rem;
+    color: #666666;
     cursor: pointer;
   }
+  .in-checkbox input { accent-color: var(--red); width: 18px; height: 18px; }
   .in-submit-btn {
     width: 100%;
     background: var(--red);
     color: #FFFFFF;
-    padding: 1rem;
+    padding: 1.1rem;
     border: none;
-    border-radius: 4px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem;
-    letter-spacing: 0.08em;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
-    transition: background 0.25s;
+    transition: all 0.3s;
+    box-shadow: 0 8px 25px rgba(187,32,38,0.3);
   }
-  .in-submit-btn:hover { background: var(--red-dark); }
+  .in-submit-btn:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(187,32,38,0.4);
+  }
   .in-form-feedback {
-    display: none;
     margin-top: 1.25rem;
-    background: #e8f5e9;
-    color: #2e7d32;
-    padding: 1rem;
-    border-radius: 4px;
+    padding: 1rem 1.4rem;
+    background: #E8F5E9;
+    border: 1px solid #C8E6C9;
+    color: #2E7D32;
+    border-radius: 8px;
     font-size: 0.9rem;
+    display: none;
   }
   .in-form-feedback.show { display: block; }
 
-  /* WA Big Banner */
+  /* Map */
+  .in-map-frame {
+    height: 420px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(51,21,53,0.1);
+    border: 1px solid var(--border);
+  }
+
+  /* WA Big Strip */
   .wa-big {
-    background: linear-gradient(135deg, #AF84AC 0%, #91648e 100%);
+    background: linear-gradient(135deg, #AF84AC 0%, #4A284B 100%);
     color: #FFFFFF;
-    padding: 5rem 2rem;
+    padding: 5.5rem 2rem;
   }
   .wa-title {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 400;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
     color: #FFFFFF;
     margin-bottom: 1rem;
   }
   .wa-text {
-    font-size: 0.95rem;
-    color: rgba(255,255,255,0.9);
+    font-size: 1rem;
+    color: rgba(255,255,255,0.92);
     margin: 0 auto 2.5rem;
-    max-width: 600px;
+    max-width: 620px;
     line-height: 1.8;
   }
   .wa-btn-big {
@@ -596,34 +742,36 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
     align-items: center;
     gap: 0.75rem;
     background: #25D366;
-    color: #FFFFFF;
-    padding: 1.1rem 2.5rem;
+    color: #FFFFFF !important;
+    padding: 1.1rem 2.8rem;
+    border-radius: 50px;
     font-size: 0.92rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-weight: 600;
-    border-radius: 4px;
+    font-weight: 700;
     text-decoration: none;
-    transition: background 0.3s, transform 0.2s;
+    transition: all 0.3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
   }
+  .wa-btn-big svg { width: 24px; height: 24px; fill: currentColor; }
   .wa-btn-big:hover {
-    background: #1db954;
-    transform: translateY(-2px);
+    background: #1eb954;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
   }
-  .wa-btn-big svg { width: 22px; height: 22px; fill: #FFFFFF; }
   .wa-note {
-    margin-top: 1.25rem;
     font-size: 0.82rem;
-    color: rgba(255,255,255,0.7);
-    font-style: italic;
+    color: rgba(255,255,255,0.75);
+    margin-top: 1.25rem;
   }
 
   @media (max-width: 1024px) {
+    .welcome-lounge-card { grid-template-columns: 1fr; }
+    .wlc-photo { min-height: 280px; }
     .contact-cards { grid-template-columns: 1fr; }
     .hours-section { grid-template-columns: 1fr; }
   }
   @media (max-width: 768px) {
     .in-form-row { grid-template-columns: 1fr; }
-    .in-form-card { padding: 1.8rem; }
+    .in-form-card { padding: 2rem 1.5rem; }
+    .wlc-content { padding: 2rem 1.5rem; }
   }
 </style>

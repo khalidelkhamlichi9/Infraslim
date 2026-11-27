@@ -4,20 +4,89 @@ import { getGlobalSettings } from '../lib/strapi';
 
 const settings = await getGlobalSettings();
 const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\D/g, '')}`;
+
+const faqGroups = [
+  {
+    title: 'Le centre',
+    items: [
+      { q: 'Le centre est-il vraiment réservé aux femmes ?', a: "Oui, entièrement et sans exception. Le vestiaire, la salle de sport, les cabines de soin et toute l'équipe. C'est le principe du centre depuis son ouverture en 2023." },
+      { q: 'Depuis quand INFRASLIM existe-t-il ?', a: "Le centre a ouvert en 2023, à Agdal." },
+      { q: 'Où se trouve le centre ?', a: "Au 43 Rue Oum Rabiâ, Appt. N°2, Agdal, Rabat." },
+      { q: 'Quels sont vos horaires ?', a: "Du lundi au samedi, de 08h00 à 20h00. Fermé le dimanche." },
+      { q: 'Où se garer ?', a: "Le parking Kaïs est à 3 minutes à pied. Un stationnement gratuit est également disponible en face du centre, selon les disponibilités." }
+    ]
+  },
+  {
+    title: 'Les rendez-vous',
+    items: [
+      { q: 'Faut-il prendre rendez-vous ?', a: "Oui, pour toutes les prestations, y compris le diagnostic InBody." },
+      { q: 'Comment réserver ?', a: "Le plus simple est WhatsApp au 06 15 10 98 98. Vous pouvez aussi appeler ou passer par le formulaire de contact." },
+      { q: 'Comment annuler ou décaler ?', a: "Prévenez-nous sur WhatsApp ou par téléphone, idéalement la veille, pour que le créneau soit proposé à une autre cliente." },
+      { q: 'Combien de temps dure un premier rendez-vous ?', a: "Une trentaine de minutes : le diagnostic, puis l'échange sur votre objectif." }
+    ]
+  },
+  {
+    title: 'Le diagnostic InBody',
+    items: [
+      { q: "Qu'est-ce que le diagnostic InBody ?", a: "Une analyse de votre composition corporelle. Elle mesure votre masse grasse, votre masse musculaire, votre eau corporelle et leur répartition par zone." },
+      { q: 'Est-il payant ?', a: "Non, il est offert et ne vous engage à rien." },
+      { q: 'Qui le réalise ?', a: "Ghizlane, qui vous explique ensuite vos résultats." },
+      { q: 'Combien de temps prend-il ?', a: "La mesure elle-même dure moins d'une minute, debout sur l'appareil, les mains sur les poignées. Comptez une trentaine de minutes avec l'échange qui suit." },
+      { q: 'Faut-il se préparer ?', a: "Évitez de manger dans les deux à quatre heures qui précèdent, évitez le sport juste avant, et passez aux toilettes avant la mesure." },
+      { q: 'Que me remet-on ?', a: "Votre fiche de résultats, qui servira de point de comparaison pour les mesures suivantes." },
+      { q: 'Est-il obligatoire avant de commencer ?', a: "Non, mais c'est lui qui nous permet de vous proposer les bonnes séances plutôt qu'un programme standard." }
+    ]
+  },
+  {
+    title: 'Les tarifs et les packs',
+    items: [
+      { q: 'Les packs ont-ils une date limite ?', a: "Non, ils sont valables toute l'année." },
+      { q: 'Quels moyens de paiement acceptez-vous ?', a: "Les espèces et le virement bancaire." },
+      { q: 'Peut-on payer en plusieurs fois ?', a: "Oui, c'est possible. Nous en parlons au moment de la réservation." },
+      { q: 'Peut-on venir à la séance sans prendre de pack ?', a: "Oui, toutes nos prestations sont disponibles à l'unité." },
+      { q: "Y a-t-il des frais d'inscription ou un abonnement ?", a: "Non, ni l'un ni l'autre." }
+    ]
+  },
+  {
+    title: 'Les prestations',
+    items: [
+      { q: 'Faut-il être sportive pour commencer ?', a: "Non. L'intensité est réglée sur votre niveau." },
+      { q: 'Combien de séances faut-il prévoir ?', a: "Cela dépend de votre objectif. Un pack de dix séances correspond à un premier cycle complet." },
+      { q: 'Peut-on venir pendant ses règles ?', a: "Oui, pour la quasi-totalité de nos prestations." },
+      { q: 'Et pendant une grossesse ?', a: "Demandez l'avis de votre médecin. Nous adapterons ou nous vous orienterons vers des prestations adaptées. Les séances de laser sont reportées." },
+      { q: 'Que faut-il apporter ?', a: "Pour le sport, une tenue et une bouteille d'eau. Pour les soins et le hammam, tout est fourni." }
+    ]
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqGroups.flatMap((g) =>
+    g.items.map((i) => ({
+      "@type": "Question",
+      "name": i.q,
+      "acceptedAnswer": { "@type": "Answer", "text": i.a }
+    }))
+  )
+};
 ---
 
-<Layout title="Questions Fréquentes (FAQ) | INFRASLIM Rabat" currentPath="/faq">
+<Layout title="Questions fréquentes | INFRASLIM Rabat" description="Rendez-vous, tarifs, packs, diagnostic InBody, accès et stationnement. Toutes les réponses sur le centre INFRASLIM à Agdal, Rabat." currentPath="/faq">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <!-- ============================================================
        HERO FAQ
   ============================================================ -->
   <section class="faq-hero">
+    <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1920&q=85" alt="Questions Fréquentes INFRASLIM Agdal" class="hero-bg-photo" />
+    <div class="hero-photo-overlay"></div>
     <div class="faq-hero-inner">
       <div class="breadcrumb">
         <a href="/">Accueil</a> &nbsp;/&nbsp; <span>FAQ</span>
       </div>
       <div class="hero-eyebrow">— QUESTIONS FRÉQUENTES · CENTRE 100% FÉMININ</div>
-      <h1 class="hero-title">Questions <em>Fréquentes</em></h1>
+      <h1 class="hero-title">Questions fréquentes sur le centre <em>INFRASLIM</em></h1>
       <p class="hero-desc">Tout ce que vous souhaitez savoir avant votre première visite à INFRASLIM. Notre équipe reste disponible par WhatsApp pour toute question complémentaire.</p>
     </div>
   </section>
@@ -53,203 +122,46 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
         <p>Vous ne trouvez pas la réponse à votre interrogation ? Contactez-nous directement par WhatsApp au <strong>06 15 10 98 98</strong>.</p>
       </div>
 
-      <!-- GROUP 1: Le Centre & Organisation -->
-      <div class="faq-group reveal">
-        <div class="faq-group-header">
-          <div class="fgg-icon">🏠</div>
-          <div>
-            <div class="fgg-label">Catégorie</div>
-            <div class="fgg-title">Le Centre &amp; Organisation</div>
-          </div>
+      <!-- Visual Support Card -->
+      <div class="faq-visual-banner reveal">
+        <div class="fvb-photo">
+          <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1000&q=85" alt="Conseil & Accompagnement INFRASLIM Agdal" />
         </div>
-
-        <div class="faq-item open">
-          <button class="faq-question">
-            <span>Le centre est-il exclusivement féminin ?</span>
-            <div class="faq-toggle">
-              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-            </div>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Oui, INFRASLIM est un espace 100% féminin. Seul le personnel féminin est présent en toutes circonstances. Votre intimité, votre confort et votre pudeur sont notre priorité absolue.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Comment prendre rendez-vous ?</span>
-            <div class="faq-toggle">
-              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-            </div>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Vous pouvez prendre rendez-vous par WhatsApp ou par téléphone au <strong>06 15 10 98 98</strong>, du lundi au samedi de 08h00 à 20h00. Notre équipe vous confirme votre créneau dans les meilleurs délais.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Où êtes-vous situés ?</span>
-            <div class="faq-toggle">
-              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-            </div>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              INFRASLIM est situé au 43 Rue Oum Rabiâ, Appt. N°2, à Agdal, Rabat (Parking Kaïs à 240m). Contactez-nous par WhatsApp pour obtenir les indications d'accès précises.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Quels sont vos horaires d'ouverture ?</span>
-            <div class="faq-toggle">
-              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-            </div>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Nous sommes ouvertes du lundi au samedi, de 08h00 à 20h00 en continu. Les séances sont dispensées uniquement sur réservation préalable.
-            </div>
-          </div>
+        <div class="fvb-content">
+          <span class="fvb-tag">Écoute & Conseil Personnalisé</span>
+          <h3>Un doute sur un soin ou un protocole ?</h3>
+          <p>Nos praticiennes prennent le temps de vous orienter selon votre morphologie, vos objectifs et vos disponibilités. Le bilan InBody offert est le meilleur point de départ.</p>
+          <a href={`${waBase}?text=Bonjour%20INFRASLIM%2C%20j%27ai%20une%20question%20concernant%20vos%20soins.`} target="_blank" rel="noopener" class="fvb-btn">Poser ma question sur WhatsApp →</a>
         </div>
       </div>
 
-      <!-- GROUP 2: Soins & Résultats -->
-      <div class="faq-group reveal">
-        <div class="faq-group-header">
-          <div class="fgg-icon">✦</div>
-          <div>
-            <div class="fgg-label">Catégorie</div>
-            <div class="fgg-title">Soins &amp; Résultats</div>
+      {faqGroups.map((group, gIdx) => (
+        <div class="faq-group reveal">
+          <div class="faq-group-header">
+            <div class="fgg-icon">
+              <svg class="h-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div>
+              <div class="fgg-label">Catégorie 0{gIdx + 1}</div>
+              <h2 class="fgg-title" style="margin:0;">{group.title}</h2>
+            </div>
           </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Dois-je apporter quelque chose pour ma première visite ?</span>
-            <div class="faq-toggle">
-              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          {group.items.map((item, iIdx) => (
+            <div class={`faq-item ${gIdx === 0 && iIdx === 0 ? 'open' : ''}`}>
+              <button type="button" class="faq-question">
+                <span>{item.q}</span>
+                <div class="faq-toggle">
+                  <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">{item.a}</div>
+              </div>
             </div>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Pour les séances de sport infrarouge, prévoyez une tenue de sport légère et des baskets propres. Pour les soins corps et hammam, tout le nécessaire (serviettes, peignoir, produits) est fourni par nos soins.
-            </div>
-          </div>
+          ))}
         </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Les résultats sont-ils garantis ?</span>
-            <div class="faq-toggle">
-              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-            </div>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Les résultats varient selon chaque métabolisme et l'assiduité. C'est pourquoi Ghizlane réalise un bilan InBody offert dès le départ pour suivre avec exactitude la perte de masse grasse et le gain de tonicité.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Combien de séances sont nécessaires pour voir des résultats ?</span>
-            <div class="faq-toggle">
-              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-            </div>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Une sensation immédiate de légèreté et un regain d'énergie se ressentent dès la 1ère séance. Des résultats mesurables et visibles sur la silhouette s'observent généralement dès 4 à 6 séances régulières.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- GROUP 3: Tarifs & Packs -->
-      <div class="faq-group reveal">
-        <div class="faq-group-header">
-          <div class="fgg-icon">💎</div>
-          <div>
-            <div class="fgg-label">Catégorie</div>
-            <div class="fgg-title">Tarifs &amp; Packs</div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Proposez-vous des packs personnalisés ?</span>
-            <div class="faq-toggle">
-              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-            </div>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Oui. Tous nos services sont proposés en packs 10 séances qui permettent de réaliser 20% d'économie immédiate. Nous composons également des cures mixtes sur-mesure (ex: Sport Infrarouge + VelaShape).
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Quels modes de paiement acceptez-vous ?</span>
-            <div class="faq-toggle">
-              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-            </div>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Nous acceptons les règlements en espèces ainsi que par carte bancaire marocaine et internationale. Des facilités de paiement peuvent être envisagées sur les cures complètes.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- GROUP 4: Épilation Laser -->
-      <div class="faq-group reveal">
-        <div class="faq-group-header">
-          <div class="fgg-icon">⚡</div>
-          <div>
-            <div class="fgg-label">Catégorie</div>
-            <div class="fgg-title">Épilation Laser</div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>L'épilation laser est-elle efficace sur tous les types de peau ?</span>
-            <div class="faq-toggle">
-              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-            </div>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Oui, notre technologie de laser diode tri-longueur d'onde est conçue pour traiter efficacement et en toute sécurité tous les phototypes, des peaux claires aux peaux mates ou bronzées.
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Combien de séances faut-il pour l'épilation laser ?</span>
-            <div class="faq-toggle">
-              <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-            </div>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              En moyenne, 6 à 8 séances espacées de 4 à 6 semaines permettent une élimination durable de 85 à 95% des poils sur les zones traitées.
-            </div>
-          </div>
-        </div>
-      </div>
+      ))}
 
     </div>
   </section>
@@ -263,10 +175,10 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
       <p class="cs-text">Notre équipe est disponible du lundi au samedi de 08h00 à 20h00 pour répondre à toutes vos interrogations avec bienveillance.</p>
       <div class="cs-buttons">
         <a href={`${waBase}?text=Bonjour%20INFRASLIM%2C%20j%27ai%20une%20question%20sur%20vos%20soins.`} target="_blank" rel="noopener" class="btn-wa">
-          📲 Poser ma question sur WhatsApp
+          Poser ma question sur WhatsApp
         </a>
         <a href="tel:+212615109898" class="btn-tel">
-          📞 06 15 10 98 98
+          06 15 10 98 98
         </a>
       </div>
     </div>
@@ -305,12 +217,14 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
   }
 
   .faq-hero {
-    background: linear-gradient(135deg, #AF84AC 0%, #91648e 100%);
+    background: linear-gradient(135deg, #AF84AC 0%, #4A284B 100%);
     color: #FFFFFF;
-    padding: 4.5rem 2rem 5.5rem;
+    padding: 5rem 2rem 6rem;
     text-align: center;
+    position: relative;
+    overflow: hidden;
   }
-  .faq-hero-inner { max-width: 820px; margin: 0 auto; }
+  .faq-hero-inner { max-width: 820px; margin: 0 auto; position: relative; z-index: 2; }
   .breadcrumb {
     font-size: 0.75rem;
     letter-spacing: 0.08em;
@@ -371,6 +285,74 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.85;
+  }
+
+  /* Visual Banner */
+  .faq-visual-banner {
+    background: #FAF7FA;
+    border: 1px solid rgba(175,132,172,0.25);
+    border-radius: 16px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 0.9fr 1.2fr;
+    margin-bottom: 4rem;
+    box-shadow: 0 12px 35px rgba(51,21,53,0.06);
+  }
+  .fvb-photo {
+    min-height: 240px;
+    position: relative;
+  }
+  .fvb-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .fvb-content {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .fvb-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+  }
+  .fvb-content h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: #2D2D2D;
+    margin-bottom: 0.75rem;
+  }
+  .fvb-content p {
+    font-size: 0.92rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .fvb-btn {
+    align-self: flex-start;
+    background: var(--red);
+    color: #FFFFFF !important;
+    padding: 0.8rem 1.6rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 6px 15px rgba(187,32,38,0.25);
+  }
+  .fvb-btn:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+  }
+  @media (max-width: 768px) {
+    .faq-visual-banner { grid-template-columns: 1fr; }
+    .fvb-content { padding: 1.8rem; }
   }
 
   /* FAQ Group */

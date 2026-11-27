@@ -6,29 +6,32 @@ const settings = await getGlobalSettings();
 const waLink = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\D/g,'')}?text=Bonjour%20INFRASLIM%2C%20je%20souhaite%20b%C3%A9n%C3%A9ficier%20du%20diagnostic%20InBody%20offert.`;
 ---
 
-<Layout title="Le Centre INFRASLIM | Centre Santé & Beauté 100% Femmes à Rabat" currentPath="/le-centre">
+<Layout title="Le centre INFRASLIM à Agdal, Rabat | 100 % femmes" description="Ouvert en 2023 à Agdal, INFRASLIM est un centre santé et beauté entièrement féminin. Sport infrarouge, soins, hammam. Visite et diagnostic offerts." currentPath="/le-centre">
 
   <!-- ============================================================
-       HERO — Mauve Dégradé avec breadcrumb
+       HERO — Mauve Dégradé avec breadcrumb & texture
   ============================================================ -->
   <section class="centre-hero">
+    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1920&q=85" alt="Centre INFRASLIM Agdal Rabat" class="hero-bg-photo" />
+    <div class="hero-photo-overlay"></div>
+    <div class="hero-bg-overlay"></div>
     <div class="centre-hero-inner">
       <div class="breadcrumb">
         <a href="/">Accueil</a>&nbsp;/&nbsp; Le Centre
       </div>
-      <div class="hero-eyebrow">— LE CENTRE</div>
+      <div class="hero-eyebrow">— LE CENTRE D'EXCEPTION</div>
       <h1 class="hero-title">INFRASLIM, centre santé et beauté 100 % femmes à Rabat</h1>
-      <p class="hero-desc">Un espace entièrement féminin ouvert en 2023 à Agdal. Du vestiaire à la salle de sport, il n'y a que des femmes.</p>
+      <p class="hero-desc">Un espace entièrement féminin ouvert en 2023 à Agdal. Du vestiaire à la salle de sport, il n'y a que des femmes pour une sérénité et une intimité totales.</p>
     </div>
   </section>
 
   <!-- ============================================================
-       FLOATING STATS BAR — Carte blanche qui chevauchent le hero
+       FLOATING STATS BAR — Carte blanche qui chevauche le hero
   ============================================================ -->
   <div class="floating-stats-bar">
     <div class="stats-card-white">
       <div class="sc-item">
-        <div class="sc-num">2023</div>
+        <div class="sc-num" data-count="2023">2023</div>
         <div class="sc-label">Année d'ouverture</div>
       </div>
       <div class="sc-item">
@@ -36,12 +39,12 @@ const waLink = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
         <div class="sc-label">Femmes, sans exception</div>
       </div>
       <div class="sc-item">
-        <div class="sc-num">5</div>
+        <div class="sc-num" data-count="5">5</div>
         <div class="sc-label">Univers de soins</div>
       </div>
       <div class="sc-item">
         <div class="sc-num">Agdal</div>
-        <div class="sc-label">Parking à 2 minutes</div>
+        <div class="sc-label">Parking Kaïs à 3 minutes</div>
       </div>
     </div>
   </div>
@@ -53,67 +56,144 @@ const waLink = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
     <div class="container">
       <div class="two-col-why reveal">
         <div class="why-visual-wrap">
-          <div class="wv-box-1"></div>
-          <div class="wv-box-2"></div>
+          <div class="wv-main-photo">
+            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=85" alt="Espace Bien-être INFRASLIM Agdal" />
+            <div class="wv-overlay"></div>
+          </div>
+          <div class="wv-inset-photo">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=85" alt="Entraînement 100% Féminin INFRASLIM" />
+          </div>
+          <div class="wv-badge-floating">
+            <span class="wvb-icon">
+              <svg class="h-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10c0-4-3-7-8-10-5 3-8 6-8 10 0 6 8 10 8 10z"/></svg>
+            </span>
+            <div class="wvb-text">
+              <strong>100% Féminin</strong>
+              <small>Zéro regard extérieur</small>
+            </div>
+          </div>
         </div>
+
         <div class="why-text">
           <span class="section-eyebrow">— NOTRE PARTI PRIS</span>
           <h2 class="section-title">Pourquoi un centre 100 % femmes ?</h2>
           <p>Parce que beaucoup de femmes renoncent au sport ou aux soins pour une raison qu'on n'ose pas toujours dire : le regard des autres.</p>
           <p>Ici, personne ne vous observe pendant que vous pédalez. Vous n'avez pas à choisir votre tenue en fonction de qui sera dans la salle. Vous ne croisez pas d'hommes entre deux cabines.</p>
-          <p>Ce confort n'est pas un détail. C'est souvent ce qui fait la différence entre venir une fois et revenir toutes les semaines.</p>
+          <p>Ce confort n'est pas un détail. C'est souvent ce qui fait la différence entre venir une fois et revenir toutes les semaines avec le sourire et une motivation décuplée.</p>
+          <div class="why-highlights">
+            <div class="wh-pill">✓ Praticiennes 100% féminines</div>
+            <div class="wh-pill">✓ Cabines individuelles privatisées</div>
+            <div class="wh-pill">✓ Douche & vestiaire intimes</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       TOUT AU MÊME ENDROIT — Grille 5 univers de soins
+       TOUT AU MÊME ENDROIT — Grille 5 univers de soins avec photos
   ============================================================ -->
   <section class="section univers-section">
     <div class="container">
-      <span class="section-eyebrow">— NOS UNIVERS —</span>
+      <span class="section-eyebrow">— NOS UNIVERS D'EXPERTISE —</span>
       <h2 class="section-title">Tout au même endroit</h2>
       <p style="max-width:700px; margin:0 auto; color:#6B636B; font-size:0.95rem; line-height:1.8;">
         Un parcours minceur ne se joue pas sur un seul soin. Réunir l'effort, les soins du corps et la régularité dans un même lieu évite d'éparpiller son temps et son budget entre trois adresses.
       </p>
 
       <div class="univers-grid reveal">
+        <!-- 1. Sport -->
         <a href="/services/sport-nouvelle-generation" class="univers-card">
-          <div class="uc-title">Sport nouvelle génération</div>
+          <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=800&q=85" alt="Sport Nouvelle Génération Infrarouge" class="uc-bg-img" />
+          <div class="uc-gradient"></div>
+          <div class="uc-content">
+            <span class="uc-cat">01 · Effort</span>
+            <div class="uc-title">Sport nouvelle génération</div>
+            <span class="uc-arrow">Explorer →</span>
+          </div>
         </a>
+
+        <!-- 2. Minceur -->
         <a href="/services/soins-amincissants" class="univers-card">
-          <div class="uc-title">Soins amincissants</div>
+          <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=85" alt="Soins Amincissants et Remodelage" class="uc-bg-img" />
+          <div class="uc-gradient"></div>
+          <div class="uc-content">
+            <span class="uc-cat">02 · Minceur</span>
+            <div class="uc-title">Soins amincissants</div>
+            <span class="uc-arrow">Explorer →</span>
+          </div>
         </a>
+
+        <!-- 3. Visage -->
         <a href="/services/soins-visage" class="univers-card">
-          <div class="uc-title">Soins du visage</div>
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=85" alt="Soins du Visage Hydrafacial Kobido" class="uc-bg-img" />
+          <div class="uc-gradient"></div>
+          <div class="uc-content">
+            <span class="uc-cat">03 · Éclat</span>
+            <div class="uc-title">Soins du visage</div>
+            <span class="uc-arrow">Explorer →</span>
+          </div>
         </a>
+
+        <!-- 4. Laser -->
         <a href="/services/epilation-laser" class="univers-card">
-          <div class="uc-title">Épilation et laser</div>
+          <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=800&q=85" alt="Épilation Laser Diode Médical" class="uc-bg-img" />
+          <div class="uc-gradient"></div>
+          <div class="uc-content">
+            <span class="uc-cat">04 · Haute Précision</span>
+            <div class="uc-title">Épilation et laser</div>
+            <span class="uc-arrow">Explorer →</span>
+          </div>
         </a>
+
+        <!-- 5. Hammam -->
         <a href="/hammam" class="univers-card">
-          <div class="uc-title">Hammam</div>
+          <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=85" alt="Hammam Traditionnel Marocain" class="uc-bg-img" />
+          <div class="uc-gradient"></div>
+          <div class="uc-content">
+            <span class="uc-cat">05 · Rituels</span>
+            <div class="uc-title">Hammam</div>
+            <span class="uc-arrow">Explorer →</span>
+          </div>
         </a>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       BANDEAU TECHNOLOGIE — fond mauve dégradé
+       BANDEAU TECHNOLOGIE — fond photo & mauve dégradé
   ============================================================ -->
   <section class="tech-strip">
+    <div class="tech-bg-wrap">
+      <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1600&q=80" alt="Sport Infrarouge INFRASLIM" class="tech-bg-img" />
+      <div class="tech-gradient-overlay"></div>
+    </div>
     <div class="tech-strip-inner reveal">
-      <span class="section-eyebrow" style="color:rgba(255,255,255,0.8);">— NOTRE TECHNOLOGIE</span>
+      <span class="section-eyebrow" style="color:rgba(255,255,255,0.9);">— HAUTE TECHNOLOGIE BREVETÉE</span>
       <h2>1 300 calories brûlées en 30 minutes</h2>
       <p>Nos équipements associent chaleur infrarouge et pression négative. L'infrarouge fait travailler le corps en profondeur, le vacuum stimule la circulation là où la graisse s'installe le plus chez la femme : cuisses, hanches et fesses.</p>
+      <div class="tech-stats-row">
+        <div class="ts-stat">
+          <div class="ts-num">x3</div>
+          <div class="ts-lbl">Efficacité vs sport standard</div>
+        </div>
+        <div class="ts-stat">
+          <div class="ts-num">0%</div>
+          <div class="ts-lbl">Choc articulaire</div>
+        </div>
+        <div class="ts-stat">
+          <div class="ts-num">30 min</div>
+          <div class="ts-lbl">Durée par séance</div>
+        </div>
+      </div>
       <a href="/services/sport-nouvelle-generation" class="btn-tech-outline">
-        Découvrir le sport nouvelle génération
+        Découvrir le sport nouvelle génération →
       </a>
     </div>
   </section>
 
   <!-- ============================================================
-       ON MESURE AVANT DE PROPOSER — 2 colonnes: méthode + visite
+       ON MESURE AVANT DE PROPOSER — 2 colonnes: méthode + visite + visuel
   ============================================================ -->
   <section class="section">
     <div class="container">
@@ -127,43 +207,47 @@ const waLink = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
         </div>
 
         <div class="visit-box">
-          <span class="vb-title">— UNE PREMIÈRE VISITE</span>
+          <span class="vb-title">— UNE PREMIÈRE VISITE RASSURANTE</span>
           <div class="vb-step">
             <div class="vb-dot">1</div>
             <div class="vb-text">
-              <strong>Le diagnostic</strong>
-              <span>Offert et sans engagement. La mesure dure moins d'une minute.</span>
+              <strong>Le diagnostic InBody</strong>
+              <span>Offert et sans engagement. La mesure bio-impédance dure moins d'une minute.</span>
             </div>
           </div>
           <div class="vb-step">
             <div class="vb-dot">2</div>
             <div class="vb-text">
-              <strong>Votre programme</strong>
-              <span>Les séances adaptées à votre objectif, votre emploi du temps et votre budget.</span>
+              <strong>Votre programme personnalisé</strong>
+              <span>Les séances adaptées à votre objectif, votre métabolisme et votre budget.</span>
             </div>
           </div>
           <div class="vb-step">
             <div class="vb-dot">3</div>
             <div class="vb-text">
-              <strong>Le suivi</strong>
-              <span>Vous êtes accompagnée séance après séance, avec des points réguliers.</span>
+              <strong>Le suivi &amp; ajustements</strong>
+              <span>Vous êtes accompagnée séance après séance, avec des bilans d'évolution réguliers.</span>
             </div>
           </div>
         </div>
       </div>
 
       <!-- ============================================================
-           CALLOUT DIAGNOSTIC INBODY OFFERT
+           CALLOUT DIAGNOSTIC INBODY AVEC PHOTO & ACTION
       ============================================================ -->
-      <div class="inbody-callout reveal">
-        <div>
-          <span class="inbody-badge">OFFERT</span>
-          <h3 class="inbody-title">Votre diagnostic InBody est offert</h3>
-          <p class="inbody-desc">Masse grasse, masse musculaire, eau corporelle et répartition par zone. La mesure prend moins d'une minute, l'échange qui suit une vingtaine. Ghizlane vous explique vos résultats et vous repartez avec votre fiche.</p>
+      <div class="inbody-callout-card reveal">
+        <div class="inbody-card-photo">
+          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1000&q=85" alt="Diagnostic InBody INFRASLIM Agdal Rabat" />
+          <div class="ic-photo-badge">Impédancemétrie Médicale</div>
         </div>
-        <a href={waLink} target="_blank" rel="noopener" class="btn-inbody-rdv">
-          Prendre rendez-vous →
-        </a>
+        <div class="inbody-card-content">
+          <span class="inbody-badge">OFFERT &amp; SANS ENGAGEMENT</span>
+          <h3 class="inbody-title">Votre diagnostic InBody offert à Rabat</h3>
+          <p class="inbody-desc">Masse grasse, masse musculaire, eau corporelle et répartition segmentaire par zone. La mesure prend 60 secondes, l'échange qui suit une vingtaine de minutes. Notre spécialiste vous explique chaque indicateur pour un plan sur-mesure.</p>
+          <a href={waLink} target="_blank" rel="noopener" class="btn-inbody-rdv">
+            Réserver mon diagnostic offert →
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -171,10 +255,6 @@ const waLink = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
 </Layout>
 
 <style>
-  /* =====================================================
-     CSS VARIABLES (héritées du global mais redéfinies ici
-     pour s'assurer de la cohérence)
-  ===================================================== */
   :root {
     --red:        #BB2026;
     --red-dark:   #8f1a1f;
@@ -184,43 +264,51 @@ const waLink = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
     --bg:         #F7F3F7;
   }
 
-  /* =====================================================
-     HERO
-  ===================================================== */
+  /* HERO */
   .centre-hero {
-    background: linear-gradient(135deg, #AF84AC 0%, #91648e 100%);
+    background: linear-gradient(135deg, #AF84AC 0%, #4A284B 100%);
     color: #FFFFFF;
-    padding: 4.5rem 2rem 7rem;
+    padding: 5rem 2rem 7.5rem;
     position: relative;
+    overflow: hidden;
+  }
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(255,255,255,0.12) 0%, transparent 60%);
+    pointer-events: none;
   }
   .centre-hero-inner {
     max-width: 1100px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
   }
   .breadcrumb {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     letter-spacing: 0.08em;
-    color: rgba(255,255,255,0.65);
+    color: rgba(255,255,255,0.75);
     margin-bottom: 2rem;
   }
   .breadcrumb a {
-    color: rgba(255,255,255,0.65);
+    color: rgba(255,255,255,0.85);
     transition: color 0.2s;
-    text-decoration: none;
+    text-decoration: underline;
   }
   .breadcrumb a:hover { color: #FFFFFF; }
   .hero-eyebrow {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--mauve-light);
     margin-bottom: 1.25rem;
     display: block;
+    font-weight: 600;
   }
   .hero-title {
     font-family: 'Josefin Sans', sans-serif;
     font-size: clamp(2.3rem, 5vw, 3.8rem);
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.15;
     margin-bottom: 1.5rem;
     color: #FFFFFF;
@@ -228,15 +316,13 @@ const waLink = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
   }
   .hero-desc {
     font-size: 1.05rem;
-    color: rgba(255,255,255,0.85);
+    color: rgba(255,255,255,0.92);
     max-width: 720px;
     line-height: 1.8;
     font-weight: 300;
   }
 
-  /* =====================================================
-     FLOATING STATS BAR
-  ===================================================== */
+  /* FLOATING STATS BAR */
   .floating-stats-bar {
     max-width: 1100px;
     margin: -3.5rem auto 5rem;
@@ -246,9 +332,9 @@ const waLink = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
   }
   .stats-card-white {
     background: #FFFFFF;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-    border-radius: 8px;
-    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 16px 45px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    border: 1px solid rgba(175, 132, 172, 0.2);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     padding: 2.2rem 1.5rem;
@@ -262,82 +348,148 @@ const waLink = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
   .sc-num {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 2.4rem;
-    font-weight: 300;
-    color: #2D2D2D;
+    font-weight: 700;
+    color: var(--red);
     line-height: 1;
     margin-bottom: 0.5rem;
   }
   .sc-label {
-    font-size: 0.68rem;
+    font-size: 0.72rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #888888;
-    font-weight: 500;
+    color: #6B636B;
+    font-weight: 600;
   }
 
-  /* =====================================================
-     SECTIONS COMMUNES
-  ===================================================== */
+  /* SECTIONS */
   .section { padding: 5rem 2rem; }
   .container { max-width: 1100px; margin: 0 auto; }
   .section-eyebrow {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--red);
     margin-bottom: 0.8rem;
     display: block;
-    font-weight: 600;
+    font-weight: 700;
   }
   .section-title {
     font-family: 'Josefin Sans', sans-serif;
     font-size: clamp(2rem, 3.8vw, 3rem);
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1.5rem;
     color: #2D2D2D;
   }
 
-  /* =====================================================
-     POURQUOI 100% FEMMES — 2 colonnes
-  ===================================================== */
+  /* POURQUOI 100% FEMMES PHOTO COMPOSITION */
   .two-col-why {
     display: grid;
-    grid-template-columns: 1fr 1.15fr;
-    gap: 5rem;
+    grid-template-columns: 1.05fr 1.15fr;
+    gap: 4.5rem;
     align-items: center;
   }
   .why-visual-wrap {
     position: relative;
-    height: 420px;
+    height: 460px;
   }
-  .wv-box-1 {
-    position: absolute;
-    top: 0; left: 0;
-    width: 78%;
-    height: 82%;
-    background: #DEC9DD;
-    border-radius: 8px;
+  .wv-main-photo {
+    width: 82%;
+    height: 85%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(51, 21, 53, 0.12);
+    position: relative;
   }
-  .wv-box-2 {
+  .wv-main-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .wv-main-photo:hover img {
+    transform: scale(1.05);
+  }
+  .wv-overlay {
     position: absolute;
-    bottom: 0; right: 0;
-    width: 58%;
-    height: 60%;
-    background: #CEB4CD;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(51,21,53,0.3) 100%);
+  }
+  .wv-inset-photo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 54%;
+    height: 52%;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 4px solid #FFFFFF;
+    box-shadow: 0 16px 38px rgba(0,0,0,0.15);
+    z-index: 2;
+  }
+  .wv-inset-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+  .wv-inset-photo:hover img {
+    transform: scale(1.06);
+  }
+  .wv-badge-floating {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 0.75rem 1.25rem;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border: 1px solid rgba(175,132,172,0.25);
+    z-index: 3;
+    animation: luxuryFloat 4s ease-in-out infinite;
+  }
+  .wvb-icon {
+    color: var(--red);
+    font-size: 1.1rem;
+  }
+  .wvb-text strong {
+    display: block;
+    font-size: 0.85rem;
+    color: #2D2D2D;
+    line-height: 1.2;
+  }
+  .wvb-text small {
+    display: block;
+    font-size: 0.72rem;
+    color: #777777;
   }
   .why-text p {
-    font-size: 0.95rem;
+    font-size: 0.96rem;
     line-height: 1.85;
     color: #555555;
     margin-bottom: 1.25rem;
   }
+  .why-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  .wh-pill {
+    background: #F7F3F7;
+    border: 1px solid rgba(175,132,172,0.3);
+    color: #4A284B;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.45rem 1rem;
+    border-radius: 20px;
+  }
 
-  /* =====================================================
-     UNIVERS DE SOINS
-  ===================================================== */
+  /* UNIVERS DE SOINS AVEC IMAGES */
   .univers-section {
     background: #FAF7FA;
     text-align: center;
@@ -349,101 +501,196 @@ const waLink = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
     margin-top: 3.5rem;
   }
   .univers-card {
-    aspect-ratio: 3/4.2;
-    border-radius: 8px;
-    background: linear-gradient(180deg, #C7A3C5 0%, #4A214D 100%);
-    padding: 1.5rem 1rem;
+    aspect-ratio: 3/4.4;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(51,21,53,0.1);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    text-align: left;
-    color: #FFFFFF;
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-decoration: none;
-    box-shadow: 0 8px 25px rgba(74,33,77,0.15);
+    padding: 1.5rem 1.1rem;
   }
   .univers-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 35px rgba(74,33,77,0.25);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(51,21,53,0.22);
+  }
+  .uc-bg-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1;
+  }
+  .univers-card:hover .uc-bg-img {
+    transform: scale(1.08);
+  }
+  .uc-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(51,21,53,0.1) 0%, rgba(51,21,53,0.5) 50%, rgba(51,21,53,0.92) 100%);
+    z-index: 2;
+    transition: background 0.3s ease;
+  }
+  .univers-card:hover .uc-gradient {
+    background: linear-gradient(180deg, rgba(51,21,53,0.1) 0%, rgba(51,21,53,0.4) 40%, rgba(187,32,38,0.92) 100%);
+  }
+  .uc-content {
+    position: relative;
+    z-index: 3;
+    text-align: left;
+    color: #FFFFFF;
+  }
+  .uc-cat {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
   }
   .uc-title {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.15rem;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.25;
     color: #FFFFFF;
+    margin-bottom: 0.6rem;
+  }
+  .uc-arrow {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  .univers-card:hover .uc-arrow {
+    opacity: 1;
+    transform: translateX(0);
   }
 
-  /* =====================================================
-     TECH STRIP — fond mauve dégradé
-  ===================================================== */
+  /* BANDEAU TECHNOLOGIE */
   .tech-strip {
-    background: linear-gradient(135deg, #AF84AC 0%, #91648e 100%);
+    position: relative;
     color: #FFFFFF;
-    padding: 5rem 2rem;
+    padding: 6rem 2rem;
+    overflow: hidden;
+  }
+  .tech-bg-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+  .tech-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+  }
+  .tech-gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(74,40,75,0.92) 0%, rgba(187,32,38,0.88) 100%);
   }
   .tech-strip-inner {
     max-width: 900px;
     margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
   }
   .tech-strip h2 {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 400;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
     margin-bottom: 1.25rem;
     color: #FFFFFF;
   }
   .tech-strip p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.85;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 2rem;
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 2.5rem;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .tech-stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 3.5rem;
+    margin-bottom: 2.8rem;
+  }
+  .ts-num {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1;
+    margin-bottom: 0.35rem;
+  }
+  .ts-lbl {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
   }
   .btn-tech-outline {
     display: inline-block;
-    border: 2px solid rgba(255,255,255,0.7);
+    border: 2px solid #FFFFFF;
     color: #FFFFFF;
-    padding: 0.85rem 2rem;
-    font-size: 0.75rem;
+    padding: 0.95rem 2.2rem;
+    font-size: 0.8rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    font-weight: 600;
-    border-radius: 4px;
+    font-weight: 700;
+    border-radius: 30px;
     transition: all 0.3s;
     text-decoration: none;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(4px);
   }
   .btn-tech-outline:hover {
     background: #FFFFFF;
-    color: #AF84AC;
+    color: var(--red);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   }
 
-  /* =====================================================
-     MÉTHODE — 2 colonnes: texte + visit-box
-  ===================================================== */
+  /* MÉTHODE */
   .method-grid {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 5rem;
-    align-items: start;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 4.5rem;
+    align-items: center;
+    margin-bottom: 3.5rem;
   }
   .method-left p {
-    font-size: 0.95rem;
+    font-size: 0.96rem;
     line-height: 1.85;
     color: #555555;
     margin-bottom: 1.25rem;
   }
   .visit-box {
-    border: 1px solid rgba(0,0,0,0.08);
+    border: 1px solid rgba(175,132,172,0.25);
     background: #FAF7FA;
-    padding: 2.5rem 2rem;
-    border-radius: 8px;
+    padding: 2.5rem 2.2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
   }
   .vb-title {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #888888;
-    font-weight: 600;
+    color: #6B636B;
+    font-weight: 700;
     margin-bottom: 2rem;
     display: block;
   }
@@ -454,7 +701,7 @@ const waLink = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
   }
   .vb-step:last-child { margin-bottom: 0; }
   .vb-dot {
-    width: 32px; height: 32px;
+    width: 34px; height: 34px;
     border-radius: 50%;
     background: var(--red);
     color: #FFFFFF;
@@ -462,94 +709,126 @@ const waLink = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
     align-items: center;
     justify-content: center;
     font-size: 0.85rem;
-    font-weight: 600;
+    font-weight: 700;
     flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(187,32,38,0.3);
   }
   .vb-text strong {
     display: block;
-    font-size: 0.95rem;
+    font-size: 0.98rem;
     color: #2D2D2D;
     margin-bottom: 0.25rem;
   }
   .vb-text span {
-    font-size: 0.85rem;
-    color: #777777;
+    font-size: 0.86rem;
+    color: #666666;
     line-height: 1.6;
     display: block;
   }
 
-  /* =====================================================
-     INBODY CALLOUT
-  ===================================================== */
-  .inbody-callout {
-    background: #F4E8F3;
-    border-left: 4px solid var(--red);
-    border-radius: 0 8px 8px 0;
-    padding: 2.8rem 3rem;
+  /* INBODY CALLOUT CARD AVEC PHOTO */
+  .inbody-callout-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    border: 1px solid rgba(175,132,172,0.25);
+    box-shadow: 0 16px 45px rgba(51,21,53,0.08);
+    display: grid;
+    grid-template-columns: 0.95fr 1.25fr;
+    overflow: hidden;
+    margin-top: 2rem;
+  }
+  .inbody-card-photo {
+    position: relative;
+    min-height: 300px;
+  }
+  .inbody-card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .ic-photo-badge {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    background: rgba(51,21,53,0.85);
+    backdrop-filter: blur(6px);
+    color: #FFFFFF;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+  .inbody-card-content {
+    padding: 3rem;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 3rem;
-    margin-top: 3rem;
+    flex-direction: column;
+    justify-content: center;
   }
   .inbody-badge {
     display: inline-block;
+    align-self: flex-start;
     background: var(--red);
     color: #FFFFFF;
-    padding: 0.25rem 0.75rem;
+    padding: 0.3rem 0.85rem;
     font-size: 0.7rem;
     font-weight: 700;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    border-radius: 3px;
-    margin-bottom: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.2rem;
   }
   .inbody-title {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.7rem;
+    font-size: 1.85rem;
     color: #2D2D2D;
-    font-weight: 400;
-    margin-bottom: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 0.85rem;
+    line-height: 1.25;
   }
   .inbody-desc {
-    font-size: 0.9rem;
+    font-size: 0.94rem;
     color: #555555;
     line-height: 1.75;
-    max-width: 650px;
+    margin-bottom: 2rem;
   }
   .btn-inbody-rdv {
+    align-self: flex-start;
     background: var(--red);
     color: #FFFFFF !important;
-    padding: 0.9rem 2.2rem;
-    border-radius: 4px;
-    font-size: 0.8rem;
+    padding: 0.95rem 2.2rem;
+    border-radius: 30px;
+    font-size: 0.82rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    font-weight: 600;
-    white-space: nowrap;
-    transition: background 0.3s;
-    flex-shrink: 0;
+    font-weight: 700;
+    transition: all 0.3s;
     text-decoration: none;
-    display: inline-block;
+    box-shadow: 0 8px 20px rgba(187,32,38,0.25);
   }
-  .btn-inbody-rdv:hover { background: var(--red-dark); }
+  .btn-inbody-rdv:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(187,32,38,0.35);
+  }
 
-  /* =====================================================
-     RESPONSIVE
-  ===================================================== */
+  /* RESPONSIVE */
   @media (max-width: 1024px) {
     .stats-card-white { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
     .sc-item { border-right: none; }
     .univers-grid { grid-template-columns: repeat(3, 1fr); }
     .two-col-why { grid-template-columns: 1fr; }
-    .why-visual-wrap { height: 300px; }
+    .why-visual-wrap { height: 380px; }
     .method-grid { grid-template-columns: 1fr; }
-    .inbody-callout { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+    .inbody-callout-card { grid-template-columns: 1fr; }
+    .inbody-card-photo { min-height: 240px; }
   }
   @media (max-width: 768px) {
     .univers-grid { grid-template-columns: repeat(2, 1fr); }
     .floating-stats-bar { margin-bottom: 3rem; }
     .centre-hero { padding: 4rem 1.5rem 6rem; }
-    .inbody-callout { padding: 2rem 1.5rem; }
+    .inbody-card-content { padding: 2rem 1.5rem; }
+    .tech-stats-row { flex-direction: column; gap: 1.5rem; }
   }
 </style>

@@ -6,19 +6,22 @@ const settings = await getGlobalSettings();
 const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\D/g, '')}`;
 ---
 
-<Layout title="Tarifs 2026 | INFRASLIM Agdal Rabat" currentPath="/tarifs">
+<Layout title="Tarifs et packs minceur à Rabat | INFRASLIM" description="Tous nos tarifs 2026 à Agdal : sport infrarouge, soins amincissants, visage, laser et hammam. Packs de dix séances valables toute l'année." currentPath="/tarifs">
 
   <!-- ============================================================
        HERO TARIFS (PREMIUM STYLE CLAIR / MAUVE DÉGRADÉ)
   ============================================================ -->
   <section class="tarifs-hero">
+    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1920&q=85" alt="Tarifs INFRASLIM Agdal Rabat" class="hero-bg-photo" />
+    <div class="hero-photo-overlay"></div>
+    <div class="hero-bg-overlay"></div>
     <div class="tarifs-hero-inner">
       <div class="breadcrumb">
         <a href="/">Accueil</a> &nbsp;/&nbsp; Tarifs
       </div>
       <div class="hero-eyebrow">— TARIFS 2026 · TRANSPARENCE TOTALE</div>
-      <h1 class="hero-title">Nos <em>Tarifs</em></h1>
-      <p class="hero-desc">Des soins d'exception à des tarifs clairs et transparents. Packs 10 séances disponibles pour tous nos services avec 20% d'économie immédiate.</p>
+      <h1 class="hero-title">Tarifs et packs minceur à <em>Rabat</em></h1>
+      <p class="hero-desc">Tous nos prix, sans supplément ni frais caché. Les packs de dix séances sont la formule la plus avantageuse et restent valables toute l'année.</p>
     </div>
   </section>
 
@@ -27,20 +30,20 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
   ============================================================ -->
   <div class="marquee-strip">
     <div class="marquee-track">
-      <div class="marquee-item"><span>Sport à partir de 100 MAD</span><span class="sep"></span></div>
-      <div class="marquee-item"><span>VelaShape 350 MAD</span><span class="sep"></span></div>
-      <div class="marquee-item"><span>Hydrafacial 500 MAD</span><span class="sep"></span></div>
-      <div class="marquee-item"><span>Laser à partir de 150 MAD</span><span class="sep"></span></div>
-      <div class="marquee-item"><span>Hammam dès 80 MAD</span><span class="sep"></span></div>
-      <div class="marquee-item"><span>Pack 10 séances = -20%</span><span class="sep"></span></div>
-      <div class="marquee-item"><span>Tarifs 2026</span><span class="sep"></span></div>
-      <div class="marquee-item"><span>Sport à partir de 100 MAD</span><span class="sep"></span></div>
-      <div class="marquee-item"><span>VelaShape 350 MAD</span><span class="sep"></span></div>
-      <div class="marquee-item"><span>Hydrafacial 500 MAD</span><span class="sep"></span></div>
-      <div class="marquee-item"><span>Laser à partir de 150 MAD</span><span class="sep"></span></div>
-      <div class="marquee-item"><span>Hammam dès 80 MAD</span><span class="sep"></span></div>
-      <div class="marquee-item"><span>Pack 10 séances = -20%</span><span class="sep"></span></div>
-      <div class="marquee-item"><span>Tarifs 2026</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Sport Infrarouge 1 500 DH les 10</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>VelaShape 300 DH</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Hydrafacial 400 DH</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Laser Diode 200 DH / zone</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Hammam dès 150 DH</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Packs valables toute l'année</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Diagnostic InBody Offert</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Sport Infrarouge 1 500 DH les 10</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>VelaShape 300 DH</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Hydrafacial 400 DH</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Laser Diode 200 DH / zone</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Hammam dès 150 DH</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Packs valables toute l'année</span><span class="sep"></span></div>
+      <div class="marquee-item"><span>Diagnostic InBody Offert</span><span class="sep"></span></div>
     </div>
   </div>
 
@@ -51,232 +54,237 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
     <div class="container">
 
       <div class="disclaimer reveal">
-        📅 Tarifs officiels valables en 2026 au centre INFRASLIM Agdal. Bilan InBody systématiquement offert.
+        <span class="disc-icon">
+          <svg class="h-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </span>
+        <span>Tarifs officiels valables en 2026 au centre INFRASLIM Agdal. Bilan impédancemétrie InBody systématiquement offert avant tout programme.</span>
       </div>
 
       <!-- 01 · Sport Nouvelle Génération -->
       <div class="pricing-section-block reveal">
         <div class="ps-header">
-          <div class="ps-visual" style="background: linear-gradient(135deg, #1a237e, #283593);"></div>
-          <div>
-            <div class="ps-label">01 — Activité Physique</div>
-            <h2 class="ps-title">Sport Nouvelle Génération</h2>
+          <div class="ps-visual-photo">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" alt="Sport Infrarouge INFRASLIM" />
+            <div class="psv-overlay"></div>
           </div>
+          <div class="ps-title-info">
+            <div class="ps-label">01 — ACTIVITÉ PHYSIQUE & INFRAROUGE</div>
+            <h2 class="ps-title">Sport nouvelle génération</h2>
+            <p class="ps-sub">Nos équipements infrarouge et vacuum, et notre espace de renforcement musculaire avec coach.</p>
+          </div>
+          <a href={`${waBase}?text=Bonjour%20INFRASLIM%2C%20je%20souhaite%20r%C3%A9server%20une%20s%C3%A9ance%20Sport.`} target="_blank" rel="noopener" class="ps-cta-btn">Réserver ce Pôle →</a>
         </div>
         <div class="pricing-wrapper">
           <table class="pricing-table">
             <thead>
               <tr>
                 <th>Prestation</th>
-                <th>1 séance</th>
+                <th>La séance</th>
                 <th>Pack 10 séances</th>
-                <th>Économie</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>InfraBike Allongé (30 min)</td>
-                <td class="col-price">100 MAD</td>
-                <td class="col-pack">800 MAD</td>
-                <td class="col-eco">-20%</td>
+                <td><strong>InfraBike</strong> (30 min · Vélo allongé infrarouge &amp; vacuum)</td>
+                <td class="col-price">300 DH</td>
+                <td class="col-pack">1 500 DH <span class="col-eco">150 DH / séance</span></td>
               </tr>
               <tr>
-                <td>Tapis roulant infrarouge (30 min)</td>
-                <td class="col-price">100 MAD</td>
-                <td class="col-pack">800 MAD</td>
-                <td class="col-eco">-20%</td>
+                <td><strong>Tapis roulant infrarouge</strong> (30 min · Marche sous vide)</td>
+                <td class="col-price">300 DH</td>
+                <td class="col-pack">1 500 DH <span class="col-eco">150 DH / séance</span></td>
               </tr>
               <tr>
-                <td>Infra Roller Massage (30 min)</td>
-                <td class="col-price">150 MAD</td>
-                <td class="col-pack">1 200 MAD</td>
-                <td class="col-eco">-20%</td>
+                <td><strong>Infra Roller</strong> (30 min · Rouleaux massants &amp; chaleur)</td>
+                <td class="col-price">300 DH</td>
+                <td class="col-pack">1 500 DH <span class="col-eco">150 DH / séance</span></td>
               </tr>
               <tr>
-                <td>Renforcement musculaire ciblé</td>
-                <td class="col-price">100 MAD</td>
-                <td class="col-pack">800 MAD</td>
-                <td class="col-eco">-20%</td>
+                <td><strong>Renforcement musculaire</strong> (Avec machines et coach)</td>
+                <td class="col-price">300 DH</td>
+                <td class="col-pack">1 500 DH <span class="col-eco">150 DH / séance</span></td>
               </tr>
             </tbody>
           </table>
         </div>
+        <p style="padding: 0.9rem 2.2rem; margin: 0; font-size: 0.85rem; color: #555; background: #FAF7FA; border-top: 1px solid rgba(175,132,172,0.15);">Le pack de dix séances fait tomber la séance à 150 DH, soit la moitié du tarif à l'unité.</p>
       </div>
 
       <!-- 02 · Soins Amincissants -->
       <div class="pricing-section-block reveal">
         <div class="ps-header">
-          <div class="ps-visual" style="background: linear-gradient(135deg, #4a148c, #6a1b9a);"></div>
-          <div>
-            <div class="ps-label">02 — Corps & Silhouette</div>
-            <h2 class="ps-title">Soins Amincissants</h2>
+          <div class="ps-visual-photo">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Soins Amincissants VelaShape" />
+            <div class="psv-overlay"></div>
           </div>
+          <div class="ps-title-info">
+            <div class="ps-label">02 — CORPS & SILHOUETTE</div>
+            <h2 class="ps-title">Soins amincissants</h2>
+            <p class="ps-sub">Du soin d'entrée de gamme au soin manuel réalisé par une praticienne.</p>
+          </div>
+          <a href={`${waBase}?text=Bonjour%20INFRASLIM%2C%20je%20souhaite%20r%C3%A9server%20un%20soin%20Minceur.`} target="_blank" rel="noopener" class="ps-cta-btn">Réserver ce Pôle →</a>
         </div>
         <div class="pricing-wrapper">
           <table class="pricing-table">
             <thead>
               <tr>
                 <th>Prestation</th>
-                <th>1 séance</th>
+                <th>La séance</th>
                 <th>Pack 10 séances</th>
-                <th>Économie</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>VelaShape Anti-Cellulite</td>
-                <td class="col-price">350 MAD</td>
-                <td class="col-pack">2 800 MAD</td>
-                <td class="col-eco">-20%</td>
+                <td><strong>Sauna dôme</strong></td>
+                <td class="col-price">300 DH</td>
+                <td class="col-pack">1 500 DH <span class="col-eco">150 DH / séance</span></td>
               </tr>
               <tr>
-                <td>Madérothérapie Sculptante</td>
-                <td class="col-price">200 MAD</td>
-                <td class="col-pack">1 600 MAD</td>
-                <td class="col-eco">-20%</td>
+                <td><strong>Pressothérapie</strong></td>
+                <td class="col-price">300 DH</td>
+                <td class="col-pack">1 500 DH <span class="col-eco">150 DH / séance</span></td>
               </tr>
               <tr>
-                <td>Drainage Lymphatique Renata</td>
-                <td class="col-price">200 MAD</td>
-                <td class="col-pack">1 600 MAD</td>
-                <td class="col-eco">-20%</td>
+                <td><strong>Couverture chauffante</strong></td>
+                <td class="col-price">300 DH</td>
+                <td class="col-pack">1 500 DH <span class="col-eco">150 DH / séance</span></td>
+              </tr>
+              <tr class="highlight-row">
+                <td><strong>VelaShape</strong> <span class="tag-star">★ Populaire</span></td>
+                <td class="col-price">300 DH</td>
+                <td class="col-pack">2 000 DH <span class="col-eco">200 DH / séance</span></td>
               </tr>
               <tr>
-                <td>Pressothérapie Médicale</td>
-                <td class="col-price">150 MAD</td>
-                <td class="col-pack">1 200 MAD</td>
-                <td class="col-eco">-20%</td>
+                <td><strong>Massage amincissant</strong></td>
+                <td class="col-price">300 DH</td>
+                <td class="col-pack">2 500 DH <span class="col-eco">250 DH / séance</span></td>
               </tr>
               <tr>
-                <td>Sauna Dôme Détox</td>
-                <td class="col-price">100 MAD</td>
-                <td class="col-pack">800 MAD</td>
-                <td class="col-eco">-20%</td>
+                <td><strong>Massage tonifiant</strong></td>
+                <td class="col-price">300 DH</td>
+                <td class="col-pack">2 500 DH <span class="col-eco">250 DH / séance</span></td>
               </tr>
               <tr>
-                <td>Couverture chauffante amincissante</td>
-                <td class="col-price">100 MAD</td>
-                <td class="col-pack">800 MAD</td>
-                <td class="col-eco">-20%</td>
+                <td><strong>Massage relaxant</strong></td>
+                <td class="col-price">300 DH</td>
+                <td class="col-pack">2 500 DH <span class="col-eco">250 DH / séance</span></td>
               </tr>
               <tr>
-                <td>Massages amincissants & relaxants</td>
-                <td class="col-price">200 MAD</td>
-                <td class="col-pack">1 600 MAD</td>
-                <td class="col-eco">-20%</td>
+                <td><strong>Madérothérapie</strong></td>
+                <td class="col-price">600 DH</td>
+                <td class="col-pack">5 000 DH <span class="col-eco">500 DH / séance</span></td>
+              </tr>
+              <tr>
+                <td><strong>Drainage lymphatique</strong></td>
+                <td class="col-price">600 DH</td>
+                <td class="col-pack">5 000 DH <span class="col-eco">500 DH / séance</span></td>
               </tr>
             </tbody>
           </table>
         </div>
+        <p style="padding: 0.9rem 2.2rem; margin: 0; font-size: 0.85rem; color: #555; background: #FAF7FA; border-top: 1px solid rgba(175,132,172,0.15);">Les soins manuels, madérothérapie et drainage lymphatique, sont réalisés par une praticienne et durent plus longtemps.</p>
       </div>
 
       <!-- 03 · Soins du Visage -->
       <div class="pricing-section-block reveal">
         <div class="ps-header">
-          <div class="ps-visual" style="background: linear-gradient(135deg, #7f1d1d, #991b1b);"></div>
-          <div>
-            <div class="ps-label">03 — Visage & Éclat</div>
-            <h2 class="ps-title">Soins du Visage</h2>
+          <div class="ps-visual-photo">
+            <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80" alt="Soins du Visage Hydrafacial Kobido" />
+            <div class="psv-overlay"></div>
           </div>
+          <div class="ps-title-info">
+            <div class="ps-label">03 — VISAGE & ÉCLAT DU TEINT</div>
+            <h2 class="ps-title">Soins du visage</h2>
+            <p class="ps-sub">Le protocole est choisi après un échange sur votre type de peau.</p>
+          </div>
+          <a href={`${waBase}?text=Bonjour%20INFRASLIM%2C%20je%20souhaite%20r%C3%A9server%20un%20soin%20du%20Visage.`} target="_blank" rel="noopener" class="ps-cta-btn">Réserver ce Pôle →</a>
         </div>
         <div class="pricing-wrapper">
           <table class="pricing-table">
             <thead>
               <tr>
                 <th>Prestation</th>
-                <th>1 séance</th>
-                <th>Pack 10 séances</th>
-                <th>Économie</th>
+                <th>Le soin</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Soin visage classique nettoyant</td>
-                <td class="col-price">200 MAD</td>
-                <td class="col-pack">1 600 MAD</td>
-                <td class="col-eco">-20%</td>
-              </tr>
-              <tr>
-                <td>Hydrafacial Deluxe complet</td>
-                <td class="col-price">500 MAD</td>
-                <td class="col-pack">4 000 MAD</td>
-                <td class="col-eco">-20%</td>
-              </tr>
-              <tr>
-                <td>Carbon Peel Laser Hollywood</td>
-                <td class="col-price">400 MAD</td>
-                <td class="col-pack">3 200 MAD</td>
-                <td class="col-eco">-20%</td>
-              </tr>
-              <tr>
-                <td>Massage Kobido Liftant Japonais</td>
-                <td class="col-price">300 MAD</td>
-                <td class="col-pack">2 400 MAD</td>
-                <td class="col-eco">-20%</td>
-              </tr>
-              <tr>
-                <td>Microneedling & Sérums traitants</td>
-                <td class="col-price">400 MAD</td>
-                <td class="col-pack">3 200 MAD</td>
-                <td class="col-eco">-20%</td>
-              </tr>
-              <tr>
-                <td>Soin anti-âge régénérant</td>
-                <td class="col-price">300 MAD</td>
-                <td class="col-pack">2 400 MAD</td>
-                <td class="col-eco">-20%</td>
-              </tr>
-              <tr>
-                <td>Soin anti-taches & unifiant</td>
-                <td class="col-price">300 MAD</td>
-                <td class="col-pack">2 400 MAD</td>
-                <td class="col-eco">-20%</td>
-              </tr>
-              <tr>
-                <td>Soin anti-acné purifiant</td>
-                <td class="col-price">250 MAD</td>
-                <td class="col-pack">2 000 MAD</td>
-                <td class="col-eco">-20%</td>
-              </tr>
+              <tr><td><strong>Soin visage classique</strong></td><td class="col-price">400 DH</td></tr>
+              <tr><td><strong>Massage Kobido</strong></td><td class="col-price">400 DH</td></tr>
+              <tr class="highlight-row"><td><strong>Hydrafacial</strong> <span class="tag-star">★ Bestseller</span></td><td class="col-price">400 DH</td></tr>
+              <tr><td><strong>Carbon Peel</strong></td><td class="col-price">400 DH</td></tr>
+              <tr><td><strong>Microneedling</strong></td><td class="col-price">450 DH</td></tr>
+              <tr><td><strong>Soin anti-âge</strong></td><td class="col-pack">800 DH</td></tr>
+              <tr><td><strong>Soin anti-taches</strong></td><td class="col-pack">800 DH</td></tr>
+              <tr><td><strong>Soin anti-acné</strong></td><td class="col-pack">800 DH</td></tr>
             </tbody>
           </table>
         </div>
+        <p style="padding: 0.9rem 2.2rem; margin: 0; font-size: 0.85rem; color: #555; background: #FAF7FA; border-top: 1px solid rgba(175,132,172,0.15);">Les soins à 800 DH sont des protocoles complets, plus longs, construits autour d'une problématique précise.</p>
       </div>
 
-      <!-- 04 · Épilation & Laser -->
+      <!-- 04 · Épilation définitive et laser -->
       <div class="pricing-section-block reveal">
         <div class="ps-header">
-          <div class="ps-visual" style="background: linear-gradient(135deg, #0d1b2a, #1b2a3b);"></div>
-          <div>
-            <div class="ps-label">04 — Épilation & Laser</div>
-            <h2 class="ps-title">Épilation & Laser</h2>
+          <div class="ps-visual-photo">
+            <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=800&q=80" alt="Épilation Laser Diode" />
+            <div class="psv-overlay"></div>
           </div>
+          <div class="ps-title-info">
+            <div class="ps-label">04 — ÉPILATION DÉFINITIVE & LASER</div>
+            <h2 class="ps-title">Épilation définitive et laser</h2>
+            <p class="ps-sub">Par une équipe 100 % féminine à Agdal, Rabat.</p>
+          </div>
+          <a href={`${waBase}?text=Bonjour%20INFRASLIM%2C%20je%20souhaite%20r%C3%A9server%20une%20s%C3%A9ance%20Laser.`} target="_blank" rel="noopener" class="ps-cta-btn">Réserver ce Pôle →</a>
         </div>
         <div class="pricing-wrapper">
           <table class="pricing-table">
             <thead>
               <tr>
                 <th>Prestation</th>
-                <th>Prix</th>
-                <th>Remarque</th>
+                <th>Le tarif</th>
               </tr>
             </thead>
             <tbody>
+              <tr><td><strong>Laser diode, par zone</strong></td><td class="col-price">200 DH</td></tr>
+              <tr><td><strong>Laser diode, corps complet</strong></td><td class="col-pack">2 000 DH</td></tr>
+              <tr><td><strong>Détatouage, par zone</strong></td><td class="col-price">400 DH</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="padding: 0.9rem 2.2rem; margin: 0; font-size: 0.85rem; color: #555; background: #FAF7FA; border-top: 1px solid rgba(175,132,172,0.15);">Le nombre de séances dépend de la zone et de votre peau. Nous en parlons au premier rendez-vous.</p>
+      </div>
+
+      <!-- 04b · Épilation à la cire -->
+      <div class="pricing-section-block reveal">
+        <div class="ps-header">
+          <div class="ps-visual-photo">
+            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80" alt="Épilation à la cire" />
+            <div class="psv-overlay"></div>
+          </div>
+          <div class="ps-title-info">
+            <div class="ps-label">04b — ÉPILATION TRADITIONNELLE</div>
+            <h2 class="ps-title">Épilation à la cire</h2>
+            <p class="ps-sub">Toutes zones, sans engagement, par nos praticiennes.</p>
+          </div>
+          <a href={`${waBase}?text=Bonjour%20INFRASLIM%2C%20je%20souhaite%20r%C3%A9server%20une%20%C3%A9pilation%20%C3%A0%20la%20cire.`} target="_blank" rel="noopener" class="ps-cta-btn">Réserver →</a>
+        </div>
+        <div class="pricing-wrapper">
+          <table class="pricing-table">
+            <thead>
               <tr>
-                <td>Épilation laser diode</td>
-                <td class="col-price">À partir de 150 MAD</td>
-                <td style="color: var(--muted); font-size: 0.85rem;">Selon la zone sélectionnée</td>
+                <th>Zone</th>
+                <th>Le tarif</th>
               </tr>
-              <tr>
-                <td>Détatouage laser</td>
-                <td class="col-price">Sur devis</td>
-                <td style="color: var(--muted); font-size: 0.85rem;">Selon la dimension et les pigments</td>
-              </tr>
-              <tr>
-                <td>Épilation traditionnelle à la cire</td>
-                <td class="col-price">À partir de 50 MAD</td>
-                <td style="color: var(--muted); font-size: 0.85rem;">Selon la zone</td>
-              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Jambes entières</strong></td><td class="col-price">100 DH</td></tr>
+              <tr><td><strong>Demi-jambes</strong></td><td class="col-price">60 DH</td></tr>
+              <tr><td><strong>Bras entiers</strong></td><td class="col-price">70 DH</td></tr>
+              <tr><td><strong>Aisselles</strong></td><td class="col-price">50 DH</td></tr>
+              <tr><td><strong>Maillot intégral</strong></td><td class="col-price">100 DH</td></tr>
+              <tr><td><strong>Visage</strong></td><td class="col-price">100 DH</td></tr>
+              <tr><td><strong>Duvet ou menton</strong></td><td class="col-price">50 DH</td></tr>
+              <tr><td><strong>Sourcils</strong></td><td class="col-price">50 DH</td></tr>
             </tbody>
           </table>
         </div>
@@ -285,47 +293,52 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
       <!-- 05 · Hammam & Rituels -->
       <div class="pricing-section-block reveal">
         <div class="ps-header">
-          <div class="ps-visual" style="background: linear-gradient(135deg, #78350f, #92400e);"></div>
-          <div>
-            <div class="ps-label">05 — Rituels & Bien-être</div>
-            <h2 class="ps-title">Hammam Traditionnel Marocain</h2>
+          <div class="ps-visual-photo">
+            <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=800&q=80" alt="Hammam Traditionnel Marocain" />
+            <div class="psv-overlay"></div>
           </div>
+          <div class="ps-title-info">
+            <div class="ps-label">05 — RITUELS TRADITIONNELS & BIEN-ÊTRE</div>
+            <h2 class="ps-title">Hammam</h2>
+            <p class="ps-sub">Savon noir, gommage au kessa et rinçage dans un espace 100 % femmes.</p>
+          </div>
+          <a href="/services/hammam" class="ps-cta-btn">Découvrir le Hammam →</a>
         </div>
         <div class="pricing-wrapper">
           <table class="pricing-table">
             <thead>
               <tr>
-                <th>Formule</th>
-                <th>Prix</th>
-                <th>Détails</th>
+                <th>Prestation</th>
+                <th>Le tarif</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Accès hammam seul (45 min)</td>
-                <td class="col-price">80 MAD</td>
-                <td style="color: var(--muted); font-size: 0.85rem;">Vapeur bienfaisante & détente</td>
+                <td><strong>Hammam Infraslim</strong> (savon noir, gommage au kessa, rinçage)</td>
+                <td class="col-price">150 DH</td>
               </tr>
-              <tr>
-                <td>Hammam + Gommage Kessa (1h)</td>
-                <td class="col-price">150 MAD</td>
-                <td style="color: var(--muted); font-size: 0.85rem;">Vapeur, savon noir beldi & gommage complet</td>
-              </tr>
-              <tr>
-                <td>Rituel complet impérial (1h30 – 2h)</td>
-                <td class="col-price">250 MAD</td>
-                <td style="color: var(--muted); font-size: 0.85rem;">Hammam, kessa, savon beldi, ghassoul & enveloppement</td>
+              <tr class="highlight-row">
+                <td><strong>Hammam Royal</strong> (version complète &amp; enveloppante) <span class="tag-star">★ Populaire</span></td>
+                <td class="col-pack">250 DH</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <!-- Pack Callout -->
+      <!-- Pack Callout VIP : Avant de choisir & Paiement -->
       <div class="pack-callout reveal">
-        <div class="icon">💡</div>
-        <div>
-          <strong>Les packs 10 séances représentent une économie de 20%</strong> par rapport aux séances à l'unité. C'est la formule idéale pour engager un protocole complet et consolider vos résultats durablement.
+        <div class="pack-callout-inner">
+          <div class="icon">
+            <svg class="h-icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          </div>
+          <div class="pack-callout-text">
+            <strong>Avant de choisir, faites le diagnostic · Modes de paiement et validité</strong>
+            <p>Masse grasse, masse musculaire, rétention d'eau : le diagnostic InBody est offert et nous sert à vous orienter vers les séances qui vous conviennent vraiment. Les packs de dix séances sont <strong>valables toute l'année</strong>. Nous acceptons les <strong>espèces</strong> et le <strong>virement bancaire</strong>, et un <strong>règlement en plusieurs fois</strong> est possible.</p>
+          </div>
+          <a href={`${waBase}?text=Bonjour%20INFRASLIM%2C%20je%20souhaite%20des%20renseignements%20sur%20les%20packs%2010%20s%C3%A9ances.`} target="_blank" rel="noopener" class="btn-pack-wa">
+            Renseignements Packs →
+          </a>
         </div>
       </div>
 
@@ -338,7 +351,7 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
   <section class="cta-section">
     <div class="container" style="text-align: center;">
       <h2 class="cta-title">Prête à commencer votre programme ?</h2>
-      <p class="cta-text">Contactez-nous par WhatsApp pour réserver votre séance ou bénéficier de votre bilan InBody gratuit.</p>
+      <p class="cta-text">Contactez-nous par WhatsApp pour réserver votre première séance ou bénéficier de votre bilan InBody offert.</p>
       <div class="cta-buttons">
         <a href={`${waBase}?text=Bonjour%20INFRASLIM%2C%20je%20souhaite%20r%C3%A9server%20une%20s%C3%A9ance.`} target="_blank" rel="noopener" class="btn-primary">
           Réserver par WhatsApp
@@ -364,199 +377,356 @@ const waBase = `https://wa.me/${(settings.whatsapp || '212615109898').replace(/\
   }
 
   .tarifs-hero {
-    background: linear-gradient(135deg, #AF84AC 0%, #91648e 100%);
+    background: linear-gradient(135deg, #AF84AC 0%, #4A284B 100%);
     color: #FFFFFF;
-    padding: 4.5rem 2rem 5.5rem;
+    padding: 5rem 2rem 6.5rem;
     text-align: center;
+    position: relative;
+    overflow: hidden;
   }
-  .tarifs-hero-inner { max-width: 820px; margin: 0 auto; }
+  .hero-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(255,255,255,0.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .tarifs-hero-inner { max-width: 850px; margin: 0 auto; position: relative; z-index: 2; }
   .breadcrumb {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     letter-spacing: 0.08em;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255,255,255,0.75);
     margin-bottom: 1.5rem;
   }
-  .breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; }
+  .breadcrumb a { color: rgba(255,255,255,0.85); text-decoration: underline; }
   .breadcrumb a:hover { color: #fff; }
   .hero-eyebrow {
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: #DEC9DD;
+    color: var(--mauve-light);
     margin-bottom: 1rem;
     display: block;
-    font-weight: 600;
+    font-weight: 700;
   }
   .hero-title {
     font-family: 'Josefin Sans', sans-serif;
     font-size: clamp(2.3rem, 5vw, 3.8rem);
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.15;
     margin-bottom: 1.25rem;
   }
   .hero-title em { font-style: italic; color: #FFFFFF; }
   .hero-desc {
-    font-size: 1.02rem;
-    color: rgba(255,255,255,0.9);
-    line-height: 1.75;
-    max-width: 650px;
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.92);
+    line-height: 1.8;
+    max-width: 720px;
     margin: 0 auto;
+    font-weight: 300;
   }
 
-  .tarifs-section {
-    padding: 5rem 2rem;
-    background: #FAF7FA;
-  }
-  .container { max-width: 1100px; margin: 0 auto; }
+  .tarifs-section { padding: 4.5rem 2rem 6rem; background: #FAF7FA; }
+  .container { max-width: 1120px; margin: 0 auto; }
 
   .disclaimer {
     background: #FFFFFF;
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--red);
-    padding: 1.1rem 1.5rem;
-    font-size: 0.88rem;
-    color: #444;
-    border-radius: 6px;
+    border: 1px solid rgba(175,132,172,0.3);
+    border-radius: 12px;
+    padding: 1.2rem 1.8rem;
     margin-bottom: 3rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #4A284B;
+    font-size: 0.92rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
   }
+  .disc-icon { color: var(--red); font-size: 1.1rem; }
 
+  /* PRICING SECTION BLOCK AVEC PHOTO HERO */
   .pricing-section-block {
     background: #FFFFFF;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 2.5rem;
-    margin-bottom: 2.5rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    border-radius: 16px;
+    border: 1px solid rgba(175,132,172,0.22);
+    overflow: hidden;
+    margin-bottom: 3rem;
+    box-shadow: 0 12px 35px rgba(51,21,53,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .pricing-section-block:hover {
+    box-shadow: 0 16px 45px rgba(51,21,53,0.1);
   }
   .ps-header {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
-    margin-bottom: 2rem;
+    gap: 2rem;
+    padding: 1.8rem 2.2rem;
+    background: #FDFBFC;
+    border-bottom: 1px solid rgba(175,132,172,0.15);
   }
-  .ps-visual {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
+  .ps-visual-photo {
+    width: 90px;
+    height: 90px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
     flex-shrink: 0;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  }
+  .ps-visual-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .pricing-section-block:hover .ps-visual-photo img {
+    transform: scale(1.1);
+  }
+  .psv-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(51,21,53,0.3) 100%);
+  }
+  .ps-title-info {
+    flex: 1;
   }
   .ps-label {
     font-size: 0.72rem;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--red);
-    font-weight: 600;
-    margin-bottom: 0.2rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
   }
   .ps-title {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.7rem;
-    font-weight: 400;
+    font-weight: 700;
     color: #2D2D2D;
+    margin-bottom: 0.3rem;
+  }
+  .ps-sub {
+    font-size: 0.88rem;
+    color: #6B636B;
+    margin: 0;
+  }
+  .ps-cta-btn {
+    padding: 0.75rem 1.4rem;
+    border-radius: 30px;
+    background: #F7F3F7;
+    border: 1px solid rgba(175,132,172,0.3);
+    color: #4A284B;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+  }
+  .ps-cta-btn:hover {
+    background: var(--red);
+    color: #FFFFFF;
+    border-color: var(--red);
+    transform: translateY(-2px);
   }
 
-  .pricing-wrapper { overflow-x: auto; }
+  /* TABLE */
+  .pricing-wrapper {
+    overflow: hidden;
+  }
   .pricing-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 500px;
+    font-size: 0.94rem;
+    text-align: left;
   }
-  .pricing-table thead th {
-    font-size: 0.72rem;
+  .pricing-table th {
+    background: #FAF7FA;
+    padding: 1.1rem 2.2rem;
+    font-size: 0.75rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--muted);
-    padding: 1rem 1.25rem;
-    text-align: left;
-    border-bottom: 2px solid #F0E8F0;
+    color: #6B636B;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(175,132,172,0.18);
   }
-  .pricing-table tbody td {
-    padding: 1.1rem 1.25rem;
-    border-bottom: 1px solid #F7F3F7;
-    font-size: 0.92rem;
-    color: #333;
+  .pricing-table td {
+    padding: 1.25rem 2.2rem;
+    border-bottom: 1px solid rgba(175,132,172,0.12);
+    color: #333333;
+    vertical-align: middle;
   }
-  .pricing-table tbody tr:hover td {
-    background: #FAF7FA;
+  .pricing-table tr:last-child td {
+    border-bottom: none;
   }
-  .col-price { font-weight: 600; color: #2D2D2D; }
-  .col-pack { font-weight: 700; color: var(--red); }
-  .col-eco { font-size: 0.8rem; color: #16a34a; font-weight: 600; }
+  .pricing-table tr:hover td {
+    background: #FDFCFC;
+  }
+  .highlight-row td {
+    background: #FFF9F9;
+  }
+  .tag-star {
+    display: inline-block;
+    background: #FFEBEB;
+    color: var(--red);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.2rem 0.55rem;
+    border-radius: 20px;
+    margin-left: 0.5rem;
+  }
+  .col-price {
+    font-weight: 700;
+    color: #2D2D2D;
+    white-space: nowrap;
+  }
+  .col-pack {
+    font-weight: 700;
+    color: var(--red);
+    white-space: nowrap;
+  }
+  .col-eco {
+    font-weight: 700;
+    color: #2E7D32;
+    background: #E8F5E9;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 0.78rem;
+  }
 
+  /* PACK CALLOUT VIP */
   .pack-callout {
     background: #FFFFFF;
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--red);
-    border-radius: 8px;
-    padding: 2rem 2.5rem;
-    margin-top: 3rem;
+    border-radius: 16px;
+    border: 2px solid var(--red);
+    padding: 2.2rem 2.5rem;
+    margin-top: 3.5rem;
+    box-shadow: 0 16px 40px rgba(187,32,38,0.08);
+  }
+  .pack-callout-inner {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    gap: 2rem;
   }
-  .pack-callout .icon { font-size: 2rem; flex-shrink: 0; }
-  .pack-callout strong { color: var(--red); }
+  .pack-callout .icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+  }
+  .pack-callout-text {
+    flex: 1;
+  }
+  .pack-callout-text strong {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.45rem;
+    color: #2D2D2D;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+  .pack-callout-text p {
+    color: #555555;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .btn-pack-wa {
+    background: var(--red);
+    color: #FFFFFF !important;
+    padding: 0.9rem 1.8rem;
+    border-radius: 30px;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 700;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 6px 18px rgba(187,32,38,0.25);
+  }
+  .btn-pack-wa:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(187,32,38,0.35);
+  }
 
+  /* CTA */
   .cta-section {
-    background: linear-gradient(135deg, #AF84AC 0%, #91648e 100%);
+    background: linear-gradient(135deg, #AF84AC 0%, #4A284B 100%);
     color: #FFFFFF;
-    padding: 5rem 2rem;
+    padding: 5.5rem 2rem;
   }
   .cta-title {
     font-family: 'Josefin Sans', sans-serif;
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 400;
-    margin-bottom: 1rem;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
     color: #FFFFFF;
+    margin-bottom: 1rem;
   }
   .cta-text {
-    font-size: 0.95rem;
-    color: rgba(255,255,255,0.9);
+    font-size: 1rem;
+    color: rgba(255,255,255,0.92);
     margin: 0 auto 2.5rem;
-    max-width: 600px;
+    max-width: 620px;
     line-height: 1.8;
   }
   .cta-buttons {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.25rem;
     justify-content: center;
     flex-wrap: wrap;
   }
   .btn-primary {
     background: var(--red);
-    color: #FFFFFF;
-    padding: 0.9rem 2.5rem;
-    font-size: 0.8rem;
+    color: #FFFFFF !important;
+    padding: 0.95rem 2.5rem;
+    font-size: 0.82rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    font-weight: 600;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: background 0.3s;
-  }
-  .btn-primary:hover { background: var(--red-dark); }
-  .btn-secondary {
-    border: 2px solid rgba(255,255,255,0.7);
-    color: #FFFFFF;
-    padding: 0.9rem 2.5rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-weight: 600;
-    border-radius: 4px;
+    font-weight: 700;
+    border-radius: 30px;
     text-decoration: none;
     transition: all 0.3s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+  .btn-primary:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+  }
+  .btn-secondary {
+    border: 2px solid rgba(255,255,255,0.85);
+    color: #FFFFFF !important;
+    padding: 0.95rem 2.5rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(4px);
   }
   .btn-secondary:hover {
     background: #FFFFFF;
-    color: #AF84AC;
+    color: var(--mauve) !important;
+    transform: translateY(-2px);
   }
 
+  @media (max-width: 1024px) {
+    .ps-header { flex-direction: column; align-items: flex-start; gap: 1.2rem; }
+    .pack-callout-inner { flex-direction: column; align-items: flex-start; }
+    .ps-cta-btn { align-self: flex-start; }
+  }
   @media (max-width: 768px) {
-    .pricing-section-block { padding: 1.5rem; }
-    .ps-header { flex-direction: column; align-items: flex-start; }
+    .tarifs-hero { padding: 4rem 1.5rem 5rem; }
+    .ps-header { padding: 1.5rem; }
+    .pricing-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .pricing-table { min-width: 460px; }
+    .pricing-table th, .pricing-table td { padding: 0.85rem 0.9rem; font-size: 0.84rem; }
+    .pack-callout { padding: 1.5rem; }
+    .btn-pack-wa { width: 100%; text-align: center; }
     .cta-buttons { flex-direction: column; }
     .btn-primary, .btn-secondary { width: 100%; text-align: center; }
   }

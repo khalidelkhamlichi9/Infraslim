@@ -1,5 +1,148 @@
 ---
-import Confidentialite from './confidentialite.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<Confidentialite />
+<Layout
+  title="Politique de confidentialité | INFRASLIM Rabat"
+  description="Comment INFRASLIM collecte, utilise et protège vos données personnelles, conformément à la loi 09-08."
+  currentPath="/politique-de-confidentialite"
+  noindex={true}
+>
+  <section class="legal-hero">
+    <div class="legal-hero-inner">
+      <div class="breadcrumb">
+        <a href="/">Accueil</a> &nbsp;/&nbsp; <span>Politique de confidentialité</span>
+      </div>
+      <span class="hero-eyebrow">— PROTECTION DES DONNÉES · LOI 09-08</span>
+      <h1 class="hero-title">Politique de confidentialité</h1>
+      <p class="hero-desc">Cette page explique quelles données nous collectons sur le site infraslim.ma, pourquoi, et quels sont vos droits.</p>
+    </div>
+  </section>
+
+  <section class="legal-section">
+    <div class="legal-container">
+      <article class="legal-card">
+        <h2>Qui est responsable du traitement</h2>
+        <p>
+          [RAISON SOCIALE], dont le siège est au 43 Rue Oum Rabiâ, Appt. N°2, Agdal, Rabat, est responsable des données collectées sur ce site.
+        </p>
+        <p>
+          <strong>Contact :</strong> [ADRESSE E-MAIL] &middot; <a href="tel:+212615109898">+212 615 10 98 98</a>
+        </p>
+      </article>
+
+      <article class="legal-card">
+        <h2>Quelles données nous collectons</h2>
+        <p>
+          <strong>Via le formulaire de contact :</strong> nom et prénom, numéro de téléphone, adresse e-mail, nature de votre demande, créneau préféré et contenu de votre message.
+        </p>
+        <p>
+          <strong>Via la navigation :</strong> données de fréquentation du site, collectées de façon anonymisée à des fins de mesure d'audience.
+        </p>
+        <p>
+          Nous ne collectons <strong>aucune donnée de santé</strong> via ce site. Les mesures réalisées lors du diagnostic InBody sont recueillies au centre, dans le cadre de la prestation, et ne transitent pas par le site.
+        </p>
+      </article>
+
+      <article class="legal-card">
+        <h2>Pourquoi nous collectons ces données</h2>
+        <ul class="legal-list">
+          <li>Répondre à votre demande et vous proposer un rendez-vous</li>
+          <li>Vous recontacter au sujet de votre demande</li>
+          <li>Mesurer la fréquentation du site et améliorer son contenu</li>
+        </ul>
+        <p>
+          Vos données ne sont <strong>ni vendues, ni louées, ni cédées</strong> à des tiers à des fins commerciales.
+        </p>
+      </article>
+
+      <article class="legal-card">
+        <h2>Combien de temps nous les conservons</h2>
+        <p>
+          Les données issues du formulaire de contact sont conservées [DURÉE À DÉFINIR, usuellement 1 à 3 ans] à compter du dernier contact, puis supprimées.
+        </p>
+      </article>
+
+      <article class="legal-card">
+        <h2>Qui y a accès</h2>
+        <p>
+          Seules les personnes de l'équipe INFRASLIM chargées de la relation clientèle.
+        </p>
+        <p>
+          Des prestataires techniques peuvent intervenir dans le cadre de l'hébergement et de la mesure d'audience, sans usage propre de vos données.
+        </p>
+      </article>
+
+      <article class="legal-card">
+        <h2>Cookies</h2>
+        <p>
+          Le site utilise des cookies de mesure d'audience et, le cas échéant, des cookies publicitaires.
+        </p>
+        <p>
+          Un bandeau vous permet d'accepter ou de refuser les cookies non essentiels dès votre arrivée. <strong>Le refus est possible en un clic</strong> et n'empêche pas la consultation du site. Vous pouvez modifier votre choix à tout moment.
+        </p>
+      </article>
+
+      <article class="legal-card">
+        <h2>Vos droits</h2>
+        <p>
+          Conformément à la loi 09-08 relative à la protection des personnes physiques à l'égard du traitement des données à caractère personnel, vous disposez d'un droit d'accès, de rectification et d'opposition.
+        </p>
+        <p>
+          Pour l'exercer, écrivez-nous à [ADRESSE E-MAIL] ou au 43 Rue Oum Rabiâ, Appt. N°2, Agdal, Rabat.
+        </p>
+      </article>
+
+      <article class="legal-card">
+        <h2>Modification de cette politique</h2>
+        <p>
+          Cette politique peut être mise à jour. La date de dernière modification figure ci-dessous.
+        </p>
+        <p class="legal-updated"><strong>Dernière mise à jour :</strong> [DATE DE MISE EN LIGNE]</p>
+      </article>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .legal-hero {
+    background: linear-gradient(135deg, #AF84AC 0%, #4A284B 100%);
+    color: #FFFFFF;
+    padding: 4.5rem 2rem;
+    text-align: center;
+  }
+  .legal-hero-inner { max-width: 820px; margin: 0 auto; }
+  .breadcrumb { font-size: 0.78rem; color: rgba(255,255,255,0.75); margin-bottom: 1rem; }
+  .breadcrumb a { color: rgba(255,255,255,0.9); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  .hero-eyebrow { display: block; font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: #DEC9DD; margin-bottom: 0.75rem; font-weight: 600; }
+  .hero-title { font-family: 'Josefin Sans', sans-serif; font-size: clamp(2.1rem, 4.5vw, 3.2rem); font-weight: 700; color: #FFFFFF; margin-bottom: 0.75rem; }
+  .hero-desc { font-size: 0.98rem; color: rgba(255,255,255,0.9); line-height: 1.7; }
+
+  .legal-section { background: #F7F3F7; padding: 4.5rem 2rem; }
+  .legal-container { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; }
+  .legal-card {
+    background: #FFFFFF;
+    border-radius: 14px;
+    padding: 2.2rem;
+    border: 1px solid rgba(175,132,172,0.22);
+    border-left: 4px solid #BB2026;
+    box-shadow: 0 8px 25px rgba(51,21,53,0.04);
+  }
+  .legal-card h2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #2D2D2D;
+    margin-bottom: 1rem;
+  }
+  .legal-card p { font-size: 0.94rem; color: #4A4A4A; line-height: 1.8; margin-bottom: 0.85rem; }
+  .legal-card p:last-child { margin-bottom: 0; }
+  .legal-card a { color: #BB2026; text-decoration: none; font-weight: 600; }
+  .legal-list { margin: 0 0 1rem 1.25rem; padding: 0; color: #4A4A4A; font-size: 0.94rem; line-height: 1.8; }
+  .legal-updated { font-size: 0.86rem; color: #6B636B; margin-top: 1rem; }
+
+  @media (max-width: 720px) {
+    .legal-card { padding: 1.6rem; }
+  }
+</style>
