@@ -412,9 +412,45 @@
   function init() {
     initScrollProgress();
     initNavbar();
-    initHeroEntrance();
-    initSectionHeadersAnimation();
-    initScrollAnimations();
+    // Parallax background + counters + sticky sidebar + magnetic buttons + 3D card tilt
+    // (Title split-text-reveal & card-fly-* scroll animations are handled globally in Layout.astro)
+    gsap.utils.toArray('.hero-bg-photo, .hero-parallax-bg').forEach(bg => {
+      gsap.to(bg, {
+        yPercent: 18,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: bg.parentElement,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true
+        }
+      });
+    });
+
+    document.querySelectorAll('[data-count]').forEach(el => {
+      const target = parseInt(el.getAttribute('data-count'), 10);
+      if (isNaN(target)) return;
+      let animated = false;
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top 88%',
+        once: true,
+        onEnter: () => {
+          if (animated) return;
+          animated = true;
+          const obj = { n: 0 };
+          gsap.to(obj, {
+            n: target,
+            duration: 1.8,
+            ease: 'power2.out',
+            onUpdate: () => {
+              el.textContent = Math.floor(obj.n).toLocaleString('fr-FR');
+            }
+          });
+        }
+      });
+    });
+
     initStickySidebar();
     initMagneticButtons();
     initCardTiltAndSpotlight();

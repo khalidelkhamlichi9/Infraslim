@@ -72,7 +72,219 @@ const {
   <!-- Scripts d'animation GSAP & Moteur Premium -->
   <script is:inline src="/premium.js"></script>
 
+  <!-- Moteur Global d'Animations Avancées (Toutes les pages) -->
+  <script>
+    (function() {
+      function setupGlobalAnimations() {
+        const isHome = window.location.pathname === '/' || window.location.pathname === '/index.html';
+
+        if (!isHome) {
+          // 1. Titres cinématiques mot par mot sur toutes les pages internes
+          const titleSelectors = [
+            'h1.hero-title', '.service-detail-hero h1', 'main section h1',
+            '.section-title', '.ps-title', '.wlc-title', '.cta-title',
+            '.wa-title', '.inbody-title', '.ht-title', 'main section h2'
+          ].join(', ');
+
+          document.querySelectorAll(titleSelectors).forEach(el => {
+            if (!el.classList.contains('split-text-reveal') && !el.closest('.hero-hrbana')) {
+              el.classList.add('split-text-reveal');
+            }
+          });
+
+          // 2. Hero meta & descriptions
+          document.querySelectorAll('.breadcrumb, .hero-eyebrow, .hero-desc, .hero-subtitle, .hero-actions').forEach((el, idx) => {
+            if (!el.classList.contains('reveal-on-scroll')) {
+              el.classList.add('reveal-on-scroll', 'reveal-fade-up', `stagger-delay-${Math.min((idx % 4) + 1, 4)}`);
+            }
+          });
+
+          // 3. Blocs 2 colonnes (image + texte qui arrivent des deux côtés)
+          document.querySelectorAll('.split-layout, .two-col-why, .welcome-lounge-card, .inbody-callout-card').forEach(wrap => {
+            const kids = Array.from(wrap.children);
+            if (kids.length >= 2) {
+              if (!kids[0].classList.contains('card-fly-left') && !kids[0].classList.contains('card-fly-right')) {
+                kids[0].classList.add('card-fly-left', 'delay-s1');
+              }
+              if (!kids[1].classList.contains('card-fly-left') && !kids[1].classList.contains('card-fly-right')) {
+                kids[1].classList.add('card-fly-right', 'delay-s2');
+              }
+            }
+          });
+
+          // 4. Grilles de cartes (alternance gauche / haut / droite avec cascade)
+          const gridSelectors = [
+            '.univers-grid', '.blog-grid', '.pricing-plans', '.ritual-grid',
+            '.contact-cards', '.trust-grid', '.practical-grid', '.hammam-gallery-mosaic',
+            '.tech-pillars', '.stats-card-white', '.about-stats', '.benefits-grid',
+            '.services-grid', '.why-highlights', '.faq-list'
+          ].join(', ');
+
+          document.querySelectorAll(gridSelectors).forEach(grid => {
+            Array.from(grid.children).forEach((child, i) => {
+              if (
+                child.classList.contains('card-fly-left') ||
+                child.classList.contains('card-fly-right') ||
+                child.classList.contains('card-fly-up')
+              ) return;
+              const mod = i % 3;
+              const flyClass = mod === 0 ? 'card-fly-left' : mod === 1 ? 'card-fly-up' : 'card-fly-right';
+              const delayClass = `delay-s${(i % 6) + 1}`;
+              child.classList.add(flyClass, delayClass);
+            });
+          });
+
+          // 5. Blocs individuels (tarifs, FAQ, callouts, formulaires)
+          document.querySelectorAll('.pricing-section-block, .faq-group, .service-universe-card, .pack-callout, .in-form-card, .disclaimer, .sec-head-center').forEach((el, i) => {
+            if (
+              !el.classList.contains('card-fly-left') &&
+              !el.classList.contains('card-fly-right') &&
+              !el.classList.contains('card-fly-up') &&
+              !el.classList.contains('reveal-on-scroll')
+            ) {
+              const flyClass = i % 2 === 0 ? 'card-fly-up' : 'card-fly-left';
+              el.classList.add(flyClass, 'delay-s1');
+            }
+          });
+
+          // 6. Sidebar détail service
+          const sidebar = document.querySelector('.detail-sidebar');
+          if (sidebar && !sidebar.classList.contains('card-fly-right')) {
+            sidebar.classList.add('card-fly-right', 'delay-s2');
+          }
+        }
+
+        // 7. Découpage mot-à-mot des titres (.split-text-reveal) avec protection anti-doublon
+        document.querySelectorAll('.split-text-reveal').forEach(title => {
+          const el = title as HTMLElement;
+          if (el.dataset.splitDone === '1') return;
+          el.dataset.splitDone = '1';
+          const text = el.innerHTML;
+          const parts = text.split(/(<[^>]+>|\s+)/);
+          el.innerHTML = parts.map((part) => {
+            if (part.startsWith('<') || part.trim() === '') return part;
+            return `<span class="split-char-anim"><span class="char">${part}</span></span>`;
+          }).join('');
+        });
+
+        // 8. IntersectionObserver global pour révéler les éléments au scroll
+        const revealElements = document.querySelectorAll(
+          '.reveal-on-scroll, .card-fly-left, .card-fly-right, .card-fly-up, .split-text-reveal'
+        );
+        if (!revealElements.length) return;
+
+        function revealItem(target: Element) {
+          target.classList.add('is-revealed');
+          if (target.classList.contains('split-text-reveal')) {
+            target.querySelectorAll('.char').forEach((c, i) => {
+              setTimeout(() => {
+                c.parentElement?.classList.add('is-revealed');
+              }, i * 65);
+            });
+          }
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              revealItem(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.08,
+          rootMargin: '0px 0px -30px 0px'
+        });
+
+        revealElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.94 && rect.bottom > 0) {
+            revealItem(el);
+          } else {
+            observer.observe(el);
+          }
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupGlobalAnimations);
+      } else {
+        setupGlobalAnimations();
+      }
+    })();
+  </script>
+
   <style is:global>
+    /* ===================================================
+       SYSTÈME GLOBAL D'ANIMATIONS AVANCÉES (TOUTES PAGES)
+    =================================================== */
+    .split-char-anim {
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: top;
+    }
+    .split-char-anim .char {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(115%) rotate(4deg);
+      transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.65s ease;
+      will-change: transform, opacity;
+    }
+    .split-char-anim.is-revealed .char {
+      opacity: 1;
+      transform: translateY(0) rotate(0deg);
+    }
+
+    .card-fly-left {
+      opacity: 0 !important;
+      transform: translateX(-110px) rotate(-2.5deg) !important;
+      filter: blur(7px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.85s ease !important;
+    }
+    .card-fly-right {
+      opacity: 0 !important;
+      transform: translateX(110px) rotate(2.5deg) !important;
+      filter: blur(7px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.85s ease !important;
+    }
+    .card-fly-up {
+      opacity: 0 !important;
+      transform: translateY(80px) scale(0.93) !important;
+      filter: blur(5px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), filter 0.85s ease !important;
+    }
+    .card-fly-left.is-revealed,
+    .card-fly-right.is-revealed,
+    .card-fly-up.is-revealed {
+      opacity: 1 !important;
+      transform: translate(0, 0) rotate(0deg) scale(1) !important;
+      filter: blur(0px) !important;
+    }
+
+    .reveal-on-scroll {
+      opacity: 0;
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-fade-up { transform: translateY(40px); }
+    .reveal-fade-left { transform: translateX(-60px); }
+    .reveal-fade-right { transform: translateX(60px); }
+    .reveal-scale-up { transform: scale(0.92); }
+    .reveal-on-scroll.is-revealed {
+      opacity: 1;
+      transform: translate(0, 0) scale(1);
+    }
+
+    .delay-s1 { transition-delay: 0.1s !important; }
+    .delay-s2 { transition-delay: 0.22s !important; }
+    .delay-s3 { transition-delay: 0.34s !important; }
+    .delay-s4 { transition-delay: 0.46s !important; }
+    .delay-s5 { transition-delay: 0.58s !important; }
+    .delay-s6 { transition-delay: 0.7s !important; }
+    .stagger-delay-1 { transition-delay: 0.08s !important; }
+    .stagger-delay-2 { transition-delay: 0.18s !important; }
+    .stagger-delay-3 { transition-delay: 0.28s !important; }
+    .stagger-delay-4 { transition-delay: 0.38s !important; }
+
     #progress-bar {
       position: fixed;
       top: 0; left: 0;
