@@ -1,4 +1,4 @@
-# INFRASLIM — Architecture Astro + Strapi CMS
+# INFRASLIM - Architecture Astro + Strapi CMS
 
 Ce projet contient la version moderne **Jamstack (Astro + Strapi)** du site officiel **INFRASLIM (Agdal, Rabat)**.
 
