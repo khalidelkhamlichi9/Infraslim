@@ -645,5 +645,114 @@ body {
   }
 }
 
+/* =====================================================================
+   INFRASLIM HAUTE BEAUTÉ — LUXURY CRAFT DESIGN & NATURAL ANIMATIONS
+   100% Code & Craft · Zéro Effet IA · Standards Awwwards / Maisons de Luxe
+   ===================================================================== */
+
+/* 1. SCROLLBAR LUXE DISCRÈTE */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F3F7;
+}
+::-webkit-scrollbar-thumb {
+  background: #AF84AC;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BB2026;
+}
+
+/* 2. TEXT SELECTION HAUT DE GAMME */
+::selection {
+  background: #AF84AC;
+  color: #FFFFFF;
+}
+
+/* 3. LISSAGE TYPOGRAPHIQUE & RENDU */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 4. NAVBAR GLASSMORPHISM LUXE SUR SCROLL */
+.header.scrolled, .navbar.scrolled {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  box-shadow: 0 8px 30px rgba(51, 21, 53, 0.08) !important;
+  border-bottom: 1.5px solid rgba(175, 132, 172, 0.22) !important;
+}
+
+/* 5. CARTES TARIFS & PRESTATIONS — EFFET LIFT & OMBRES PHYSIQUES RAFFINÉES */
+.pp-card, .pro-card, .service-card, .stat-box, .inbody-callout-card, .pricing-card-pro {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease !important;
+  will-change: transform, box-shadow;
+}
+.pp-card:hover, .pro-card:hover, .service-card:hover, .stat-box:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 20px 45px -10px rgba(51, 21, 53, 0.12), 0 0 0 1px rgba(187, 32, 38, 0.2) !important;
+}
+
+/* Flèche bouton dans les cartes */
+.pp-card:hover .pp-btn,
+.pro-card:hover .pc-arrow-btn,
+.pro-card:hover .pc-footer-link {
+  color: #8f1a1f !important;
+  transform: translateX(3px);
+}
+.pp-btn, .pc-arrow-btn, .pc-footer-link {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease !important;
+}
+
+/* 6. ZOOMS SOIGNÉS SUR LES CADRES PHOTOS (REVUE DE MODE / PUBLICATION) */
+.sv-frame, .about-inset-photo, .inbody-card-photo, .split-visual, .inbody-card-pro {
+  overflow: hidden;
+}
+.sv-frame img, .about-inset-photo img, .inbody-card-photo img, .inbody-card-pro img {
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.sv-frame:hover img, .about-inset-photo:hover img, .inbody-card-photo:hover img, .inbody-card-pro:hover img {
+  transform: scale(1.05) !important;
+}
+
+/* 7. BOUTONS LUXE — ÉLÉGANCE AU CLIC & SURVOL */
+.ht-btn-red, .btn-primary, .btn-inbody-rdv, .btn-rdv-submit, .btn-wa-direct-lg {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease !important;
+}
+.ht-btn-red:active, .btn-primary:active, .btn-inbody-rdv:active, .btn-rdv-submit:active {
+  transform: scale(0.97) !important;
+}
+
+/* 8. BADGES FLOTTANTS ÉLÉGANTS */
+.luxury-float {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(175, 132, 172, 0.28);
+  box-shadow: 0 10px 25px rgba(51, 21, 53, 0.1);
+  color: #4A284B;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  border-radius: 30px;
+  padding: 0.55rem 1.25rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.luxury-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(51, 21, 53, 0.15);
+}
+
+/* 9. MARQUEE FLUIDE SANS ACCROC */
+.marquee-strip:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+
 
 

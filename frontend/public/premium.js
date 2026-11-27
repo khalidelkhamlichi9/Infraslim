@@ -346,9 +346,9 @@
     });
   }
 
-  // 7. MAGNETIC BUTTON HOVER EFFECT
+  // 7. MAGNETIC BUTTON HOVER EFFECT (LUXE BESPOKE FEEL)
   function initMagneticButtons() {
-    const magneticBtns = document.querySelectorAll('.ht-btn-red, .btn-primary, .btn-tech-outline, .btn-inbody-rdv, .btn-wa-big, .float-wa-btn, .ps-cta-btn, .btn-pack-wa, .mf-btn');
+    const magneticBtns = document.querySelectorAll('.ht-btn-red, .btn-primary, .btn-tech-outline, .btn-inbody-rdv, .btn-wa-big, .float-wa-btn, .ps-cta-btn, .btn-pack-wa, .mf-btn, .pp-btn, .btn-rdv-submit, .ht-btn-white, .btn-wa-direct-lg');
     magneticBtns.forEach(btn => {
       btn.addEventListener('mousemove', (e) => {
         const rect = btn.getBoundingClientRect();
@@ -372,9 +372,9 @@
     });
   }
 
-  // 8. 3D INTERACTIVE TILT + CURSOR SPOTLIGHT POUR TOUTES LES CARDS
+  // 8. 3D INTERACTIVE TILT + SPOTLIGHT POUR TOUTES LES CARDS (SANS EFFET D'IA, PUR PHYSIQUE CSS)
   function initCardTiltAndSpotlight() {
-    const tiltCards = document.querySelectorAll('.univers-card, .service-card, .service-universe-card, .plan, .cc, .hg-card, .ritual-step, .blog-card, .tech-pillar, .stat-box, .prac-item');
+    const tiltCards = document.querySelectorAll('.univers-card, .service-card, .service-universe-card, .plan, .cc, .hg-card, .ritual-step, .blog-card, .tech-pillar, .stat-box, .prac-item, .pp-card, .pro-card, .inbody-callout-card');
     tiltCards.forEach(card => {
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
@@ -387,11 +387,11 @@
         card.style.setProperty('--mouse-y', `${relY}px`);
 
         gsap.to(card, {
-          rotationY: x * 9,
-          rotationX: -y * 9,
-          y: -8,
-          scale: 1.02,
-          transformPerspective: 900,
+          rotationY: x * 8,
+          rotationX: -y * 8,
+          y: -6,
+          scale: 1.015,
+          transformPerspective: 1000,
           duration: 0.35,
           ease: 'power2.out'
         });
