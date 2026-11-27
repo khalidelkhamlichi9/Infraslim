@@ -35,7 +35,7 @@ export const CATEGORIES: CategoryData[] = [
     eyebrow: '01 · EFFORT & INFRAROUGE · SALLE 100 % FÉMININE',
     h1: 'Sport nouvelle génération pour femmes à Rabat',
     leadIntro: "Vous n'avez pas deux heures par jour, vous n'aimez pas les salles bondées, et le cardio classique ne donne rien sur le bas du corps. C'est pour ça que nous avons monté cet espace. Le sport nouvelle génération associe l'effort physique à deux technologies : la chaleur infrarouge et la pression négative. Vous pédalez ou vous marchez dans une cabine qui chauffe le bas du corps et stimule la circulation. Une séance dure 30 minutes et permet de brûler jusqu'à 1 300 calories, dans une salle entièrement féminine à Agdal.",
-    heroImage: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1400&q=85',
+    heroImage: 'https://infraslim.ma/wp-content/uploads/2024/10/WhatsApp-Image-2024-09-12-at-12.02.48-1.jpeg',
     sections: [
       {
         h2: "Comment l'infrarouge change une séance de sport",
@@ -123,7 +123,7 @@ export const CATEGORIES: CategoryData[] = [
     eyebrow: '02 · MINCEUR & REMODELAGE · SOINS EN CABINE',
     h1: 'Soins amincissants à Rabat',
     leadIntro: "Le sport fait fondre, les soins remodèlent. Les deux ne font pas le même travail, et c'est leur association qui donne les résultats les plus nets. Nos soins amincissants agissent sur ce que l'effort seul ne règle pas : la cellulite, la rétention d'eau, la fermeté de la peau et les zones qui résistent. Ils se pratiquent en cabine, à Agdal, dans un centre entièrement féminin.",
-    heroImage: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1400&q=85',
+    heroImage: 'https://infraslim.ma/wp-content/uploads/2024/10/879A0428.jpg',
     sections: [
       {
         h2: 'Quel soin pour quel problème ?',
@@ -196,7 +196,7 @@ export const CATEGORIES: CategoryData[] = [
     eyebrow: '03 · ÉCLAT & ANTI-ÂGE · INSTITUT VISAGE',
     h1: 'Soins du visage et anti-âge à Rabat',
     leadIntro: "Un bon soin du visage ne se choisit pas sur un nom. Il se choisit sur ce que votre peau demande. Nos soins du visage se répartissent en deux familles : les soins d'éclat et de nettoyage, et les soins ciblés sur un problème précis. Le protocole est déterminé après un échange sur votre type de peau, vos habitudes et ce que vous souhaitez corriger, dans notre institut d'Agdal.",
-    heroImage: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1400&q=85',
+    heroImage: 'https://infraslim.ma/wp-content/uploads/2024/10/WhatsApp-Image-2024-09-26-at-14.13.21-2-1.jpeg',
     sections: [
       {
         h2: 'Quel soin pour quelle peau ?',
